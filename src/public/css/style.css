@@ -12,6 +12,7 @@ li {
     list-style: none;
     display: inline-block;
     text-decoration: none;
+    text-align: start;
 }
 
 ul {
@@ -23,7 +24,8 @@ a {
 }
 
 a:hover {
-    color: var(--vang) !important;
+    transition: all 0.05s;
+    color: #333 !important;
 }
 
 body {
@@ -37,10 +39,18 @@ body {
     font-family: 'Roboto', 'Montserrat';
     font-size: 14px;
 }
+ul li { 
+    display: inline-block; 
+    vertical-align: top;
+    padding: 10px 19px; 
+    cursor: pointer; 
+    position: relative;
+}
 
-.sub-nav {
+.nav-menu .sub-nav {
     text-align: start;
     margin-left: 19px;
+    padding-left: 9px;
 }
 
 #page-header {
@@ -188,7 +198,7 @@ button#close-menu-btn-2 {
 .home-banner-2 {
     width: 100%;
     margin-top: 200px;
-    background-color: #799c58;
+    background-color: var(--vang);
     padding: 4rem 0;
 }
 
@@ -275,13 +285,60 @@ img {
     /* border-radius: 0 0 0.5rem 0.5rem; */
 }
 
-.product-title {
-    margin-bottom: 7px;
+.product-content-box p {
+    margin: 0 !important;
+}
+
+.product-content-box a {
+    display: flex;
+    justify-content: center;
+}
+
+.product-color {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.color {
+    border-radius: 999px;
+    padding: 6px 6px;
+    margin-bottom: 6px;
+}
+
+.product-color-black {
+    background-color: #000;
+}
+
+.product-color-blue {
+    background-color: #1e73be;
+}
+
+.product-color-green {
+    background-color: #75c43c;
+}
+
+.product-color-gray {
+    background-color: #9b9b9b;
+}
+
+.product-color-red {
+    background-color: #dd3333;
+}
+
+.product-color-yellow {
+    background-color: #ee2;
 }
 
 .product-title a {
     display: block;
     width: 100%;
+}
+
+.product-price {
+    color: #1d6397;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .product-content-box {
@@ -607,6 +664,10 @@ section.v-about {
     justify-content: center;
     text-align: start;
     padding-left: 0;
+}
+
+.business__branch__right ul li:hover {
+    background-color: transparent !important;
 }
 
 .business__branch__right p {
@@ -1338,7 +1399,7 @@ section.v-about {
 .social-icons-container {
     position: fixed;
     top: 14rem;
-    left: 104rem;
+    right: 14px;
     width: 50px;
     height: fit-content;
     z-index: 20000;
@@ -1350,12 +1411,6 @@ section.v-about {
     align-items: center;
     gap: 2rem;
 }
-
-/* .social-icon-right {
-    border-radius: 999px;
-    background-color: pink;
-    padding: 12px 18px;
-} */
 
 .social-icon-right a {
     display: inline-block;
@@ -1398,6 +1453,10 @@ section.v-about {
 .footer-check {
     display: flex;
     justify-content: space-around;
+}
+
+.footer-text {
+    margin-top: 38px;
 }
 
 .footer-text p:hover {
@@ -1512,6 +1571,10 @@ section.v-about {
         position: relative;
         right: 138px;
         top: 8px;
+    }
+    
+    .nav-menu-2 .sub-nav {
+        padding-left: 10px;
     }
 
     .nav-menu-2 i {
