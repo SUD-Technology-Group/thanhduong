@@ -333,6 +333,7 @@ img {
 .product-title a {
     display: block;
     width: 100%;
+    color: #333 !important;
 }
 
 .product-price {
@@ -915,6 +916,127 @@ section.v-about {
     font-weight: 700;
 }
 /* News End */
+
+/* News Detail Start  */
+.news__detail__container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 80% 20%;
+}
+
+.news__detail__sub__title {
+    margin-top: 16px;
+}
+
+.news__detail__sub__title p {
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.news__detail__content__header h3 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--vang);
+}
+
+.news__detail__content__time p {
+    margin-top: 20px;
+    font-size: 0.7rem;
+}
+
+.news__detail__content__img {
+    text-align: center;
+}
+
+.news__detail__content__img p{
+    margin: 20px 0;
+    font-size: 13px;
+}
+
+.news__detail__content__text p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.news__detail__content__text__sub__image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.news__detail__content__watch__more span {
+    color: var(--cam);
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.news__detail__content__watch__more a {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.news__detail__content__fanpage {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.news__detail__content__fanpage p {
+    margin: 0 !important;
+    font-size: 14px;
+    font-weight: bolder;
+    color: var(--cam);
+}
+
+.news__detail__content__fanpage a {
+    color: #333;
+    font-size: 14px;
+}
+
+.news__detail__container__right {
+    margin-top: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.news__detail__container__right h3 {
+    position: relative;
+    font-size: 1em;
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+
+.news__detail__container__right h3::after {
+    position: absolute;
+    content: '';
+    width: 12%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #e5e5e5;
+}
+
+.news__detail__container__right h1 {
+    position: relative;
+}
+
+.news__detail__container__right h1 img {
+    width: 100%;
+    position: relative;
+}
+
+.news__detail__container__right h1 p {
+    position: absolute;
+    bottom: 0;
+    left: 86px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+}
+/* News Detail End  */
 
 /* Contact Start */
 .map-title {
