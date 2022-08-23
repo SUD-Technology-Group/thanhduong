@@ -358,6 +358,102 @@ img {
     top: 0;
 }
 
+.modal__signin {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50000;
+    display: flex;
+    display: none;
+}
+
+.modal__overplay
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.4);
+}
+
+.modal__body
+{
+    margin: 14rem auto auto auto;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.modal__header__icon {
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--vang);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.modal__header__icon__mail i {
+    color: #ffffff;
+    font-size: 80px;
+}
+
+.modal__header__icon__close {
+    position: absolute;
+    bottom: 11rem;
+    left: 460px;
+    background: #ffffff;
+    border-radius: 999px;
+    padding: 0px 8px;
+}
+
+.modal__header__icon__close i {
+    font-size: 28px;
+}
+
+.modal__footer {
+    padding: 24px;
+}
+
+.modal__footer__text {
+    text-align: center;
+}
+
+.modal__footer__text p {
+    width: 88%;
+    align-self: center;
+    margin-left: 29px;
+    color: #bebebe;
+}
+
+.modal__footer__input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal__footer__input input {
+    width: 80%;
+    padding: 8px;
+    border: none;
+    background-color: #f2f2fa;
+    text-align: center;
+    outline: none;
+}
+
+.modal__footer__input button {
+    width: 80%;
+    padding: 8px;
+    border: none;
+    color: #ffffff;
+    background-color: var(--vang);
+}
+
 /*ABOUT*/
 section.v-about {
     padding: 6rem 0;
