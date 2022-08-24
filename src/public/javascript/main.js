@@ -111,3 +111,21 @@ closeButton2.addEventListener('click', () => {
     closeButton2.style.display = 'none';
     openButton2.style.display = 'block';
 });
+
+// show modal form
+const modal = document.querySelector('.modal__signin');
+const closeModalButton = document.querySelector('.modal__header__icon__close');
+
+if (sessionStorage.getItem('isShowed')) {
+    console.log('if');
+} else {
+    console.log('else');
+    setTimeout(() => {
+        modal.style.display = 'flex';
+        sessionStorage.setItem('isShowed', true);
+    }, 3000);
+}
+
+closeModalButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
