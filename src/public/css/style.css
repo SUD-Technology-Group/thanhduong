@@ -49,7 +49,7 @@ ul li {
 
 .nav-menu .sub-nav {
     text-align: start;
-    margin-left: 19px;
+    margin-left: 22px;
     padding-left: 9px;
 }
 
@@ -153,7 +153,7 @@ ul li {
 
 .header-body-2 ul.sub-nav {
     margin-top: 0;
-    margin-left: 18px;
+    margin-left: 21px;
 }
 
 .header-body-2 ul {
@@ -331,6 +331,7 @@ img {
 }
 
 .product-title a {
+    font-size: 18px;
     display: block;
     width: 100%;
     color: #333 !important;
@@ -404,7 +405,7 @@ img {
 .modal__header__icon__close {
     position: absolute;
     bottom: 11rem;
-    left: 460px;
+    left: 96%;
     background: #ffffff;
     border-radius: 999px;
     padding: 0px 8px;
@@ -1627,9 +1628,12 @@ section.v-about {
 }
 
 .to-top-btn {
+    position: relative;
+    right: 0;
+    margin-top: 30px;
     height: 40px;
     width: 40px;
-    background-color: #fff;
+    background-color: var(--vang);
     color: #333;
     display: flex;
     align-items: center;
@@ -1644,6 +1648,7 @@ section.v-about {
 }
 
 .to-top-btn i {
+    color: #ffffff;
     font-size: 36px;
 }
 
@@ -1702,8 +1707,13 @@ section.v-about {
 }
 
 .footer-check {
+    height: 104px;
     display: flex;
     justify-content: space-around;
+}
+
+.footer-check img {
+    width: 150%;
 }
 
 .footer-text {
