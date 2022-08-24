@@ -1,0 +1,91 @@
+{{#if success}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{success}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+{{#if error}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{error}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+<div class="container">
+    <div class="row m-0">
+        <div class="col-md-12 bg-white py-2" >
+            <table class="table table-hover mt-2 data-table" style="table-layout:fixed;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Hình ảnh</th>
+                        <th scope="col">Tên</th>
+                        <th scope="col">Loại</th>
+                        <th scope="col">Thông số</th>
+                        <th scope="col">Mô tả</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#if products}}
+                    {{#each products}}
+                    <tr>
+                    <a href="#">
+                        <td><img src='{{imgs.[0]}}' alt="" width="70%"></td>
+                        <td>{{name}}</td>
+                        <td>{{category}}</td>
+                        <td>{{{parameter}}}</td>
+                        <td>{{{description}}}</td>
+                        <td>{{price}}</td>
+                        <td>{{amount}}</td>
+                        <td class="d-flex">
+                            
+                            <!-- Button trigger modal -->
+                            <a type="button" class="btn btn-warning w-100 mr-1" href="/admin/products/update/{{_id}}">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <!-- Button trigger modal -->
+                            <a type="button" class="btn btn-danger w-100 mr-1" data-toggle="modal"
+                                data-target="#myModal{{_id}}">
+                                <i class="fas fa-times-circle"></i>
+                            </a>
+                        </td>
+                    </a>
+                    </tr>
+                    {{/each}}
+                    {{else}}
+                    <td colspan="5">Không có dịch vụ nào</td>
+                    {{/if}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{#each products}}
+
+    <div class="modal fade" id="myModal{{_id}}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Xóa sản phẩm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Bạn có muốn xóa sản phẩm này ??
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                    <a type="button" href="/admin/products/delete/{{_id}}" class="btn btn-danger">Xóa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

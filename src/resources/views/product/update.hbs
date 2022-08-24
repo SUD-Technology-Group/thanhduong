@@ -1,0 +1,125 @@
+{{!-- Body: start --}}
+{{#if error}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{error}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+<div class="container">
+    <div class="addProduct-body">
+
+        <form class="form-horizontal p-3" enctype="multipart/form-data" method="POST" action="/admin/products/update">
+            <fieldset>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="control-label text-uppercase" for="name">TÊN SẢN PHẨM</label>
+                    <input id="name" name="name" placeholder="Tên sản phẩm" value="{{product.name}}"
+                        class="form-control input-md" required="" type="text">
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="control-label text-uppercase" for="category">DANH MỤC SẢN PHẨM</label>
+                    <select id="category" name="category" required="" class="form-control" value="{{product.category}}">
+                        <option value="">-- Chọn loại sản phẩm --</option>
+                        <option {{#equal product.category "Pallet Gỗ"}} selected {{/equal}} value="Pallet Gỗ">Pallet Gỗ</option>
+                        <option {{#equal product.category "Pallet Nhựa"}} selected {{/equal}} value="Pallet Nhựa">Pallet Nhựa</option>
+                    </select>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="control-label text-uppercase" for="price">Giá</label>
+                    <input id="price" value="{{product.price}}" required="" name="price" placeholder="Giá" class="form-control input-md" type="number">
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="control-label text-uppercase" for="amount">Số lượng</label>
+                    <input id="amount" value="{{product.amount}}" name="amount" placeholder="Số lượng"
+                            class="form-control input-md" required="" type="number">
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="control-label text-uppercase" for="product-imgs">HÌNH ẢNH SẢN PHẨM</label>
+                    <div class="form-group-container">
+                        <input id="product-imgs" accept="image/*" required="" name="product-imgs"
+                            class="form-control input-md" onchange="preview()" type="file" multiple>
+                        <label for="product-imgs">
+                            <i class="fas fa-upload"></i>
+                            Chọn ảnh sản phẩm &nbsp;
+                        </label>
+                        <p id="num-of-file">Chưa có ảnh nào được chọn</p>
+                        <div id="images-upload">
+                        {{#each product.imgs}}
+                            <figure>
+                                <img src="{{this}}" alt="" width="50%">
+                            </figure>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label class="control-label text-uppercase" for="parameter">Thông số kỹ thuật</label>
+                    <textarea id="parameter" name="parameter" class="ckeditor">{{{product.parameter}}}</textarea>
+                </div>
+
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label class="control-label text-uppercase" for="description">Mô tả sản phẩm</label>
+                    <textarea id="description" name="description" class="ckeditor">{{{product.description}}}</textarea>
+                </div>
+
+                <input type="text" name="id" class="d-none" value="{{product._id}}">
+
+                <!-- Text input-->
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary">Cập nhật sản phẩm</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+</div>
+
+{{!-- Body: end --}}
+
+<script src="/ckeditor/ckeditor.js"></script>
+
+<!-- Footer -->
+<script>
+    let fileInput = document.getElementById("product-imgs")
+    let imageContainer = document.getElementById('images-upload')
+    let numOfFiles = document.getElementById('num-of-file')
+
+    function preview() {
+        imageContainer.innerHTML = ""
+        numOfFiles.textContent = `${fileInput.files.length} ảnh đã được chọn`;
+
+        for (i of fileInput.files) {
+            let reader = new FileReader()
+            let figure = document.createElement("figure")
+            let figCap = document.createElement("figcaption")
+
+            figCap.innerText = i.name
+            figure.appendChild(figCap)
+            reader.onload = () => {
+                let img = document.createElement("img");
+                img.setAttribute("src", reader.result);
+                img.setAttribute("width", '50%');
+                figure.insertBefore(img, figCap);
+            }
+            imageContainer.appendChild(figure);
+            reader.readAsDataURL(i)
+        }
+    }
+
+    CKEDITOR.replace('ckeditor')
+
+</script>
