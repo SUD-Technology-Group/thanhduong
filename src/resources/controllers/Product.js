@@ -5,9 +5,10 @@ const fs = require('fs');
 
 const ProductController = {
     // Client
-    index: (req, res) => {
-        res.render('Product');
-    },
+    index: catchAsync(async (req, res) => {
+        const products = await productService.getAll();
+        res.render('Product', products);
+    }),
 
     detail: catchAsync(async (req, res) => {
         const id = req.params.id;
