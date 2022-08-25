@@ -1,12 +1,11 @@
 <div class='detail'>
-    
     <div class='map-title'>
-        <p>Trang chủ / Sản phẩm / Pallet Công Nghiệp / Pallet Nhựa Xuất Khẩu</p>
+        <p><a href="/">Trang chủ</a> / <a href="/products">Sản phẩm</a> / {{product.category}}</p>
     </div>
     <div class='detail__container'>
         <div class='detail__container__left'>
             <div class='detail__container__left__img'>
-                <img src='/img/products/pr3.png' alt='detail' />
+                <img src='{{product.imgs}}' alt='detail' />
             </div>
         </div>
         <div class='detail__container__right'>
@@ -14,11 +13,10 @@
                 <h3>{{product.name}}</h3>
             </div>
             <div class='detail__container__right__desc'>
-                <p>Kích thước: <span>1200x1000x30 mm</span></p>
-                <p>Trọng lượng sản phẩm: <span>4.2kg ± 2% kg</span></p>
-                <p>Chất liệu: <span>HDPE chất lượng cao</span></p>
-                <p>Màu sắc: <span>xanh dương</span></p>
-                <p>DANH MỤC: <span>PALLET CÔNG NGHIỆP, PALLET NHỰA XUẤT KHẨU</span></p>
+                {{{product.parameter}}}
+                {{{product.description}}}
+                <p>Giá: <span>{{product.price}}</span></p>
+                <p>DANH MỤC: <span>{{product.category}}</span></p>
                 <p>TỪ KHÓA:
                     <span>PALLET GIÁ RẺ, PALLET Thành Dương, PALLET Thành Dương VIỆT NAM, PALLET KHUNG RÀNG, PALLET TIỆN
                         LỢI

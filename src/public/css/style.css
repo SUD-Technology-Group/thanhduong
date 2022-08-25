@@ -1429,7 +1429,7 @@ section.v-about {
     border-color: #e5e5e5;
     border-width: thin;
     padding: 10px 10px;
-    height: 72%;
+    height: fit-content;
 }
 
 .detail__container__promise__subtext i {
@@ -1529,6 +1529,7 @@ section.v-about {
 
 .starts span {
     border-right: 1px solid #27262673;
+    display: flex;
 }
 
 .starts span:nth-child(5) {
