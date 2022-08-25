@@ -36,7 +36,6 @@
                     {{#if products}}
                     {{#each products}}
                     <tr>
-                    <a href="#">
                         <td><img src='{{imgs.[0]}}' alt="" width="70%"></td>
                         <td>{{name}}</td>
                         <td>{{category}}</td>
@@ -45,18 +44,20 @@
                         <td>{{price}}</td>
                         <td>{{amount}}</td>
                         <td class="d-flex">
-                            
                             <!-- Button trigger modal -->
-                            <a type="button" class="btn btn-warning w-100 mr-1" href="/admin/products/update/{{_id}}">
-                                <i class="fas fa-edit"></i>
+                            <a class="text-info w-100" href="/admin/products/demo/{{_id}}">
+                                <i class="fas fa-info-circle fa-lg"></i>
                             </a>
                             <!-- Button trigger modal -->
-                            <a type="button" class="btn btn-danger w-100 mr-1" data-toggle="modal"
+                            <a  class="text-warning w-100" href="/admin/products/update/{{_id}}">
+                                <i class="fas fa-edit fa-lg"></i>
+                            </a>
+                            <!-- Button trigger modal -->
+                            <a  class="text-danger w-100" data-toggle="modal"
                                 data-target="#myModal{{_id}}">
-                                <i class="fas fa-times-circle"></i>
+                                <i class="fas fa-trash fa-lg"></i>
                             </a>
                         </td>
-                    </a>
                     </tr>
                     {{/each}}
                     {{else}}

@@ -1,6 +1,6 @@
 const AdminController = {
     index: (req, res) =>  {
-        res.render('admin', { layout: 'admin'})
+        res.render('admin', {layout: 'admin'})
     }
 }
 

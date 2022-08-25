@@ -10,6 +10,7 @@ router.get('/', adminController.index);
 
 // // Product
 router.get('/products', productController.getAll);
+router.get('/products/demo/:id', productController.demo);
 router.get('/products/create', productController.createView);
 router.post('/products/create', upload.array('product-imgs', 4), productController.create);
 router.get('/products/update/:id', productController.updateView);
