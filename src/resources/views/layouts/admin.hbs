@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+  <link rel="stylesheet" href="dropdown-scroll.css">
+  <!-- Boxiocns CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  {{!-- Bootstrap --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  {{!-- Font Awesome --}}
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  {{!-- Data table css --}}
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="icon" type="image/x-icon" href="/img/logo2.png">
+  <title>Thành Dương Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="sidebar">
+      <div class="logo-details">
+        <div class="logo-box">
+          <div style="margin-top: 10px; border-radius: 50%">
+            <img width="100%" src="/img/logo.png" alt="">
+          </div>
+        </div>
+        <a class="mt-4" href="/admin"><span class="logo_name">Thành Dương</span></a>
+      </div>
+      <ul class="nav-links">
+
+        <li>
+          <div class="icon-link">
+            <a href="/">
+              <i class="fas fa-home"></i>
+              <span class="link_name">Trang chủ</span>
+            </a>
+          </div>
+        </li>
+        {{!-- Sale --}}
+        {{!-- {{#isAccountant position}} --}}
+
+        <li>
+          <div class="icon-link">
+            <a href="#">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="link_name">Sản phẩm</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow'></i>
+          </div>
+          <ul class="sub-menu">     
+
+            <li><a class="link_name" href="#">Sản phẩm</a></li>
+            {{!-- {{#isSale position}} 
+             <li {{#isAdmin position}} class="d-none" {{/isAdmin}}><a href="/admin/product-manager">Kiểm kho</a>
+            </li> 
+             {{/isSale }} --}}
+            <li><a href="/admin/products/create">Thêm sản phẩm</a></li>
+            <li><a href="/admin/products">Danh sách sản phẩm</a></li>
+
+          </ul>
+        </li>
+        {{!-- {{/isAccountant}} --}}
+        {{!-- {{#isAccountant position}} --}}
+
+        {{!-- <li>
+          <div class="icon-link">
+            <a href="#">
+              <i class="fas fa-sticky-note"></i>
+              <span class="link_name">Giới thiệu</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow'></i>
+          </div>
+          <ul class="sub-menu">
+
+            <li><a class="link_name" href="#">Giới thiệu</a></li>
+            {{#isSale position}}
+            <li {{#isAdmin position}} class="d-none" {{/isAdmin}}><a href="/admin/product-manager">Kiểm kho</a>
+            </li> 
+            {{/isSale }}
+            <li><a href="/admin/add-about">Sửa nội dung</a></li>
+            <li><a href="/admin/add-product">Thêm sản phẩm</a></li>
+
+          </ul>
+        </li>
+        {{/isAccountant}}
+
+        {{#isAdmin position}}
+        
+        <li>
+          <div class="icon-link">
+            <a href="#">
+              <i class="fas fa-file-alt"></i>
+              <span class="link_name">Đơn hàng</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow'></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Đơn hàng</a></li>
+            <li><a href="/admin/create-order">Tạo đơn hàng</a></li>
+            <li><a href="/admin/getOrders">Danh sách đơn hàng</a></li>
+          </ul>
+        </li>
+      
+        {{/isAdmin }}
+        Admin
+        {{#isAdmin position}}
+        <li>
+          <div class="icon-link">
+            <a href="#">
+              <i class='bx bx-news'></i>
+              <span class="link_name">Tin tức</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow'></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Tin tức</a></li>
+            <li><a href="/admin/listNews">Tất cả tin</a></li>
+            <li><a href="/admin/add-news">Thêm bài viết</a></li>
+          </ul>
+        </li>
+        <li>
+          <div class="icon-link">
+            <a href="#">
+              <i class="fas fa-percent"></i>
+              <span class="link_name">Khuyến mãi</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow'></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Khuyến mãi</a></li>
+            <li><a href="/admin/listDiscounts">Tất cả khuyến mãi</a></li>
+            <li><a href="/admin/add-discount">Thêm khuyến mãi</a></li>
+          </ul>
+        </li>
+        <li>
+          <div class="icon-link">
+            <a href="#">
+              <i class="fas fa-cogs"></i>
+              <span class="link_name">Dịch vụ</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow'></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Dịch vụ</a></li>
+            <li><a href="/admin/listServices">Tất cả dịch vụ</a></li>
+            <li><a href="/admin/add-services">Thêm dịch vụ</a></li>
+
+          </ul>
+        </li>
+        <li>
+          <div class="icon-link">
+            <a href="#">
+              <i class="fas fa-handshake"></i>
+              <span class="link_name">Đối tác</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow'></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Đối tác</a></li>
+            <li><a href="/admin/listPartners">Tất cả đối tác</a></li>
+            <li><a href="/admin/addPartner">Thêm đối tác</a></li>
+
+          </ul>
+        </li>
+        <li>
+          <div class="icon-link">
+            <a href="#">
+              <i class="fas fa-users"></i>
+              <span class="link_name">Nhân viên</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow'></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Nhân viên</a></li>
+            <li><a href="/admin/getUsers">Danh sách nhân viên</a></li>
+            <li><a href="/users/register">Thêm nhân viên</a></li>
+          </ul>
+        </li>
+        {{/isAdmin}}
+        {{#isSale position}}
+        <li>
+          <div class="icon-link">
+            <a href="/admin/customer-info">
+              <i class="fas fa-users"></i>
+              <span class="link_name">Khách hàng</span>
+            </a>
+
+          </div>
+        </li>
+        {{/isSale}}
+        {{#isAdmin position}}
+        <li>
+          <a href="/admin/history">
+            <i class="fas fa-history"></i>
+            <span class="link_name">Lịch sử</span>
+          </a>
+
+        </li>
+        {{/isAdmin}}
+        <li>
+          <div class="icon-link">
+            <a href="#">
+              <i class="fas fa-user-cog"></i>
+              <span class="link_name">Tài khoản</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow'></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Tài khoản</a></li>
+            <li><a href="/users/changePassword">Đổi mật khẩu</a></li>
+            <li><a href="/users/logout">Đăng xuất</a></li>
+          </ul>
+        </li> --}}
+      </ul>
+    </div>
+    
+
+    <section class="home-section mr-2 ml-2">
+      <div class="home-content">
+        <i class='bx bx-menu'></i>
+        <span class="text">{{pageName}}</span> <br />
+      </div>
+      {{{body}}}
+    </section>
+  </div>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+    crossorigin="anonymous"></script>
+  <script src="/javascript/cart.js"></script>
+  <script src="/javascript/main.js"></script>
+  <script>
+    $('.data-table').DataTable();
+
+    setTimeout(() => {$(".alert").alert('close')}, 5000)
+    
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+      arrow[i].addEventListener("click", (e) => {
+        let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+        arrowParent.classList.toggle("showMenu");
+      });
+    }
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    /* sidebarBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("close");
+    }); */
+    $(function () {
+      /* console.log("width: "+ document.body.clientWidth); */
+
+      resizeScreen();
+      $(window).resize(function () {
+        resizeScreen();
+      });
+      $('.bx-menu').click(function () {
+        // 點選選單按鈕時，大螢幕為新增或移除.close，小螢幕新增或移除.small-screen預設有.close，
+        if (document.body.clientWidth > 400) {
+          $('.sidebar').toggleClass('close');
+        } else {
+          $('.sidebar').toggleClass('small-screen');
+        }
+      });
+
+      function resizeScreen() {
+        // 大螢幕.sidebar預設為沒有.close，小螢幕.sidebar預設為有.close
+        if (document.body.clientWidth < 400) {
+          $('.sidebar').addClass('close');
+        } else {
+          $('.sidebar').removeClass('close');
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>
