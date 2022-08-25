@@ -1509,7 +1509,7 @@ section.v-about {
 }
 
 .question__form__text {
-    padding: 36px;
+    padding: 28px;
 }
 
 .question__form__header p {
@@ -1529,7 +1529,6 @@ section.v-about {
 
 .starts span {
     border-right: 1px solid #27262673;
-    display: flex;
 }
 
 .starts span:nth-child(5) {
@@ -1541,8 +1540,8 @@ section.v-about {
 }
 
 .starts > span > i {
-    padding-right: 8px;
-    margin-right: 10px;
+    padding-right: 4px;
+    margin-right: 6px;
 }
 
 .question__form__comment p {
@@ -1588,6 +1587,8 @@ section.v-about {
 
 .question__form__box {
     margin-top: 14px;
+    display: flex;
+    gap: 6px;
 }
 
 .question__form__box label {
@@ -2054,6 +2055,22 @@ section.v-about {
         align-items: center;
     }
 
+    .starts {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .starts span {
+        border-right: transparent;
+        border-bottom: 1px solid #27262673;
+    }
+
+    .starts span:nth-child(5) {
+        border-bottom-color: transparent;
+        margin-bottom: 2rem;
+    }
+
     .business__title h2 {
         font-size: 18px;
     }
@@ -2100,6 +2117,11 @@ section.v-about {
         font-weight: 700;
     }
 
+    .question__form__box label {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
     .form-contact {
         display: flex;
         align-items: center;
@@ -2107,6 +2129,10 @@ section.v-about {
         background-color: #f5f5f5;
         border-radius: 70px;
         padding: 2rem;
+    }
+
+    .detail__container__promise {
+        display: none;
     }
 
     .reason.open {
