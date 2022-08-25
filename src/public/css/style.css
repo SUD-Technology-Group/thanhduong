@@ -594,6 +594,7 @@ section.v-about {
 .title {
     color: var(--vang);
 }
+
 .introduction-title {
     margin-top: 14rem;
     display: flex;
@@ -1993,6 +1994,12 @@ section.v-about {
         margin-left: 0;
         margin-right: 0;
         padding: 0;
+    }
+
+    .introduction-title {
+        margin-top: 16rem;
+        display: flex;
+        justify-content: center;
     }
 
     .introduction-title h3  {
