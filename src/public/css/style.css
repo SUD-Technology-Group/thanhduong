@@ -12,6 +12,7 @@ li {
     list-style: none;
     display: inline-block;
     text-decoration: none;
+    text-align: start;
 }
 
 ul {
@@ -23,7 +24,8 @@ a {
 }
 
 a:hover {
-    color: var(--vang) !important;
+    transition: all 0.05s;
+    color: #333 !important;
 }
 
 body {
@@ -37,10 +39,18 @@ body {
     font-family: 'Roboto', 'Montserrat';
     font-size: 14px;
 }
+ul li { 
+    display: inline-block; 
+    vertical-align: top;
+    padding: 10px 19px; 
+    cursor: pointer; 
+    position: relative;
+}
 
-.sub-nav {
+.nav-menu .sub-nav {
     text-align: start;
-    margin-left: 19px;
+    margin-left: 22px;
+    padding-left: 9px;
 }
 
 #page-header {
@@ -143,7 +153,7 @@ body {
 
 .header-body-2 ul.sub-nav {
     margin-top: 0;
-    margin-left: 18px;
+    margin-left: 21px;
 }
 
 .header-body-2 ul {
@@ -188,7 +198,7 @@ button#close-menu-btn-2 {
 .home-banner-2 {
     width: 100%;
     margin-top: 200px;
-    background-color: #799c58;
+    background-color: var(--vang);
     padding: 4rem 0;
 }
 
@@ -275,13 +285,62 @@ img {
     /* border-radius: 0 0 0.5rem 0.5rem; */
 }
 
-.product-title {
-    margin-bottom: 7px;
+.product-content-box p {
+    margin: 0 !important;
+}
+
+.product-content-box a {
+    display: flex;
+    justify-content: center;
+}
+
+.product-color {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.color {
+    border-radius: 999px;
+    padding: 6px 6px;
+    margin-bottom: 6px;
+}
+
+.product-color-black {
+    background-color: #000;
+}
+
+.product-color-blue {
+    background-color: #1e73be;
+}
+
+.product-color-green {
+    background-color: #75c43c;
+}
+
+.product-color-gray {
+    background-color: #9b9b9b;
+}
+
+.product-color-red {
+    background-color: #dd3333;
+}
+
+.product-color-yellow {
+    background-color: #ee2;
 }
 
 .product-title a {
+    font-size: 18px;
     display: block;
     width: 100%;
+    color: #333 !important;
+}
+
+.product-price {
+    color: #1d6397;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .product-content-box {
@@ -298,6 +357,102 @@ img {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+}
+
+.modal__signin {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50000;
+    display: flex;
+    display: none;
+}
+
+.modal__overplay
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.4);
+}
+
+.modal__body
+{
+    margin: 14rem auto auto auto;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.modal__header__icon {
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--vang);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.modal__header__icon__mail i {
+    color: #ffffff;
+    font-size: 80px;
+}
+
+.modal__header__icon__close {
+    position: absolute;
+    bottom: 11rem;
+    left: 96%;
+    background: #ffffff;
+    border-radius: 999px;
+    padding: 0px 8px;
+}
+
+.modal__header__icon__close i {
+    font-size: 28px;
+}
+
+.modal__footer {
+    padding: 24px;
+}
+
+.modal__footer__text {
+    text-align: center;
+}
+
+.modal__footer__text p {
+    width: 88%;
+    align-self: center;
+    margin-left: 29px;
+    color: #bebebe;
+}
+
+.modal__footer__input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal__footer__input input {
+    width: 80%;
+    padding: 8px;
+    border: none;
+    background-color: #f2f2fa;
+    text-align: center;
+    outline: none;
+}
+
+.modal__footer__input button {
+    width: 80%;
+    padding: 8px;
+    border: none;
+    color: #ffffff;
+    background-color: var(--vang);
 }
 
 /*ABOUT*/
@@ -428,11 +583,16 @@ section.v-about {
 /* Homepage End */
 
 /* Introduction Start */
+.content__container .background-image {
+    height: 100%;
+    background-image: url('https://palletvina.com/wp-content/themes/vdigi/assets/images/banner-about.png');
+    background-size: cover;
+}
 .title {
     color: var(--vang);
 }
 .introduction-title {
-    margin-top: 18rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
 }
@@ -609,6 +769,10 @@ section.v-about {
     padding-left: 0;
 }
 
+.business__branch__right ul li:hover {
+    background-color: transparent !important;
+}
+
 .business__branch__right p {
     font-weight: bold;
     color: var(--vang);
@@ -634,9 +798,9 @@ section.v-about {
     padding: 0;
 }
 
-.background-image {
+.product__container .background-image {
     height: 100%;
-    background-image: url('https://muabanpalletnhuacu.com/wp-content/uploads/2022/02/banner7.jpg');
+    background-image: url('https://palletvina.com/wp-content/uploads/2021/06/banner-archive.jpg');
     background-size: cover;
 }
 
@@ -732,12 +896,13 @@ section.v-about {
 .grid-content-right {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 6rem;
+    gap: 2rem;
 }
 
 .grid-content-right p {
     font-size: 14px;
-    color: #333;
+    margin: 0 !important;
+    padding: 4px 0 4px 0;
 }
 
 .product-article {
@@ -750,6 +915,7 @@ section.v-about {
 
 .product-image img {
     transition: transform 0.5s ease;
+    width: 100%;
 }
 
 .product-image:hover img {
@@ -801,7 +967,18 @@ section.v-about {
     display: none;
 }
 
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-info .product-color {
+    margin-top: 12px;
+}
+
 .product-name {
+    margin-top: 10px;
     font-weight: 700;
 }
 
@@ -812,6 +989,13 @@ section.v-about {
 /* Product End */
 
 /* News Start */
+.news__container .background-image {
+    height: 100%;
+    background-image: url('https://palletvina.com/wp-content/themes/vdigi/assets/images/banner-about.png');
+    background-size: cover;
+    position: relative;
+}
+
 .grid-news-content {
     margin-top: 2rem;
     display: grid;
@@ -854,6 +1038,135 @@ section.v-about {
     font-weight: 700;
 }
 /* News End */
+
+/* News Detail Start  */
+.news__detail__container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 80% 20%;
+}
+
+.news__detail__sub__title {
+    margin-top: 16px;
+}
+
+.news__detail__sub__title p {
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.news__detail__content__header h3 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--vang);
+}
+
+.news__detail__content__time p {
+    margin-top: 20px;
+    font-size: 0.7rem;
+}
+
+.news__detail__content__img {
+    text-align: center;
+}
+
+.news__detail__content__img img {
+    width: 100%;
+}
+
+.news__detail__content__img p{
+    margin: 20px 0;
+    font-size: 13px;
+}
+
+.news__detail__content__text p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.news__detail__content__text__sub__image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.news__detail__content__text__sub__image img {
+    width: 100%;
+}
+
+.news__detail__content__watch__more span {
+    color: var(--cam);
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.news__detail__content__watch__more a {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.news__detail__content__fanpage {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.news__detail__content__fanpage p {
+    margin: 0 !important;
+    font-size: 14px;
+    font-weight: bolder;
+    color: var(--cam);
+}
+
+.news__detail__content__fanpage a {
+    color: #333;
+    font-size: 14px;
+}
+
+.news__detail__container__right {
+    margin-top: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.news__detail__container__right h3 {
+    position: relative;
+    font-size: 1em;
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+
+.news__detail__container__right h3::after {
+    position: absolute;
+    content: '';
+    width: 12%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #e5e5e5;
+}
+
+.news__detail__container__right h1 {
+    position: relative;
+}
+
+.news__detail__container__right h1 img {
+    width: 100%;
+    position: relative;
+}
+
+.news__detail__container__right h1 p {
+    position: absolute;
+    bottom: 0;
+    left: 86px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+}
+/* News Detail End  */
 
 /* Contact Start */
 .map-title {
@@ -1315,9 +1628,12 @@ section.v-about {
 }
 
 .to-top-btn {
+    position: relative;
+    right: 0;
+    margin-top: 30px;
     height: 40px;
     width: 40px;
-    background-color: #fff;
+    background-color: var(--vang);
     color: #333;
     display: flex;
     align-items: center;
@@ -1332,13 +1648,14 @@ section.v-about {
 }
 
 .to-top-btn i {
+    color: #ffffff;
     font-size: 36px;
 }
 
 .social-icons-container {
     position: fixed;
     top: 14rem;
-    left: 104rem;
+    right: 14px;
     width: 50px;
     height: fit-content;
     z-index: 20000;
@@ -1350,12 +1667,6 @@ section.v-about {
     align-items: center;
     gap: 2rem;
 }
-
-/* .social-icon-right {
-    border-radius: 999px;
-    background-color: pink;
-    padding: 12px 18px;
-} */
 
 .social-icon-right a {
     display: inline-block;
@@ -1396,8 +1707,21 @@ section.v-about {
 }
 
 .footer-check {
+    height: 104px;
     display: flex;
     justify-content: space-around;
+}
+
+.footer-check img {
+    width: 150%;
+}
+
+.footer-text {
+    margin-top: 38px;
+}
+
+.footer-text a:hover {
+    color: var(--vang) !important;
 }
 
 .footer-text p:hover {
@@ -1512,6 +1836,10 @@ section.v-about {
         position: relative;
         right: 138px;
         top: 8px;
+    }
+    
+    .nav-menu-2 .sub-nav {
+        padding-left: 10px;
     }
 
     .nav-menu-2 i {
