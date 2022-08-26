@@ -1274,7 +1274,7 @@ section.v-about {
 /* Detail Start */
 .detail__container {
     display: grid;
-    grid-template-columns: 40% 40% 15%;
+    grid-template-columns: 30% 40% 15%;
     gap: 2rem;
     margin-top: 2rem;
     justify-content: center;
@@ -1315,6 +1315,10 @@ section.v-about {
     background-color: rgba(0, 0, 0, 0.1);
     bottom: 0;
     left: 0%;
+}
+
+.detail__container__right__desc img {
+    width: 100%;
 }
 
 .detail__container__right__desc p {
