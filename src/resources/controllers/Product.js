@@ -13,7 +13,7 @@ const ProductController = {
 
     // GET /products/id
     detail: catchAsync(async (req, res) => {
-        const product = await productService.getById(req.params.id);
+        const product = await productService.get({ _id: req.params.id });
         res.render('product/detail', { product });
     }),
 
@@ -28,7 +28,7 @@ const ProductController = {
 
     // GET /admin/products/id
     demo: catchAsync(async (req, res) => {
-        const product = await productService.getById(req.params.id);
+        const product = await productService.get({ _id: req.params.id });
         res.render('product/demo', { pageName: 'Chi tiết sản phẩm', layout: 'admin', product });
     }),
 
@@ -42,17 +42,11 @@ const ProductController = {
     create: catchAsync(async (req, res) => {
         const { name, category, price, amount, parameter, description } = req.body;
         const slug = createSlug(name);
-        const file = req.files;
         let imgs = [];
-        if (!file) {
-            res.json({ code: 1, message: 'error' });
-        } else {
-            file.map((f) => {
-                let url = '/uploads/' + f.filename;
-                imgs.push(url);
-            });
-        }
-
+        req.files.map((f) => {
+            let url = '/uploads/' + f.filename;
+            imgs.push(url);
+        });
         await productService
             .create({
                 name,
@@ -69,16 +63,15 @@ const ProductController = {
                 res.redirect('/admin/products');
             })
             .catch((err) => {
-                req.flash('error', 'Thêm sản phẩm thất bại ' + err);
+                req.flash('error', 'Thêm sản phẩm thất bại');
                 res.redirect('/admin/products/create');
             });
     }),
 
     // GET /admin/products/update/id
     updateView: catchAsync(async (req, res) => {
-        const id = req.params.id;
         const error = req.flash('error') || '';
-        const product = await productService.getById(id);
+        const product = await productService.get({ _id: req.params.id });
         res.render('product/update', { pageName: 'Chỉnh sửa sản phẩm', layout: 'admin', product, error });
     }),
 
@@ -86,14 +79,13 @@ const ProductController = {
     update: catchAsync(async (req, res) => {
         const { id, name, category, price, amount, parameter, description } = req.body;
         const slug = createSlug(name);
-        let { imgs } = await productService.getById(id);
+        let { imgs } = await productService.get({ _id: id });
 
         if (req.files.length > 0) {
             imgs.forEach((item) => {
                 fs.unlink(`src/public/${item}`, (err) => {
                     if (err) {
                         req.flash('error', 'Cập nhật thông tin sản phẩm thất bại');
-                        console.log(err);
                         res.redirect(`/admin/products/update/${id}`);
                     }
                 });
@@ -128,9 +120,8 @@ const ProductController = {
 
     // GET /admin/products/delete/id
     delete: catchAsync(async (req, res) => {
-        const id = req.params.id;
         await productService
-            .delete(id)
+            .delete(req.params.id)
             .then(() => {
                 req.flash('success', 'Xoá sản phẩm thành công');
             })
