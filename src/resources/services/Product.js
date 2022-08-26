@@ -1,14 +1,12 @@
-const Product = require('../models/Product');
+const { Product } = require('../models');
 
 const ProductService = {
-    getById: async (id) => {
-        const product = await Product.findOne({ _id: id });
-        return product.toObject();
+    get: async (payloads) => {
+        return await Product.findOne(payloads).lean();
     },
 
     getAll: async () => {
-        const products = await Product.find({});
-        return products.map((product) => product.toObject());
+        return await Product.find({}).lean();
     },
 
     create: async (payloads) => {
