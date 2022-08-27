@@ -345,6 +345,17 @@ img {
     display: none;
 }
 
+.modal__login {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50000;
+    display: flex;
+    display: none;
+}
+
 .modal__overplay
 {
     position: absolute;
@@ -355,49 +366,55 @@ img {
 
 .modal__body
 {
-    margin: 14rem auto auto auto;
+    margin: auto auto auto auto;
     position: relative;
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 8px;
 }
 
+.modal__login__header__icon,
 .modal__header__icon {
     position: relative;
-    padding: 2rem;
+    padding: 40px 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--vang);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
 }
 
-.modal__header__icon__mail i {
-    color: #ffffff;
-    font-size: 80px;
-}
-
+.modal__login__header__icon__close,
 .modal__header__icon__close {
     position: absolute;
-    bottom: 11rem;
-    left: 96%;
-    background: #ffffff;
-    border-radius: 999px;
+    top: 0px;
+    right: 0;
+    color: rgba(255, 255, 255, 0.8);
+    border-top-right-radius: 6px;
     padding: 0px 8px;
 }
 
+.modal__login__header__icon__close i,
 .modal__header__icon__close i {
     font-size: 28px;
 }
 
-.modal__footer {
-    padding: 24px;
+.modal__login__header__icon__close i:hover,
+.modal__header__icon__close i:hover {
+    color: #333;
 }
 
+.modal__footer__login,
+.modal__footer {
+    padding: 50px 90px;
+}
+
+.modal__footer__login__text,
 .modal__footer__text {
     text-align: center;
 }
 
+.modal__footer__login__text p,
 .modal__footer__text p {
     width: 88%;
     align-self: center;
@@ -405,6 +422,7 @@ img {
     color: #bebebe;
 }
 
+.modal__footer__login__input,
 .modal__footer__input {
     display: flex;
     flex-direction: column;
@@ -413,8 +431,9 @@ img {
     gap: 1rem;
 }
 
+.modal__footer__login__input input,
 .modal__footer__input input {
-    width: 80%;
+    width: 100%;
     padding: 8px;
     border: none;
     background-color: #f2f2fa;
@@ -422,12 +441,18 @@ img {
     outline: none;
 }
 
+.modal__footer__login__input button,
 .modal__footer__input button {
-    width: 80%;
+    width: 50%;
     padding: 8px;
     border: none;
     color: #ffffff;
-    background-color: var(--vang);
+    background-image: linear-gradient(225deg, #e0a825, #fde880);
+}
+
+.modal__footer__login__input button:hover,
+.modal__footer__input button:hover {
+    opacity: 0.5;
 }
 
 /*ABOUT*/
@@ -1618,8 +1643,9 @@ section.v-about {
 }
 
 .to-top-btn {
-    position: relative;
-    right: 0;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
     margin-top: 30px;
     height: 40px;
     width: 40px;
