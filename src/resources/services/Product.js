@@ -13,12 +13,12 @@ const ProductService = {
         return await Product.create(payloads);
     },
 
-    update: async (id, payloads) => {
-        return await Product.findOneAndUpdate({ _id: id }, payloads);
+    update: async (slug, payloads) => {
+        return await Product.findOneAndUpdate({ slug }, payloads);
     },
 
-    delete: async (id) => {
-        return await Product.findOneAndDelete({ _id: id });
+    delete: async (slug) => {
+        return await Product.findOneAndDelete({ slug });
     },
 };
 
