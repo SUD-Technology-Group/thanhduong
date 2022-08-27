@@ -1643,7 +1643,7 @@ section.v-about {
 
 .social-icon-right a {
     display: inline-block;
-    animation: ring 4s .7s ease-in-out infinite;
+    
     transform-origin: 50% 4px;
     border-radius: 999px;
     padding: 6px;
@@ -1653,6 +1653,8 @@ section.v-about {
     width: 42px;
     height: 42px;
     border-radius: 999px;
+    /* animation: ring 2s 0.5s linear infinite; */
+    animation: fly 2s linear infinite;
 }
 
 @keyframes ring {
@@ -1677,6 +1679,18 @@ section.v-about {
     90% { transform: rotate(-4deg); }
     95% { transform: rotate(2deg); }
     100% { transform: rotate(-1deg); }
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .footer__grid {
