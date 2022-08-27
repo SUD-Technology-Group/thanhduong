@@ -13,8 +13,8 @@ const ProductController = {
 
     // GET /products/id
     detail: catchAsync(async (req, res) => {
-        const products = await productService.get({ _id: req.params.id });
-        res.render('product/detail', { products });
+        const product = await productService.get({ slug: req.params.id });
+        res.render('product/detail', { product });
     }),
 
     // Server
@@ -28,7 +28,7 @@ const ProductController = {
 
     // GET /admin/products/id
     demo: catchAsync(async (req, res) => {
-        const product = await productService.get({ _id: req.params.id });
+        const product = await productService.get({ slug: req.params.id });
         res.render('product/demo', { pageName: 'Chi tiết sản phẩm', layout: 'admin', product });
     }),
 
@@ -41,6 +41,13 @@ const ProductController = {
     // POST /admin/products/create
     create: catchAsync(async (req, res) => {
         const { name, category, price, amount, description } = req.body;
+
+        const product = await productService.get({ name });
+        if (product) {
+            req.flash('error', 'Tên sản phẩm đã tồn tại');
+            return res.redirect('/admin/products/create');
+        }
+
         const slug = createSlug(name);
         let imgs = [];
         req.files.map((f) => {
@@ -70,22 +77,29 @@ const ProductController = {
     // GET /admin/products/update/id
     updateView: catchAsync(async (req, res) => {
         const error = req.flash('error') || '';
-        const product = await productService.get({ _id: req.params.id });
+        const product = await productService.get({ slug: req.params.id });
         res.render('product/update', { pageName: 'Chỉnh sửa sản phẩm', layout: 'admin', product, error });
     }),
 
     // POST /admin/products/update
     update: catchAsync(async (req, res) => {
-        const { id, name, category, price, amount, description } = req.body;
-        const slug = createSlug(name);
-        let { imgs } = await productService.get({ _id: id });
+        const { id, slug, name, category, price, amount, description } = req.body;
+
+        const product = await productService.get({ name });
+        if (product && product._id != id) {
+            req.flash('error', 'Tên sản phẩm đã tồn tại');
+            return res.redirect(`/admin/products/update/${slug}`);
+        }
+
+        const newSlug = createSlug(name);
+        let { imgs } = await productService.get({ slug });
 
         if (req.files.length > 0) {
             imgs.forEach((item) => {
                 fs.unlink(`src/public/${item}`, (err) => {
                     if (err) {
-                        req.flash('error', 'Cập nhật thông tin sản phẩm thất bại');
-                        res.redirect(`/admin/products/update/${id}`);
+                        req.flash('error', 'Cập nhật sản phẩm thất bại');
+                        res.redirect(`/admin/products/update/${slug}`);
                     }
                 });
             });
@@ -97,22 +111,22 @@ const ProductController = {
         }
 
         await productService
-            .update(id, {
+            .update(slug, {
                 name,
                 imgs,
                 category,
                 description,
                 price,
                 amount,
-                slug,
+                slug: newSlug,
             })
             .then(() => {
-                req.flash('success', 'Chỉnh sửa sản phẩm thành công');
+                req.flash('success', 'Cập nhật sản phẩm thành công');
                 res.redirect('/admin/products');
             })
             .catch((err) => {
-                req.flash('error', 'Chỉnh sửa sản phẩm thất bại ' + err);
-                res.redirect(`/admin/products/update/${id}`);
+                req.flash('error', 'Cập nhật sản phẩm thất bại');
+                res.redirect(`/admin/products/update/${slug}`);
             });
     }),
 
