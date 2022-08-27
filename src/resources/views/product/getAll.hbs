@@ -43,17 +43,17 @@
                         <td>{{amount}}</td>
                         <td class="d-flex">
                             <!-- Button trigger modal -->
-                            <a class="text-info w-100" href="/admin/products/demo/{{_id}}">
+                            <a class="text-info w-100" href="/admin/products/demo/{{slug}}">
                                 <i class="fas fa-info-circle fa-lg"></i>
                             </a>
                             <!-- Button trigger modal -->
-                            <a  class="text-warning w-100" href="/admin/products/update/{{_id}}">
+                            <a  class="text-warning w-100" href="/admin/products/update/{{slug}}">
                                 <i class="fas fa-edit fa-lg"></i>
                             </a>
                             <!-- Button trigger modal -->
                             <a  class="text-danger w-100" data-toggle="modal"
                                 data-target="#deleteModal"
-                                onclick="$('#deleteBtn').attr('href', '/admin/products/delete/{{_id}}')">
+                                onclick="$('#deleteBtn').attr('href', '/admin/products/delete/{{slug}}')">
                                 <i class="fas fa-trash fa-lg"></i>
                             </a>
                         </td>
