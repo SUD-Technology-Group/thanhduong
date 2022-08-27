@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="shortcut icon" href="./img/D.png" type="image/x-icon">
+    <link rel="shortcut icon" type="image/png" href="/img/D.png">
     {{!-- Bootstrap 5 --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -28,6 +28,32 @@
     {{> header}}
     
     {{{body}}}
+    <div class="modal__signin">
+        <div class="modal__overplay"></div>
+        <div class="modal__body">
+            <div class="modal__form">
+                <div class="modal__header__icon">
+                    <div class="modal__header__icon__mail">
+                        <img src="/img/email-2.png" alt="email">
+                    </div>
+                    <div class="modal__header__icon__close">
+                        <i class="uil uil-times"></i>
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <div class="modal__footer__text">
+                        <h3>ĐĂNG KÝ TƯ VẤN TRỰC TIẾP</h3>
+                        <p>Quý khách vui lòng nhập số điện thoại để được tư vấn nhanh nhất</p>
+                    </div>
+                    <div class="modal__footer__input">
+                        <input type="text" placeholder="Họ và Tên" name="name">
+                        <input type="number" placeholder="Số điện thoại" name="phone">
+                        <button type="submit">Đăng ký ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     {{> footer}}
     

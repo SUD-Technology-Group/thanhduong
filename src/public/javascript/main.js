@@ -116,16 +116,25 @@ closeButton2.addEventListener('click', () => {
 const modal = document.querySelector('.modal__signin');
 const closeModalButton = document.querySelector('.modal__header__icon__close');
 
-if (sessionStorage.getItem('isShowed')) {
-    console.log('if');
-} else {
-    console.log('else');
-    setTimeout(() => {
-        modal.style.display = 'flex';
-        sessionStorage.setItem('isShowed', true);
-    }, 3000);
-}
+setTimeout(() => {
+    modal.style.display = 'flex';
+}, 180000);
 
 closeModalButton.addEventListener('click', () => {
     modal.style.display = 'none';
+});
+
+//show modal form for logging
+const user = document.querySelectorAll('.fa-user');
+const modalLogin = document.querySelector('.modal__login');
+const closeModalLoginButton = document.querySelector('.modal__login__header__icon__close');
+
+user.forEach((item) => {
+    item.addEventListener('click', () => {
+        modalLogin.style.display = 'flex';
+    });
+});
+
+closeModalLoginButton.addEventListener('click', () => {
+    modalLogin.style.display = 'none';
 });

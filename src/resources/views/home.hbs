@@ -164,225 +164,31 @@
         <div class='menu-title mb-5'>
             Sản phẩm mới
         </div>
-
         <div class='row'>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr1.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
+            {{#each products}}
+                <div class='col-md-3 col-sm-4 mb-4'>
+                    <a href="products/{{_id}}" class='product-box'>
+                        <div class='product-img-box'>
+                            <img src='{{imgs.[0]}}' alt={{name}} class='w-100' />
                         </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='#'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr2.png' alt='' class='w-100' />
-                    </div>
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet 1200x1100x150mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='#'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr3.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr4.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr5.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr6.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr7.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
+                        <div class='product-content-box'>
                             <div class='product-title'>
-                                <a href=''>Pallet Nhựa 500x1000x50mm</a>
+                                <a href=''>{{name}}</a>
                             </div>
+                            <div class="product-price">
+                                {{#if price}}
+                                    <p>320.000đ</p>
+                                {{else}}
+                                    <p>Giá: liên hệ</p>
+                                {{/if}}
+                            </div>
+                            <a href='#'>
+                                <button class='btn-v-about'>Mua ngay</button>
+                            </a>
                         </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
+                    </a>
                 </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr8.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
     </div>
 
@@ -424,221 +230,31 @@
         </div>
 
         <div class='row'>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr1.png' alt='' class='w-100' />
-                    </div>
+            {{#each products}}
+                <div class='col-md-3 col-sm-4 mb-4'>
+                    <a href="products/{{_id}}" class='product-box'>
+                        <div class='product-img-box'>
+                            <img src='{{imgs.[0]}}' alt={{name}} class='w-100' />
+                        </div>
 
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
+                        <div class='product-content-box'>
+                            <div class='product-title'>
+                                <a href=''>{{name}}</a>
+                            </div>
+                            <div class="product-price">
+                                {{#if price}}
+                                    <p>320.000đ</p>
+                                {{else}}
+                                    <p>Giá: liên hệ</p>
+                                {{/if}}
+                            </div>
+                            <a href='#'>
+                                <button class='btn-v-about'>Mua ngay</button>
+                            </a>
                         </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
+                    </a>
                 </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr2.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr3.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr4.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr5.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr6.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr7.png' alt='' class='w-100' />
-                    </div>
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3 col-sm-4'>
-                <div class='product-box'>
-                    <div class='product-img-box'>
-                        <img src='/img/products/pr8.png' alt='' class='w-100' />
-                    </div>
-
-                    <div class='product-content-box'>
-                        <div class="product-color">
-                            <div class="color product-color-black"></div>
-                            <div class="color product-color-blue"></div>
-                            <div class="color product-color-green"></div>
-                            <div class="color product-color-gray"></div>
-                            <div class="color product-color-red"></div>
-                            <div class="color product-color-yellow"></div>
-                        </div>
-                        <div class='product-title'>
-                            <a href=''>Pallet Nhựa 500x1000x50mm</a>
-                        </div>
-                        <div class="product-price">
-                            <p>320.000đ</p>
-                        </div>
-                        <a href='https://palletvina.com/gioi-thieu-1/'>
-                            <button class='btn-v-about'>Mua ngay</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
     </div>
 
@@ -683,28 +299,26 @@
             <span class='dot' style='margin-right: 2rem;border-radius: 999px; padding:10px 10px;'></span>
         </div>
     </div>
-
-    <div class="modal__signin">
+    <div class="modal__login">
         <div class="modal__overplay"></div>
         <div class="modal__body">
             <div class="modal__form">
-                <div class="modal__header__icon">
-                    <div class="modal__header__icon__mail">
-                        <i class="uil uil-envelopes"></i>
+                <div class="modal__login__header__icon">
+                    <div class="modal__header__icon__login">
+                        <img src="/img/user.png" alt="user">
                     </div>
-                    <div class="modal__header__icon__close">
+                    <div class="modal__login__header__icon__close">
                         <i class="uil uil-times"></i>
                     </div>
                 </div>
-                <div class="modal__footer">
-                    <div class="modal__footer__text">
-                        <h3>ĐĂNG KÝ TƯ VẤN TRỰC TIẾP</h3>
-                        <p>Quý khách vui lòng nhập số điện thoại để được tư vấn nhanh nhất</p>
+                <div class="modal__footer__login">
+                    <div class="modal__footer__login__text">
+                        <h3>ĐĂNG NHẬP TÀI KHOẢN</h3>
                     </div>
-                    <div class="modal__footer__input">
-                        <input type="text" placeholder="Họ và Tên" name="name">
-                        <input type="number" placeholder="Số điện thoại" name="phone">
-                        <button type="submit">Đăng ký ngay</button>
+                    <div class="modal__footer__login__input">
+                        <input type="text" placeholder="Tài khoản" name="user">
+                        <input type="password" placeholder="Mật khẩu" name="password">
+                        <button type="submit">Đăng Nhập </button>
                     </div>
                 </div>
             </div>
