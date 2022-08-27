@@ -13,8 +13,8 @@ const ProductController = {
 
     // GET /products/id
     detail: catchAsync(async (req, res) => {
-        const product = await productService.get({ _id: req.params.id });
-        res.render('product/detail', { product });
+        const products = await productService.get({ _id: req.params.id });
+        res.render('product/detail', { products });
     }),
 
     // Server

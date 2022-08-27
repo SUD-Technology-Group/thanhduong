@@ -1,31 +1,25 @@
 <div class='detail'>
     <div class='map-title'>
-        <p><a href="/">Trang chủ</a> / <a href="/products">Sản phẩm</a> / {{product.name}}</p>
+        <p><a href="/">Trang chủ</a> / <a href="/products">Sản phẩm</a> / {{products.name}}</p>
     </div>
     <div class='detail__container'>
         <div class='detail__container__left'>
             <div class='detail__container__left__img'>
-                <img src='{{product.imgs}}' alt='detail' />
+                <img src='{{products.imgs}}' alt='detail' />
             </div>
         </div>
         <div class='detail__container__right'>
             <div class='detail__container__right__title'>
-                <h3>{{product.name}}</h3>
+                <h3>{{products.name}}</h3>
             </div>
             <div class='detail__container__right__desc'>
-                {{{product.parameter}}}
-                {{{product.description}}}
-                {{#if product.price}}
-                    <p>Giá: <span>{{product.price}}</span></p>
+                {{{products.description}}}
+                {{#if products.price}}
+                    <p>Giá: <span>{{products.price}} VND</span></p>
                 {{else}}
                     <p>Giá: liên hệ</p>
                 {{/if}}
-                <p>DANH MỤC: <span>{{product.category}}</span></p>
-                <p>TỪ KHÓA:
-                    <span>PALLET GIÁ RẺ, PALLET Thành Dương, PALLET Thành Dương VIỆT NAM, PALLET KHUNG RÀNG, PALLET TIỆN
-                        LỢI
-                    </span>
-                </p>
+                <p>DANH MỤC: <span>{{products.category}}</span></p>
             </div>
             <div class='detail__container__right__btn'>
                 <button type='submit'>LIÊN HỆ BÁO GIÁ</button>

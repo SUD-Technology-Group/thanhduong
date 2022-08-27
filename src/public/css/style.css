@@ -780,6 +780,11 @@ section.v-about {
     font-weight: bold;
 }
 
+.background-text h3 a {
+    font-size: 28px !important;
+    font-weight: bolder;
+}
+
 .gird-content {
     display: grid;
     grid-template-columns: 30% 70%;
