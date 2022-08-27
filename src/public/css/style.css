@@ -54,6 +54,17 @@ ul li {
     padding-left: 8px;
 }
 
+.sub-nav-inside {
+    left: 95% !important;
+    top: -11% !important;
+    z-index: 90000;
+}
+
+.sub-nav-inside-2 {
+    left: 95% !important;
+    top: -40% !important;
+}
+
 #page-header {
     width: 100%;
     color: #000;
@@ -1236,10 +1247,16 @@ section.v-about {
 /* Detail Start */
 .detail__container {
     display: grid;
-    grid-template-columns: 30% 40% 15%;
+    grid-template-columns: 75% 15%;
     gap: 2rem;
     margin-top: 2rem;
     justify-content: center;
+}
+
+.detail__main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .detail__container__left {

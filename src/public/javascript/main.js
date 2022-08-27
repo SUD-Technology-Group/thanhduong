@@ -129,3 +129,9 @@ if (sessionStorage.getItem('isShowed')) {
 closeModalButton.addEventListener('click', () => {
     modal.style.display = 'none';
 });
+
+//show modal form for logging
+const user = document.querySelector('.fa-user');
+user.addEventListener('click', () => {
+    modal.style.display = 'flex';
+});
