@@ -15,7 +15,11 @@
             <div class='detail__container__right__desc'>
                 {{{product.parameter}}}
                 {{{product.description}}}
-                <p>Giá: <span>{{product.price}}</span></p>
+                {{#if product.price}}
+                    <p>Giá: <span>{{product.price}}</span></p>
+                {{else}}
+                    <p>Giá: liên hệ</p>
+                {{/if}}
                 <p>DANH MỤC: <span>{{product.category}}</span></p>
                 <p>TỪ KHÓA:
                     <span>PALLET GIÁ RẺ, PALLET Thành Dương, PALLET Thành Dương VIỆT NAM, PALLET KHUNG RÀNG, PALLET TIỆN
