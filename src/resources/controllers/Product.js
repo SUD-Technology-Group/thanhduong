@@ -40,7 +40,7 @@ const ProductController = {
 
     // POST /admin/products/create
     create: catchAsync(async (req, res) => {
-        const { name, category, price, amount, parameter, description } = req.body;
+        const { name, category, price, amount, description } = req.body;
         const slug = createSlug(name);
         let imgs = [];
         req.files.map((f) => {
@@ -52,7 +52,6 @@ const ProductController = {
                 name,
                 imgs,
                 category,
-                parameter,
                 description,
                 price,
                 amount,
@@ -77,7 +76,7 @@ const ProductController = {
 
     // POST /admin/products/update
     update: catchAsync(async (req, res) => {
-        const { id, name, category, price, amount, parameter, description } = req.body;
+        const { id, name, category, price, amount, description } = req.body;
         const slug = createSlug(name);
         let { imgs } = await productService.get({ _id: id });
 
@@ -102,7 +101,6 @@ const ProductController = {
                 name,
                 imgs,
                 category,
-                parameter,
                 description,
                 price,
                 amount,
