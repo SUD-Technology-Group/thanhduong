@@ -1,10 +1,10 @@
 const NewController = {
     index: (req, res) => {
-        res.render('New/index');
+        res.render('new');
     },
 
     detail: (req, res) => {
-        res.render('New/detail');
+        res.render('new/detail');
     },
 };
 
