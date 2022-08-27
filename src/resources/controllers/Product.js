@@ -41,14 +41,14 @@ const ProductController = {
     // POST /admin/products/create
     create: catchAsync(async (req, res) => {
         const { name, category, price, amount, description } = req.body;
+        const slug = createSlug(name);
 
-        const product = await productService.get({ name });
+        const product = await productService.get({ slug });
         if (product) {
             req.flash('error', 'Tên sản phẩm đã tồn tại');
             return res.redirect('/admin/products/create');
         }
 
-        const slug = createSlug(name);
         let imgs = [];
         req.files.map((f) => {
             let url = '/uploads/' + f.filename;
@@ -84,16 +84,15 @@ const ProductController = {
     // POST /admin/products/update
     update: catchAsync(async (req, res) => {
         const { id, slug, name, category, price, amount, description } = req.body;
+        const newSlug = createSlug(name);
 
-        const product = await productService.get({ name });
+        const product = await productService.get({ slug: newSlug });
         if (product && product._id != id) {
             req.flash('error', 'Tên sản phẩm đã tồn tại');
             return res.redirect(`/admin/products/update/${slug}`);
         }
 
-        const newSlug = createSlug(name);
         let { imgs } = await productService.get({ slug });
-
         if (req.files.length > 0) {
             imgs.forEach((item) => {
                 fs.unlink(`src/public/${item}`, (err) => {
