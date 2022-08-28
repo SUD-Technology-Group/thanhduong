@@ -118,7 +118,7 @@ const closeModalButton = document.querySelector('.modal__header__icon__close');
 
 setTimeout(() => {
     modal.style.display = 'flex';
-}, 3000);
+}, 180000);
 
 closeModalButton.addEventListener('click', () => {
     modal.style.display = 'none';

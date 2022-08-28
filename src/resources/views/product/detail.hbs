@@ -14,7 +14,6 @@
                     <h3>{{product.name}}</h3>
                 </div>
                 <div class='detail__container__right__desc'>
-                    {{{product.description}}}
                     {{#if product.price}}
                         <p>Giá: <span>{{product.price}} VND</span></p>
                     {{else}}
@@ -33,23 +32,26 @@
                     <i class='uil uil-linkedin'></i>
                 </div>
             </div>
-        </div>
-        <div class='detail__container__promise'>
-            <h3>CAM KẾT CỦA THÀNH DƯƠNG</h3>
-            <div class='detail__container__promise__subtext'>
-                <span>
-                    <i class='uil uil-file-search-alt'></i>
-                    <p>Xem mẫu trước khi đặt hàng</p>
-                </span>
-                <span>
-                    <i class='uil uil-truck'></i>
-                    <p>Giao hàng nhanh trong 24h</p>
-                </span>
-                <span>
-                    <i class='uil uil-invoice'></i>
-                    <p>Thanh toán sau khi nhận hàng</p>
-                </span>
+            <div class='detail__container__promise'>
+                <h3>CAM KẾT CỦA THÀNH DƯƠNG</h3>
+                <div class='detail__container__promise__subtext'>
+                    <span>
+                        <i class='uil uil-file-search-alt'></i>
+                        <p>Xem mẫu trước khi đặt hàng</p>
+                    </span>
+                    <span>
+                        <i class='uil uil-truck'></i>
+                        <p>Giao hàng nhanh trong 24h</p>
+                    </span>
+                    <span>
+                        <i class='uil uil-invoice'></i>
+                        <p>Thanh toán sau khi nhận hàng</p>
+                    </span>
+                </div>
             </div>
+        </div>
+        <div class="detail__description">
+            {{{product.description}}}
         </div>
     </div>
     <div class='question__container'>

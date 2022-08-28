@@ -300,11 +300,15 @@ td
 
 /* Detail Start */
 .detail__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detail__content {
   display: grid;
-  grid-template-columns: 40% 40% 15%;
+  grid-template-columns: 50% 40%;
   gap: 1rem;
-  margin-top: 2rem;
-  justify-content: center;
 }
 
 .detail__container__left {
@@ -387,6 +391,7 @@ td
 }
 
 .detail__container__right__btn button {
+  width: 74%;
   padding: 5px 10px;
   border-color: transparent;
   background-color: var(--vang);

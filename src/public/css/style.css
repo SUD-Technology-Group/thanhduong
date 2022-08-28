@@ -351,7 +351,7 @@ img {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 50000;
+    z-index: 60000;
     display: flex;
     display: none;
 }
@@ -1271,21 +1271,21 @@ section.v-about {
 
 /* Detail Start */
 .detail__container {
-    display: grid;
-    grid-template-columns: 75% 15%;
-    gap: 2rem;
-    margin-top: 2rem;
-    justify-content: center;
-}
-
-.detail__main {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
+.detail__main {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 36% 35% 20%;
+    gap: 2rem;
+}
+
 .detail__container__left {
     padding-left: 10px;
+    margin-left: 3rem;
 }
 
 .detail__container__left__img {
@@ -1364,6 +1364,7 @@ section.v-about {
 }
 
 .detail__container__right__btn button {
+    width: 36%;
     padding: 5px 10px;
     border-color: transparent;
     background-color: var(--vang);
@@ -1484,6 +1485,11 @@ section.v-about {
 
 .detail__container__promise i {
     font-size: 18px;
+}
+
+.detail__description {
+    margin-left: 4rem;
+    margin-right: 4rem;
 }
 
 .question__container {
@@ -2133,6 +2139,17 @@ section.v-about {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
+    }
+
+    .detail__container__right__btn {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .detail__container__right__btn button {
+        align-self: self-start;
+        width: 50%;
     }
 
     .news-title p {
