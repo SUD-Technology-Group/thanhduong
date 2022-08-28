@@ -54,6 +54,10 @@ ul li {
     padding-left: 8px;
 }
 
+ul.nav-menu, .header-right-corner ul {
+    margin-top: 2rem;
+}
+
 .sub-nav-inside {
     left: 95% !important;
     top: -11% !important;
