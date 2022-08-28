@@ -26,7 +26,7 @@ const ProductController = {
         res.render('product/getAll', { layout: 'admin', pageName: 'Danh sách sản phẩm', products, success, error });
     }),
 
-    // GET /admin/products/id
+    // GET /admin/products/demo/id
     demo: catchAsync(async (req, res) => {
         const product = await productService.get({ slug: req.params.id });
         res.render('product/demo', { pageName: 'Chi tiết sản phẩm', layout: 'admin', product });
@@ -49,15 +49,15 @@ const ProductController = {
             return res.redirect('/admin/products/create');
         }
 
-        let imgs = [];
+        let images = [];
         req.files.map((f) => {
-            let url = '/uploads/' + f.filename;
-            imgs.push(url);
+            let url = '/uploads/product-imgs/' + f.filename;
+            images.push(url);
         });
         await productService
             .create({
                 name,
-                imgs,
+                images,
                 category,
                 description,
                 price,
@@ -81,9 +81,10 @@ const ProductController = {
         res.render('product/update', { pageName: 'Chỉnh sửa sản phẩm', layout: 'admin', product, error });
     }),
 
-    // POST /admin/products/update
+    // POST /admin/products/update/:id
     update: catchAsync(async (req, res) => {
-        const { id, slug, name, category, price, amount, description } = req.body;
+        const { id, name, category, price, amount, description } = req.body;
+        const slug = req.params.id;
         const newSlug = createSlug(name);
 
         const product = await productService.get({ slug: newSlug });
@@ -92,9 +93,9 @@ const ProductController = {
             return res.redirect(`/admin/products/update/${slug}`);
         }
 
-        let { imgs } = await productService.get({ slug });
+        let { images } = await productService.get({ slug });
         if (req.files.length > 0) {
-            imgs.forEach((item) => {
+            images.forEach((item) => {
                 fs.unlink(`src/public/${item}`, (err) => {
                     if (err) {
                         req.flash('error', 'Cập nhật sản phẩm thất bại');
@@ -102,17 +103,17 @@ const ProductController = {
                     }
                 });
             });
-            imgs = [];
+            images = [];
             req.files.map((f) => {
-                let url = '/uploads/' + f.filename;
-                imgs.push(url);
+                let url = '/uploads/product-imgs' + f.filename;
+                images.push(url);
             });
         }
 
         await productService
             .update(slug, {
                 name,
-                imgs,
+                images,
                 category,
                 description,
                 price,
@@ -131,6 +132,15 @@ const ProductController = {
 
     // GET /admin/products/delete/id
     delete: catchAsync(async (req, res) => {
+        const { images } = await productService.get({ slug: req.params.id });
+        images.forEach((item) => {
+            fs.unlink(`src/public/${item}`, (err) => {
+                if (err) {
+                    req.flash('error', 'Xoá sản phẩm thất bại');
+                    res.redirect('/admin/products');
+                }
+            });
+        });
         await productService
             .delete(req.params.id)
             .then(() => {

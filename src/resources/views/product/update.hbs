@@ -10,7 +10,7 @@
 <div class="container">
     <div class="addProduct-body">
 
-        <form class="form-horizontal p-3" enctype="multipart/form-data" method="POST" action="/admin/products/update">
+        <form class="form-horizontal p-3" enctype="multipart/form-data" method="POST">
             <fieldset>
                 <!-- Text input-->
                 <div class="form-group">
@@ -52,9 +52,9 @@
                             <i class="fas fa-upload"></i>
                             Chọn ảnh sản phẩm &nbsp;
                         </label>
-                        <p id="num-of-file">Chưa có ảnh nào được chọn</p>
+                        <p id="num-of-file">Có {{product.images.length}} ảnh được chọn</p>
                         <div id="images-upload">
-                        {{#each product.imgs}}
+                        {{#each product.images}}
                             <figure>
                                 <img src="{{this}}" alt="" width="50%">
                             </figure>

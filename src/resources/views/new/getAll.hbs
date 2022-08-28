@@ -23,31 +23,27 @@
                 <thead class='thead-dark'>
                     <tr>
                         <th scope='col'>Hình ảnh</th>
-                        <th scope='col'>Tên</th>
-                        <th scope='col'>Loại</th>
+                        <th scope='col'>Tiêu đề</th>
                         <th scope='col'>Mô tả</th>
-                        <th scope='col'>Giá</th>
-                        <th scope='col'>Số lượng</th>
+                        <th scope='col'>Nội dung</th>
                         <th scope='col'>Thao tác</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{#if products}}
-                        {{#each products}}
+                    {{#if news}}
+                        {{#each news}}
                             <tr>
-                                <td><img src='{{images.[0]}}' alt='' width='70%' /></td>
-                                <td>{{name}}</td>
-                                <td>{{category}}</td>
+                                <td><img src='{{image}}' alt='' width='70%' /></td>
+                                <td>{{title}}</td>
+                                <td>{{description}}</td>
                                 <td>...</td>
-                                <td>{{price}}</td>
-                                <td>{{amount}}</td>
                                 <td class='d-flex'>
                                     <!-- Button trigger modal -->
-                                    <a class='text-info w-100' href='/admin/products/demo/{{slug}}'>
+                                    <a class='text-info w-100' href='/admin/news/demo/{{slug}}'>
                                         <i class='fas fa-info-circle fa-lg'></i>
                                     </a>
                                     <!-- Button trigger modal -->
-                                    <a class='text-warning w-100' href='/admin/products/update/{{slug}}'>
+                                    <a class='text-warning w-100' href='/admin/news/update/{{slug}}'>
                                         <i class='fas fa-edit fa-lg'></i>
                                     </a>
                                     <!-- Button trigger modal -->
@@ -55,7 +51,7 @@
                                         class='text-danger w-100'
                                         data-toggle='modal'
                                         data-target='#deleteModal'
-                                        onclick="$('#deleteBtn').attr('href', '/admin/products/delete/{{slug}}')"
+                                        onclick="$('#deleteBtn').attr('href', '/admin/news/delete/{{slug}}')"
                                     >
                                         <i class='fas fa-trash fa-lg'></i>
                                     </a>
@@ -64,8 +60,6 @@
                         {{/each}}
                     {{else}}
                         <tr><td></td>
-                            <td></td>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -81,13 +75,13 @@
         <div class='modal-dialog' role='document'>
             <div class='modal-content'>
                 <div class='modal-header'>
-                    <h5 class='modal-title' id='exampleModalLabel'>Xóa sản phẩm</h5>
+                    <h5 class='modal-title' id='exampleModalLabel'>Xóa tin tức</h5>
                     <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
                         <span aria-hidden='true'>&times;</span>
                     </button>
                 </div>
                 <div class='modal-body'>
-                    Bạn có muốn xóa sản phẩm này ??
+                    Bạn có muốn xóa tin tức này ??
                 </div>
                 <div class='modal-footer'>
                     <button type='button' class='btn btn-secondary' data-dismiss='modal'>Hủy</button>
