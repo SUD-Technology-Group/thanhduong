@@ -2,7 +2,7 @@
 
 :root {
     --vang: #996e11;
-    --cam: #fec260;
+    --cam: #d8ca4f;
     --tim: #a66cff;
     --luc: #59ce8f;
     --xanh: #3ab4f2;
@@ -23,13 +23,14 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+li:hover a {
     transition: all 0.05s;
-    color: #333 !important;
+    color: #fff !important;
 }
 
 body {
     min-height: 200vh;
+    background-color: #f4f0f0 !important;
     font-family: 'Roboto';
 }
 
@@ -43,7 +44,7 @@ body {
 ul li { 
     display: inline-block; 
     vertical-align: top;
-    padding: 10px 19px; 
+    padding: 10px 26px;
     cursor: pointer; 
     position: relative;
 }
