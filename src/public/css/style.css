@@ -1702,7 +1702,7 @@ section.v-about {
     width: 42px;
     height: 42px;
     border-radius: 999px;
-    /* animation: ring 2s 0.5s linear infinite; */
+    box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
     animation: fly 2s linear infinite;
 }
 
