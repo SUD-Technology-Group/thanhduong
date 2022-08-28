@@ -131,6 +131,7 @@ const closeModalLoginButton = document.querySelector('.modal__login__header__ico
 
 user.forEach((item) => {
     item.addEventListener('click', () => {
+        console.log(item);
         modalLogin.style.display = 'flex';
     });
 });
