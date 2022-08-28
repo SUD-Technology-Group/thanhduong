@@ -1,0 +1,94 @@
+{{!-- Body: start --}}
+{{#if error}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{error}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+<div class="container">
+    <div class="addProduct-body">
+
+        <form class="form-horizontal p-3" enctype="multipart/form-data" method="POST">
+            <fieldset>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="control-label text-uppercase" for="title">TIÊU ĐỀ TIN TỨC</label>
+                    <input id="title" name="title" placeholder="Tiêu đề tin tức"
+                        class="form-control input-md" required="" type="text">
+                </div>
+
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label class="control-label text-uppercase" for="description">Mô tả tin tức</label> <br>
+                    <textarea id="description" class="p-2" name="description" style="width: 100%; height: 100px;"></textarea>
+                </div>
+
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label class="control-label text-uppercase" for="content">Nội dung tin tức</label>
+                    <textarea id="content" name="content" class="ckeditor"></textarea>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="control-label text-uppercase" for="new-imgs">HÌNH ẢNH TIN TỨC</label>
+                    <div class="form-group-container">
+                        <input id="new-imgs" accept="image/*" required="" name="new-imgs"
+                            class="form-control input-md" onchange="preview()" type="file">
+                        <label for="new-imgs">
+                            <i class="fas fa-upload"></i>
+                            Chọn ảnh tin tức &nbsp;
+                        </label>
+                        <p id="num-of-file">Chưa có ảnh nào được chọn</p>
+                        <div id="images-upload">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary">Thêm tin tức</button>
+                    <a type="button" href="/admin/news" class="btn btn-secondary">Huỷ</a>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+</div>
+
+{{!-- Body: end --}}
+
+<!-- Footer -->
+<script>
+    let fileInput = document.getElementById("new-imgs")
+    let imageContainer = document.getElementById('images-upload')
+    let numOfFiles = document.getElementById('num-of-file')
+
+    function preview() {
+        imageContainer.innerHTML = ""
+        numOfFiles.textContent = `${fileInput.files.length} ảnh đã được chọn`;
+
+        for (i of fileInput.files) {
+            let reader = new FileReader()
+            let figure = document.createElement("figure")
+            let figCap = document.createElement("figcaption")
+
+            figCap.innerText = i.name
+            figure.appendChild(figCap)
+            reader.onload = () => {
+                let img = document.createElement("img");
+                img.setAttribute("src", reader.result);
+                img.setAttribute("width", '50%');
+                figure.insertBefore(img, figCap);
+            }
+            imageContainer.appendChild(figure);
+            reader.readAsDataURL(i)
+        }
+    }
+
+    CKEDITOR.replace('ckeditor')
+
+</script>
