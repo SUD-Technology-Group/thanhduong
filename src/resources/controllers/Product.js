@@ -105,7 +105,7 @@ const ProductController = {
             });
             images = [];
             req.files.map((f) => {
-                let url = '/uploads/product-imgs' + f.filename;
+                let url = '/uploads/product-imgs/' + f.filename;
                 images.push(url);
             });
         }

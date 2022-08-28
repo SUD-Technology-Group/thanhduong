@@ -82,7 +82,7 @@ const newController = {
         }
 
         let { image } = await newService.get({ slug });
-        if (req.file.length > 0) {
+        if (req.file) {
             fs.unlink(`src/public/${image}`, (err) => {
                 if (err) {
                     req.flash('error', 'Cập nhật tin tức thất bại');
