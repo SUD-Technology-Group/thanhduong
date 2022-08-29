@@ -1,0 +1,56 @@
+{{#if error}}
+    <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+        {{error}}
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+        </button>
+    </div>
+{{/if}}
+<div class='container'>
+    <div class='addProduct-body'>
+
+        <form class='form-horizontal p-3' method='POST'>
+            <fieldset>
+                <!-- Text input-->
+                <div class='form-group'>
+                    <label class='control-label text-uppercase' for='name'>Tên danh mục</label>
+                    <input
+                        id='name'
+                        name='name'
+                        value="{{category.name}}"
+                        placeholder='Tên danh mục'
+                        class='form-control input-md'
+                        required=''
+                        type='text'
+                    />
+                </div>
+
+                <!-- Select Basic -->
+                <div class='form-group'>
+                    <label class='control-label text-uppercase' for='parent'>DANH MỤC cha</label>
+                    <select id='parent' name='parent' class='form-control'>
+                        <option value=''>Không có</option>
+                        {{#each categories}}
+                            {{#unless parent}}
+                                <option
+                                    value='{{_id}}' 
+                                    {{#equal name ../category.parent.name }} selected {{/equal}} 
+                                    >{{name}}
+                                </option>
+                            {{/unless}}
+                        {{/each}}
+                    </select>
+                </div>
+
+                <input type="text" name="id" class="d-none" value="{{category._id}}">
+
+                <!-- Text input-->
+                <div class='form-footer'>
+                    <button type='submit' class='btn btn-primary'>Cập nhật danh mục</button>
+                    <a type='button' href='/admin/categories' class='btn btn-secondary'>Huỷ</a>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>

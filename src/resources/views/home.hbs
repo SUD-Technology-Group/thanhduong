@@ -1,7 +1,11 @@
 <div class='home-banner'>
     <div class='owl-carousel owl-theme'>
-        <div style="height: 720px;" class="owl-item w-100 mx-auto"> <img style="height: 720px;" src='/img/banners/1.png' alt='' /> </div>
-        <div style="height: 720px;" class="owl-item w-100 mx-auto"> <img style="height: 720px;" src='/img/banners/2.png' alt='' /> </div>
+        <div style='height: 720px;' class='owl-item w-100 mx-auto'>
+            <img style='height: 720px;' src='/img/banners/1.png' alt='' />
+        </div>
+        <div style='height: 720px;' class='owl-item w-100 mx-auto'>
+            <img style='height: 720px;' src='/img/banners/2.png' alt='' />
+        </div>
     </div>
 </div>
 
@@ -167,7 +171,7 @@
         <div class='row'>
             {{#each products}}
                 <div class='col-md-3 col-sm-4 mb-4'>
-                    <a href="products/{{slug}}" class='product-box'>
+                    <a href='products/{{slug}}' class='product-box'>
                         <div class='product-img-box'>
                             <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                         </div>
@@ -175,7 +179,7 @@
                             <div class='product-title'>
                                 <a href='products/{{slug}}'>{{name}}</a>
                             </div>
-                            <div class="product-price">
+                            <div class='product-price'>
                                 {{#if price}}
                                     <p>{{formatCurrency price}} VND</p>
                                 {{else}}
@@ -193,30 +197,30 @@
     </div>
 
     <div class='home-banner-2 mt-5 mb-5'>
-        <div class="home-banner-content">
-            <article class="home-banner-article">
-                <div class="home-banner-icon">
-                    <i class="uil uil-plane-departure"></i>
+        <div class='home-banner-content'>
+            <article class='home-banner-article'>
+                <div class='home-banner-icon'>
+                    <i class='uil uil-plane-departure'></i>
                 </div>
-                <div class="home-banner-text">
+                <div class='home-banner-text'>
                     <h3>Giao Hàng Toàn Quốc</h3>
                     <p>An Toàn - Nhanh Chóng</p>
                 </div>
             </article>
-            <article class="home-banner-article">
-                <div class="home-banner-icon">
-                    <i class="uil uil-credit-card"></i>
+            <article class='home-banner-article'>
+                <div class='home-banner-icon'>
+                    <i class='uil uil-credit-card'></i>
                 </div>
-                <div class="home-banner-text">
+                <div class='home-banner-text'>
                     <h3>Thanh Toán Dễ Dàng</h3>
                     <p>Thanh toán online dễ dàng 24/7</p>
                 </div>
             </article>
-            <article class="home-banner-article">
-                <div class="home-banner-icon">
-                    <i class="uil uil-shopping-bag"></i>
+            <article class='home-banner-article'>
+                <div class='home-banner-icon'>
+                    <i class='uil uil-shopping-bag'></i>
                 </div>
-                <div class="home-banner-text">
+                <div class='home-banner-text'>
                     <h3>Mẫu Mã Đa Dạng Kích Thước</h3>
                     <p>Hàng Số Lượng Lớn</p>
                 </div>
@@ -232,27 +236,38 @@
         <div class='row'>
             {{#each products}}
                 <div class='col-md-3 col-sm-4 mb-4'>
-                    <a href="products/{{slug}}" class='product-box'>
-                        <div class='product-img-box'>
-                            <img src='{{images.[0]}}' alt={{name}} class='w-100' />
-                        </div>
+                    {{!-- <div class='card h-100'>
+                        <a href='products/{{slug}}' class='product-box'>
+                            <div class='product-img-box'>
+                                <img src='{{images.[0]}}' alt={{name}} class='w-100' />
+                            </div>
 
-                        <div class='product-content-box'>
-                            <div class='product-title'>
-                                <a href='products/{{slug}}'>{{name}}</a>
+                            <div class='product-content-box'>
+                                <div class='product-title'>
+                                    <a href='products/{{slug}}'>{{name}}</a>
+                                </div>
+                                <div class='product-price'>
+                                    {{#if price}}
+                                        <p>{{formatCurrency price}} VND</p>
+                                    {{else}}
+                                        <p>Giá: liên hệ</p>
+                                    {{/if}}
+                                </div>
+                                <a href='#'>
+                                    <button class='btn-v-about'>Mua ngay</button>
+                                </a>
                             </div>
-                            <div class="product-price">
-                                {{#if price}}
-                                    <p>{{formatCurrency price}} VND</p>
-                                {{else}}
-                                    <p>Giá: liên hệ</p>
-                                {{/if}}
-                            </div>
-                            <a href='#'>
-                                <button class='btn-v-about'>Mua ngay</button>
-                            </a>
+                        </a>
+                    </div> --}}
+                    <div class='card h-100 shadow'>
+                        <img class='card-img-top w-100 h-100' src='{{images.[0]}}' alt='' />
+                        <div class='card-body'>
+                            <h5 class='card-title'>{{name}}</h5>
+                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href='#' class='btn btn-outline-primary w-100'>Mua ngay</a>
                         </div>
-                    </a>
+                    </div>
                 </div>
             {{/each}}
         </div>
@@ -282,26 +297,26 @@
             <span class='dot' style='margin-right: 2rem;border-radius: 999px; padding:10px 10px;'></span>
         </div>
     </div>
-    <div class="modal__login">
-        <div class="modal__overplay"></div>
-        <div class="modal__body">
-            <div class="modal__form">
-                <div class="modal__login__header__icon">
-                    <div class="modal__header__icon__login">
-                        <img src="/img/user.png" alt="user">
+    <div class='modal__login'>
+        <div class='modal__overplay'></div>
+        <div class='modal__body'>
+            <div class='modal__form'>
+                <div class='modal__login__header__icon'>
+                    <div class='modal__header__icon__login'>
+                        <img src='/img/user.png' alt='user' />
                     </div>
-                    <div class="modal__login__header__icon__close">
-                        <i class="uil uil-times"></i>
+                    <div class='modal__login__header__icon__close'>
+                        <i class='uil uil-times'></i>
                     </div>
                 </div>
-                <div class="modal__footer__login">
-                    <div class="modal__footer__login__text">
+                <div class='modal__footer__login'>
+                    <div class='modal__footer__login__text'>
                         <h3>ĐĂNG NHẬP TÀI KHOẢN</h3>
                     </div>
-                    <div class="modal__footer__login__input">
-                        <input type="text" placeholder="Tài khoản" name="user">
-                        <input type="password" placeholder="Mật khẩu" name="password">
-                        <button type="submit">Đăng Nhập </button>
+                    <div class='modal__footer__login__input'>
+                        <input type='text' placeholder='Tài khoản' name='user' />
+                        <input type='password' placeholder='Mật khẩu' name='password' />
+                        <button type='submit'>Đăng Nhập </button>
                     </div>
                 </div>
             </div>
