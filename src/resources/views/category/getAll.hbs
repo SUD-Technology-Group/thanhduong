@@ -1,0 +1,83 @@
+{{#if success}}
+    <div class='alert alert-success alert-dismissible fade show' role='alert'>
+        {{success}}
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+        </button>
+    </div>
+{{/if}}
+
+{{#if error}}
+    <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+        {{error}}
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+        </button>
+    </div>
+{{/if}}
+
+<div class='container'>
+    <div class='row m-0'>
+        <div class='col-md-12 bg-white py-2'>
+            <table class='table table-hover mt-2 data-table' style='table-layout:fixed;'>
+                <thead class='thead-dark'>
+                    <tr>
+                        <th scope='col'>Tên</th>
+                        <th scope='col'>Danh mục cha</th>
+                        <th scope='col'>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#if categories}}
+                        {{#each categories}}
+                            <tr>
+                                <td>{{name}}</td>
+                                <td>{{parent.name}}</td>
+                                <td class='d-flex'>
+                                    <!-- Button trigger modal -->
+                                    <a class='text-warning w-100' href='/admin/categories/update/{{slug}}'>
+                                        <i class='fas fa-edit fa-lg'></i>
+                                    </a>
+                                    <!-- Button trigger modal -->
+                                    <a
+                                        class='text-danger w-100'
+                                        data-toggle='modal'
+                                        data-target='#deleteModal'
+                                        onclick="$('#deleteBtn').attr('href', '/admin/categories/delete/{{slug}}')"
+                                    >
+                                        <i class='fas fa-trash fa-lg'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                        <tr><td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    {{/if}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class='modal fade' id='deleteModal'>
+        <div class='modal-dialog' role='document'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <h5 class='modal-title' id='exampleModalLabel'>Xóa tin tức</h5>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                </div>
+                <div class='modal-body'>
+                    Bạn có muốn xóa tin tức này ??
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Hủy</button>
+                    <a type='button' id='deleteBtn' class='btn btn-danger'>Xóa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
