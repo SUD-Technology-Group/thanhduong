@@ -177,7 +177,7 @@
                             </div>
                             <div class="product-price">
                                 {{#if price}}
-                                    <p>{{price}}</p>
+                                    <p>{{formatCurrency price}}</p>
                                 {{else}}
                                     <p>Giá: liên hệ</p>
                                 {{/if}}
@@ -243,7 +243,7 @@
                             </div>
                             <div class="product-price">
                                 {{#if price}}
-                                    <p>{{price}}</p>
+                                    <p>{{formatCurrency price}}</p>
                                 {{else}}
                                     <p>Giá: liên hệ</p>
                                 {{/if}}
@@ -262,35 +262,19 @@
         <div style='color: #996e11;' class='menu-title mb-5'>
             Tin tức & sự kiện
         </div>
-
         <div class='row'>
             <div class='owl-carousel cs-3 owl-theme mt-3'>
-                <div class='news-box'>
-                    <img src='/img/default.png' alt='' />
-
-                    <a href=''>Mua Pallet Nhựa cũ giá rẽ</a>
-                    <p>30/6/2022</p>
-                    <div class='is-divider'></div>
-                    <p>Mua Pallet Nhựa cũ giá rẻ, uy tín ở đâu? Công ty TNHH Pallet Nhựa Thành Dương là một trong những
-                        đơn vị để quý khách chọn ...</p>
-                </div>
-                <div class='news-box'>
-                    <img src='/img/default.png' alt='' />
-                    <a href=''>Mua Pallet Nhựa cũ giá rẽ</a>
-                    <p>30/6/2022</p>
-                    <div class='is-divider'></div>
-                    <p>Mua Pallet Nhựa cũ giá rẻ, uy tín ở đâu? Công ty TNHH Pallet Nhựa Thành Dương là một trong những
-                        đơn vị để quý khách chọn ...</p>
-                </div>
-                <div class='news-box'>
-                    <img src='/img/default.png' alt='' />
-                    <a href=''>Mua Pallet Nhựa cũ giá rẽ</a>
-                    <p>30/6/2022</p>
-                    <div class='is-divider'></div>
-                    <p>Mua Pallet Nhựa cũ giá rẻ, uy tín ở đâu? Công ty TNHH Pallet nhựa Thành Dương là một trong những
-                        đơn vị để quý khách chọn ...</p>
-                </div>
-
+                {{#each news}}
+                    <div class='news-box'>
+                        <a href='/news/{{slug}}'>
+                            <img src='{{image}}' alt='news' />
+                        </a>
+                        <a href='/news/{{slug}}'>{{title}}</a>
+                        <p>{{timestamps}}</p>
+                        <div class='is-divider'></div>
+                        <p>{{description}}</p>
+                    </div>
+                {{/each}}
             </div>
         </div>
         <div class='swiper-dot' style='display:flex; justify-content: center;'>

@@ -14,7 +14,8 @@ const newController = {
     // GET /news/id
     detail: catchAsync(async (req, res) => {
         const newObj = await newService.get({ slug: req.params.id });
-        res.render('new/detail', { new: newObj });
+        const news = await newService.getAll();
+        res.render('new/detail', { new: newObj, news });
     }),
 
     // Server

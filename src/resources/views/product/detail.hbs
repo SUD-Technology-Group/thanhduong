@@ -8,6 +8,11 @@
                 <div class='detail__container__left__img'>
                     <img src='{{product.images.[0]}}' alt='detail' />
                 </div>
+                <div class="detail__container__sub__img">
+                    {{#each product.images}}
+                        <img src="{{this}}" alt="sub__image">
+                    {{/each}}
+                </div>
             </div>
             <div class='detail__container__right'>
                 <div class='detail__container__right__title'>
@@ -15,7 +20,7 @@
                 </div>
                 <div class='detail__container__right__desc'>
                     {{#if product.price}}
-                        <p>Giá: <span>{{product.price}} VND</span></p>
+                        <p>Giá: <span>{{formatCurrency product.price}} VND</span></p>
                     {{else}}
                         <p>Giá: liên hệ</p>
                     {{/if}}

@@ -19,6 +19,9 @@ app.engine('hbs', handlebars.engine({
         equal: function (lval, rval, options) {
             if (lval == rval) return options.fn(this)
         },
+        formatCurrency: function(price) {
+            return price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+        }
     }
 }));
 app.set('views', path.join(__dirname, '/resources/views'));
