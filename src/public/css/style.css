@@ -1669,6 +1669,9 @@ section.v-about {
 
 .news-box {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .news-box img {
@@ -1680,7 +1683,7 @@ section.v-about {
     height: 3px;
     display: block;
     background-color: rgba(0, 0, 0, 0.1);
-    margin: 1em 0 1em;
+    margin: 0 0 1em;
     width: 100%;
     max-width: 30px;
 }

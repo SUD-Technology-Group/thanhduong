@@ -20,7 +20,7 @@ app.engine('hbs', handlebars.engine({
             if (lval == rval) return options.fn(this)
         },
         formatCurrency: function(price) {
-            return price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+            return price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
         }
     }
 }));
