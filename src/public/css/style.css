@@ -809,7 +809,7 @@ section.v-about {
 
 .product__container .background-image {
     height: 100%;
-    background-image: url('https://palletvina.com/wp-content/uploads/2021/06/banner-archive.jpg');
+    background-image: url('/img/pallet.jpg');
     background-size: cover;
 }
 
@@ -925,6 +925,7 @@ section.v-about {
 
 .product-image {
     overflow: hidden;
+    /* height: 50%; */
 }
 
 .product-image img {
@@ -1001,7 +1002,7 @@ section.v-about {
 /* News Start */
 .news__container .background-image {
     height: 100%;
-    background-image: url('https://palletvina.com/wp-content/themes/vdigi/assets/images/banner-about.png');
+    background-image: url('/img/news.jpg');
     background-size: cover;
     position: relative;
 }

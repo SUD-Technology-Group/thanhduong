@@ -13,49 +13,21 @@
         <div class='grid-content-left'>
             <ul>
                 <h4>Danh mục sản phẩm</h4>
-                <li>
-                    <i class='uil uil-arrow-right'></i>
-                    Pallet Gỗ
-                </li>
-                <li>
-                    <i class='uil uil-arrow-right'></i>
-                    Pallet Nhựa Mới
-                </li>
-                <li>
-                    <i class='uil uil-arrow-right'></i>
-                    Pallet Nhựa
-                </li>
-                <li>
-                    <i class='uil uil-arrow-right'></i>
-                    Pallet Nhựa Cũ
-                </li>
-                <li>
-                    <i class='uil uil-arrow-right'></i>
-                    Sóng Nhựa
-                </li>
+                {{#each categories}}
+                    <li>
+                        <i class='uil uil-arrow-right'></i>
+                        {{name}}
+                    </li>
+                {{/each}}
             </ul>
             <ul>
                 <h4>Sản phẩm khuyến mãi</h4>
-                <li>
-                    <i class='uil uil-arrow-right'></i>
-                    Pallet Gỗ
-                </li>
-                <li>
-                    <i class='uil uil-arrow-right'></i>
-                    Pallet Nhựa Mới
-                </li>
-                <li>
-                    <i class='uil uil-arrow-right'></i>
-                    Pallet Nhựa
-                </li>
-                <li>
-                    <i class='uil uil-arrow-right'></i>
-                    Pallet Nhựa Cũ
-                </li>
-                <li>
-                    <i class='uil uil-arrow-right'></i>
-                    Sóng Nhựa
-                </li>
+                {{#each categories}}
+                    <li>
+                        <i class='uil uil-arrow-right'></i>
+                        {{name}}
+                    </li>
+                {{/each}}
             </ul>
         </div>
         
@@ -75,14 +47,6 @@
                     </div>
                 </div>
                 <div class='product-info'>
-                    <div class="product-color">
-                        <div class="color product-color-black"></div>
-                        <div class="color product-color-blue"></div>
-                        <div class="color product-color-green"></div>
-                        <div class="color product-color-gray"></div>
-                        <div class="color product-color-red"></div>
-                        <div class="color product-color-yellow"></div>
-                    </div>
                     <div class='product-name'>
                         <h5>{{name}}</h5>
                     </div>
