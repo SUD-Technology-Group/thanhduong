@@ -22,10 +22,17 @@
                 <!-- Select Basic -->
                 <div class="form-group">
                     <label class="control-label text-uppercase" for="category">DANH MỤC SẢN PHẨM</label>
-                    <select id="category" name="category" required="" class="form-control" value="{{product.category}}">
-                        <option value="">-- Chọn loại sản phẩm --</option>
-                        <option {{#equal product.category "Pallet Gỗ"}} selected {{/equal}} value="Pallet Gỗ">Pallet Gỗ</option>
-                        <option {{#equal product.category "Pallet Nhựa"}} selected {{/equal}} value="Pallet Nhựa">Pallet Nhựa</option>
+                    <select id="category" name="category" class="form-control" value="{{product.category}}">
+                        <option value="">-- Không --</option>
+                        {{#each categories}}
+                            {{#noChild name ../categories }}
+                                <option
+                                value="{{_id}}"
+                                {{#equal ../product.category.name name}} selected {{/equal}}
+                                >{{name}}
+                                </option>
+                            {{/noChild}}
+                        {{/each}}
                     </select>
                 </div>
 

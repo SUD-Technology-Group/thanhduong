@@ -1,4 +1,4 @@
-const { productService } = require('../services');
+const { productService, categoryService } = require('../services');
 const catchAsync = require('../utils/catchAsync');
 const createSlug = require('../utils/createSlug');
 const fs = require('fs');
@@ -8,7 +8,8 @@ const ProductController = {
     // GET /products
     index: catchAsync(async (req, res) => {
         const products = await productService.getAll();
-        res.render('product', { products });
+        const categories = await categoryService.getAll();
+        res.render('product', { products, categories });
     }),
 
     // GET /products/id
@@ -33,10 +34,11 @@ const ProductController = {
     }),
 
     // GET /admin/products/create
-    createView: (req, res) => {
+    createView: catchAsync(async (req, res) => {
         const error = req.flash('error') || '';
-        res.render('product/create', { pageName: 'Thêm sản phẩm', layout: 'admin', error });
-    },
+        const categories = await categoryService.getAll();
+        res.render('product/create', { pageName: 'Thêm sản phẩm', layout: 'admin', categories, error });
+    }),
 
     // POST /admin/products/create
     create: catchAsync(async (req, res) => {
@@ -58,7 +60,7 @@ const ProductController = {
             .create({
                 name,
                 images,
-                category,
+                category: category || null,
                 description,
                 price,
                 amount,
@@ -78,7 +80,8 @@ const ProductController = {
     updateView: catchAsync(async (req, res) => {
         const error = req.flash('error') || '';
         const product = await productService.get({ slug: req.params.id });
-        res.render('product/update', { pageName: 'Chỉnh sửa sản phẩm', layout: 'admin', product, error });
+        const categories = await categoryService.getAll();
+        res.render('product/update', { pageName: 'Chỉnh sửa sản phẩm', layout: 'admin', categories, product, error });
     }),
 
     // POST /admin/products/update/:id
@@ -114,7 +117,7 @@ const ProductController = {
             .update(slug, {
                 name,
                 images,
-                category,
+                category: category || null,
                 description,
                 price,
                 amount,

@@ -2,11 +2,11 @@ const { Product } = require('../models');
 
 const ProductService = {
     get: async (payloads) => {
-        return await Product.findOne(payloads).lean();
+        return await Product.findOne(payloads).populate('category').lean();
     },
 
     getAll: async () => {
-        return await Product.find({}).lean();
+        return await Product.find({}).populate('category').lean();
     },
 
     create: async (payloads) => {
