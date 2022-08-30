@@ -164,6 +164,36 @@
 </section>
 
 <div class='home-content'>
+    <div class='home-banner-2 mt-5 mb-5'>
+        <div class='home-banner-content'>
+            <article class='home-banner-article'>
+                <div class='home-banner-icon'>
+                    <i class='uil uil-award'></i>
+                </div>
+                <div class='home-banner-text'>
+                    <h3>Chất Lượng</h3>
+                </div>
+            </article>
+            <article class='home-banner-article'>
+                <div class='home-banner-icon'>
+                    <i class='uil uil-check-circle'></i>
+                </div>
+                <div class='home-banner-text'>
+                    <h3>Cam kết</h3>
+                    {{! <p>Thanh toán online dễ dàng 24/7</p> }}
+                </div>
+            </article>
+            <article class='home-banner-article'>
+                <div class='home-banner-icon'>
+                    <i class='uil uil-truck'></i>
+                </div>
+                <div class='home-banner-text'>
+                    <h3>Vận Chuyển</h3>
+                </div>
+            </article>
+        </div>
+    </div>
+
     <div class='container'>
         <div class='menu-title mb-5'>
             Sản phẩm mới
@@ -173,7 +203,7 @@
                 <div class='col-md-3 col-sm-4 mb-4'>
                     <a href='products/{{slug}}' class='product-box'>
                         <div class='product-img-box'>
-                            <img src='{{images.[0]}}' alt={{name}} class='w-100' />
+                            <img src='{{images}}' alt={{name}} class='w-100' />
                         </div>
                         <div class='product-content-box'>
                             <div class='product-title'>
@@ -187,11 +217,7 @@
                                 {{/if}}
                             </div>
                             <a href='#'>
-                                <button 
-                                    type="button" 
-                                    class="btn btn-primary btn-lg" 
-                                    style="margin-top: 8px;"
-                                >
+                                <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
                                     Mua ngay
                                 </button>
                             </a>
@@ -202,41 +228,9 @@
         </div>
     </div>
 
-    <div class='home-banner-2 mt-5 mb-5'>
-        <div class='home-banner-content'>
-            <article class='home-banner-article'>
-                <div class='home-banner-icon'>
-                    <i class='uil uil-plane-departure'></i>
-                </div>
-                <div class='home-banner-text'>
-                    <h3>Giao Hàng Toàn Quốc</h3>
-                    <p>An Toàn - Nhanh Chóng</p>
-                </div>
-            </article>
-            <article class='home-banner-article'>
-                <div class='home-banner-icon'>
-                    <i class='uil uil-credit-card'></i>
-                </div>
-                <div class='home-banner-text'>
-                    <h3>Thanh Toán Dễ Dàng</h3>
-                    <p>Thanh toán online dễ dàng 24/7</p>
-                </div>
-            </article>
-            <article class='home-banner-article'>
-                <div class='home-banner-icon'>
-                    <i class='uil uil-shopping-bag'></i>
-                </div>
-                <div class='home-banner-text'>
-                    <h3>Mẫu Mã Đa Dạng Kích Thước</h3>
-                    <p>Hàng Số Lượng Lớn</p>
-                </div>
-            </article>
-        </div>
-    </div>
-
     <div class='container'>
-        <div class='menu-title mb-5'>
-            Sản phẩm nổi bật
+        <div class='menu-title mb-5 mt-5'>
+            Pallet gỗ
         </div>
 
         <div class='row'>
@@ -244,7 +238,7 @@
                 <div class='col-md-3 col-sm-4 mb-4'>
                     <a href='products/{{slug}}' class='product-box'>
                         <div class='product-img-box'>
-                            <img src='{{images.[0]}}' alt={{name}} class='w-100' />
+                            <img src='{{images}}' alt={{name}} class='w-100' />
                         </div>
 
                         <div class='product-content-box'>
@@ -259,11 +253,7 @@
                                 {{/if}}
                             </div>
                             <a href='#'>
-                                <button 
-                                    type="button" 
-                                    class="btn btn-primary btn-lg" 
-                                    style="margin-top: 8px;"
-                                >
+                                <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
                                     Mua ngay
                                 </button>
                             </a>
@@ -275,7 +265,79 @@
     </div>
 
     <div class='container'>
-        <div style='color: #996e11;' class='menu-title mb-5'>
+        <div class='menu-title mb-5 mt-5'>
+            Pallet nhựa
+        </div>
+        
+        <div class='row'>
+            {{#each products}}
+                <div class='col-md-3 col-sm-4 mb-4'>
+                    <a href='products/{{slug}}' class='product-box'>
+                        <div class='product-img-box'>
+                            <img src='{{images}}' alt={{name}} class='w-100' />
+                        </div>
+
+                        <div class='product-content-box'>
+                            <div class='product-title'>
+                                <a href='products/{{slug}}'>{{name}}</a>
+                            </div>
+                            <div class='product-price'>
+                                {{#if price}}
+                                    <p>{{formatCurrency price}} VND</p>
+                                {{else}}
+                                    <p>Giá: liên hệ</p>
+                                {{/if}}
+                            </div>
+                            <a href='#'>
+                                <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
+                                    Mua ngay
+                                </button>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class='container'>
+        <div class='menu-title mb-5 mt-5'>
+            Sóng nhựa
+        </div>
+        
+        <div class='row'>
+            {{#each products}}
+                <div class='col-md-3 col-sm-4 mb-4'>
+                    <a href='products/{{slug}}' class='product-box'>
+                        <div class='product-img-box'>
+                            <img src='{{images}}' alt={{name}} class='w-100' />
+                        </div>
+
+                        <div class='product-content-box'>
+                            <div class='product-title'>
+                                <a href='products/{{slug}}'>{{name}}</a>
+                            </div>
+                            <div class='product-price'>
+                                {{#if price}}
+                                    <p>{{formatCurrency price}} VND</p>
+                                {{else}}
+                                    <p>Giá: liên hệ</p>
+                                {{/if}}
+                            </div>
+                            <a href='#'>
+                                <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
+                                    Mua ngay
+                                </button>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class='container'>
+        <div style='color: #996e11;' class='menu-title mb-5 mt-5'>
             Tin tức & sự kiện
         </div>
         <div class='row'>

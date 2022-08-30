@@ -29,7 +29,6 @@ li:hover a {
 }
 
 body {
-    /* min-height: 200vh; */
     background-color: #f4f0f0 !important;
     font-family: 'Roboto';
 }
@@ -236,8 +235,9 @@ button#close-menu-btn-2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 18px 106px;
+    padding: 0 13rem;
     border-right: 1px solid #ffffff;
+    color: #080808;
 }
 
 .home-banner-article:nth-child(3) {
@@ -681,7 +681,8 @@ section.v-about {
 }
 
 .reason.open p {
-    display: block;
+    display: flex;
+    gap: 1rem;
 }
 
 .section__container {
@@ -1740,8 +1741,7 @@ section.v-about {
 }
 
 .social-icon-right img {
-    width: 42px;
-    height: 42px;
+    width: 35px;
     border-radius: 999px;
     box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
     animation: fly 2s linear infinite;
