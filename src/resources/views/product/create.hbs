@@ -22,15 +22,12 @@
                 <!-- Select Basic -->
                 <div class="form-group">
                     <label class="control-label text-uppercase" for="category">DANH MỤC SẢN PHẨM</label>
-                    <select id="category" name="category" required="" class="form-control">
-                        <option>-- Chọn loại sản phẩm --</option>
+                    <select id="category" name="category" class="form-control">
+                        <option value="">-- Chọn loại sản phẩm --</option>
                         {{#each categories}}
-                            {{#if parent}}
-                                    <option value="{{_id}}">{{name}}</option>
-                            {{/if}}
-                            {{#each ../categories}}
-                                
-                            {{/each}}
+                            {{#noChild name ../categories }}
+                                <option value="{{_id}}">{{name}}</option>
+                            {{/noChild}}
                         {{/each}}
                     </select>
                 </div>
