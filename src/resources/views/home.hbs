@@ -187,7 +187,13 @@
                                 {{/if}}
                             </div>
                             <a href='#'>
-                                <button class='btn-v-about'>Mua ngay</button>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-primary btn-lg" 
+                                    style="margin-top: 8px;"
+                                >
+                                    Mua ngay
+                                </button>
                             </a>
                         </div>
                     </a>
@@ -236,38 +242,33 @@
         <div class='row'>
             {{#each products}}
                 <div class='col-md-3 col-sm-4 mb-4'>
-                    {{!-- <div class='card h-100'>
-                        <a href='products/{{slug}}' class='product-box'>
-                            <div class='product-img-box'>
-                                <img src='{{images.[0]}}' alt={{name}} class='w-100' />
-                            </div>
-
-                            <div class='product-content-box'>
-                                <div class='product-title'>
-                                    <a href='products/{{slug}}'>{{name}}</a>
-                                </div>
-                                <div class='product-price'>
-                                    {{#if price}}
-                                        <p>{{formatCurrency price}} VND</p>
-                                    {{else}}
-                                        <p>Giá: liên hệ</p>
-                                    {{/if}}
-                                </div>
-                                <a href='#'>
-                                    <button class='btn-v-about'>Mua ngay</button>
-                                </a>
-                            </div>
-                        </a>
-                    </div> --}}
-                    <div class='card h-100 shadow'>
-                        <img class='card-img-top w-100 h-100' src='{{images.[0]}}' alt='' />
-                        <div class='card-body'>
-                            <h5 class='card-title'>{{name}}</h5>
-                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href='#' class='btn btn-outline-primary w-100'>Mua ngay</a>
+                    <a href='products/{{slug}}' class='product-box'>
+                        <div class='product-img-box'>
+                            <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                         </div>
-                    </div>
+
+                        <div class='product-content-box'>
+                            <div class='product-title'>
+                                <a href='products/{{slug}}'>{{name}}</a>
+                            </div>
+                            <div class='product-price'>
+                                {{#if price}}
+                                    <p>{{formatCurrency price}} VND</p>
+                                {{else}}
+                                    <p>Giá: liên hệ</p>
+                                {{/if}}
+                            </div>
+                            <a href='#'>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-primary btn-lg" 
+                                    style="margin-top: 8px;"
+                                >
+                                    Mua ngay
+                                </button>
+                            </a>
+                        </div>
+                    </a>
                 </div>
             {{/each}}
         </div>
