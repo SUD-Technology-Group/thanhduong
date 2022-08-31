@@ -1,214 +1,63 @@
-<div class="sidebar">
-    <div class="logo-details">
-    <div class="logo-box">
-        <div style="margin-top: 10px; border-radius: 50%">
-        <img width="100%" src="/img/logo.png" alt="">
+<div class='sidebar'>
+    <div class='logo-details mt-3'>
+        <div class='logo-box'>
+            <div style='border-radius: 50%'>
+                <img width='100%' src='/img/logo.png' alt='' />
+            </div>
         </div>
+        <a href='/admin'><span class='logo_name'>Thành Dương</span></a>
+        <i id='menu-toggle' class="fa-solid fa-bars fa-lg text-white ml-3"></i>
     </div>
-    <a class="mt-4" href="/admin"><span class="logo_name">Thành Dương</span></a>
-    </div>
-    <ul class="nav-links">
+    <ul class='nav-links'>
+        {{!-- Trang chủ --}}
+        <li>
+            <div class='icon-link'>
+                <a href='/'>
+                    <i class='fas fa-home'></i>
+                    <span class='link_name'>Trang chủ</span>
+                </a>
+            </div>
+        </li>
 
-    <li>
-        <div class="icon-link">
-        <a href="/">
-            <i class="fas fa-home"></i>
-            <span class="link_name">Trang chủ</span>
-        </a>
-        </div>
-    </li>
-    {{!-- Sale --}}
-    {{!-- {{#isAccountant position}} --}}
+        {{! Đơn hàng }}
+        <li>
+            <div class='icon-link'>
+                <a href='/admin/orders'>
+                    <i class="fa-solid fa-receipt"></i>
+                    <span class='link_name'>Đơn hàng</span>
+                </a>
+            </div>
+        </li>
 
-    {{!-- Sản phẩm --}}
-    <li>
-        <div class="icon-link">
-        <a href="#">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="link_name">Sản phẩm</span>
-        </a>
-        <i class='bx bxs-chevron-down arrow'></i>
-        </div>
-        <ul class="sub-menu">     
+        {{! Sản phẩm }}
+        <li>
+            <div class='icon-link'>
+                <a href='/admin/products'>
+                    <i class='fas fa-shopping-cart'></i>
+                    <span class='link_name'>Sản phẩm</span>
+                </a>
+            </div>
+        </li>
 
-        <li><a class="link_name" href="#">Sản phẩm</a></li>
-        {{!-- {{#isSale position}} 
-            <li {{#isAdmin position}} class="d-none" {{/isAdmin}}><a href="/admin/product-manager">Kiểm kho</a>
-        </li> 
-            {{/isSale }} --}}
-        <li><a href="/admin/products/create">+ Thêm sản phẩm mới</a></li>
-        <li><a href="/admin/products">+ Danh sách sản phẩm</a></li>
+        {{! Danh mục sản phẩm }}
+        <li>
+            <div class='icon-link'>
+                <a href='/admin/categories'>
+                    <i class='bx bx-category'></i>
+                    <span class='link_name'>Danh mục SP</span>
+                </a>
+            </div>
+        </li>
 
-        </ul>
-    </li>
-
-    {{!-- Danh mục sản phẩm --}}
-    <li>
-        <div class="icon-link">
-        <a href="#">
-            <i class='bx bx-category'></i>
-            <span class="link_name">Loại SP</span>
-        </a>
-        <i class='bx bxs-chevron-down arrow'></i>
-        </div>
-        <ul class="sub-menu">
-        <li><a href="/admin/categories/create">+ Thêm loại mới</a></li>
-        <li><a href="/admin/categories">+ Danh sách các loại</a></li>
-        </ul>
-    </li>
-
-    {{!-- Tin tức --}}
-    <li>
-        <div class="icon-link">
-        <a href="#">
-            <i class='bx bx-news'></i>
-            <span class="link_name">Tin tức</span>
-        </a>
-        <i class='bx bxs-chevron-down arrow'></i>
-        </div>
-        <ul class="sub-menu">
-        <li><a href="/admin/news/create">+ Thêm tin tức mới</a></li>
-        <li><a href="/admin/news">+ Danh sách tin tức</a></li>
-        </ul>
-    </li>
-    {{!-- {{/isAccountant}} --}}
-    {{!-- {{#isAccountant position}} --}}
-
-    {{!-- <li>
-        <div class="icon-link">
-        <a href="#">
-            <i class="fas fa-sticky-note"></i>
-            <span class="link_name">Giới thiệu</span>
-        </a>
-        <i class='bx bxs-chevron-down arrow'></i>
-        </div>
-        <ul class="sub-menu">
-
-        <li><a class="link_name" href="#">Giới thiệu</a></li>
-        {{#isSale position}}
-        <li {{#isAdmin position}} class="d-none" {{/isAdmin}}><a href="/admin/product-manager">Kiểm kho</a>
-        </li> 
-        {{/isSale }}
-        <li><a href="/admin/add-about">Sửa nội dung</a></li>
-        <li><a href="/admin/add-product">Thêm sản phẩm</a></li>
-
-        </ul>
-    </li>
-    {{/isAccountant}}
-
-    {{#isAdmin position}}
-    
-    <li>
-        <div class="icon-link">
-        <a href="#">
-            <i class="fas fa-file-alt"></i>
-            <span class="link_name">Đơn hàng</span>
-        </a>
-        <i class='bx bxs-chevron-down arrow'></i>
-        </div>
-        <ul class="sub-menu">
-        <li><a class="link_name" href="#">Đơn hàng</a></li>
-        <li><a href="/admin/create-order">Tạo đơn hàng</a></li>
-        <li><a href="/admin/getOrders">Danh sách đơn hàng</a></li>
-        </ul>
-    </li>
-    
-    {{/isAdmin }}
-    Admin
-    {{#isAdmin position}}
-    
-    <li>
-        <div class="icon-link">
-        <a href="#">
-            <i class="fas fa-percent"></i>
-            <span class="link_name">Khuyến mãi</span>
-        </a>
-        <i class='bx bxs-chevron-down arrow'></i>
-        </div>
-        <ul class="sub-menu">
-        <li><a class="link_name" href="#">Khuyến mãi</a></li>
-        <li><a href="/admin/listDiscounts">Tất cả khuyến mãi</a></li>
-        <li><a href="/admin/add-discount">Thêm khuyến mãi</a></li>
-        </ul>
-    </li>
-    <li>
-        <div class="icon-link">
-        <a href="#">
-            <i class="fas fa-cogs"></i>
-            <span class="link_name">Dịch vụ</span>
-        </a>
-        <i class='bx bxs-chevron-down arrow'></i>
-        </div>
-        <ul class="sub-menu">
-        <li><a class="link_name" href="#">Dịch vụ</a></li>
-        <li><a href="/admin/listServices">Tất cả dịch vụ</a></li>
-        <li><a href="/admin/add-services">Thêm dịch vụ</a></li>
-
-        </ul>
-    </li>
-    <li>
-        <div class="icon-link">
-        <a href="#">
-            <i class="fas fa-handshake"></i>
-            <span class="link_name">Đối tác</span>
-        </a>
-        <i class='bx bxs-chevron-down arrow'></i>
-        </div>
-        <ul class="sub-menu">
-        <li><a class="link_name" href="#">Đối tác</a></li>
-        <li><a href="/admin/listPartners">Tất cả đối tác</a></li>
-        <li><a href="/admin/addPartner">Thêm đối tác</a></li>
-
-        </ul>
-    </li>
-    <li>
-        <div class="icon-link">
-        <a href="#">
-            <i class="fas fa-users"></i>
-            <span class="link_name">Nhân viên</span>
-        </a>
-        <i class='bx bxs-chevron-down arrow'></i>
-        </div>
-        <ul class="sub-menu">
-        <li><a class="link_name" href="#">Nhân viên</a></li>
-        <li><a href="/admin/getUsers">Danh sách nhân viên</a></li>
-        <li><a href="/users/register">Thêm nhân viên</a></li>
-        </ul>
-    </li>
-    {{/isAdmin}}
-    {{#isSale position}}
-    <li>
-        <div class="icon-link">
-        <a href="/admin/customer-info">
-            <i class="fas fa-users"></i>
-            <span class="link_name">Khách hàng</span>
-        </a>
-
-        </div>
-    </li>
-    {{/isSale}}
-    {{#isAdmin position}}
-    <li>
-        <a href="/admin/history">
-        <i class="fas fa-history"></i>
-        <span class="link_name">Lịch sử</span>
-        </a>
-
-    </li>
-    {{/isAdmin}}
-    <li>
-        <div class="icon-link">
-        <a href="#">
-            <i class="fas fa-user-cog"></i>
-            <span class="link_name">Tài khoản</span>
-        </a>
-        <i class='bx bxs-chevron-down arrow'></i>
-        </div>
-        <ul class="sub-menu">
-        <li><a class="link_name" href="#">Tài khoản</a></li>
-        <li><a href="/users/changePassword">Đổi mật khẩu</a></li>
-        <li><a href="/users/logout">Đăng xuất</a></li>
-        </ul>
-    </li> --}}
+        {{! Tin tức }}
+        <li>
+            <div class='icon-link'>
+                <a href='/admin/news'>
+                    <i class='bx bx-news'></i>
+                    <span class='link_name'>Tin tức</span>
+                </a>
+            </div>
+        </li>
     </ul>
 </div>
+

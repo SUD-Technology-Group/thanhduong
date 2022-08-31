@@ -1,4 +1,3 @@
-{{!-- Body: start --}}
 {{#if error}}
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
     {{error}}
@@ -7,82 +6,101 @@
     </button>
 </div>
 {{/if}}
-<div class="container">
-    <div class="addProduct-body">
 
-        <form class="form-horizontal p-3" enctype="multipart/form-data" method="POST">
-            <fieldset>
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="name">TÊN SẢN PHẨM</label>
-                    <input id="name" name="name" placeholder="Tên sản phẩm"
-                        class="form-control input-md" required="" type="text">
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='card shadow'>
+                <div class='card-header d-flex justify-content-between'>
+                    <h4>{{pageName}}</h4>
+                    <a type="button" href="/admin/products" class="btn btn-secondary">Trở lại</a>
                 </div>
+                <div class='card-body'>
+                    <form class="form" enctype="multipart/form-data" method="POST">
+                        <fieldset>
 
-                <!-- Select Basic -->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="category">DANH MỤC SẢN PHẨM</label>
-                    <select id="category" name="category" class="form-control">
-                        <option value="">-- Chọn loại sản phẩm --</option>
-                        {{#each categories}}
-                            {{#noChild name ../categories }}
-                                <option value="{{_id}}">{{name}}</option>
-                            {{/noChild}}
-                        {{/each}}
-                    </select>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label class="control-label text-uppercase" for="name">TÊN SẢN PHẨM<span style="color:red">*</span></label>
+                                    <input id="name" name="name" placeholder="Tên sản phẩm"
+                                    class="form-control" required type="text">
+                                </div>
+                                
+                                <div class="form-group col">
+                                    <label class="control-label text-uppercase" for="category">DANH MỤC SẢN PHẨM</label>
+                                    <select id="category" name="category" class="form-control">
+                                        <option value="">-- Chọn loại sản phẩm --</option>
+                                        {{#each categories}}
+                                            {{#noChild name ../categories }}
+                                                <option value="{{_id}}">{{name}}</option>
+                                            {{/noChild}}
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label class="control-label text-uppercase" for="price">Giá</label>
+                                    <input id="price" name="price" placeholder="Giá" class="form-control input-md" type="number">
+                                    <p class="mt-2 mb-0 text-muted">*Mặc định: Liên hệ</p>
+                                </div>
+
+                                <div class="form-group col">
+                                    <label class="control-label text-uppercase" for="amount">Số lượng<span style="color:red">*</span></label>
+                                    <input id="amount" name="amount" placeholder="Số lượng"
+                                    class="form-control input-md" required="" type="number">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="control-label text-uppercase" for="product-imgs">HÌNH ẢNH SẢN PHẨM<span style="color:red">*</span></label>
+                                <div class="form-group-container">
+                                    <input id="product-imgs" accept="image/*" required="" name="product-imgs"
+                                        class="form-control-file" onchange="preview()" type="file" multiple>
+                                    <p id="num-of-file" class="mt-1">Chưa có ảnh nào được chọn</p>
+                                    <div id="images-upload">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label text-uppercase" for="description">Mô tả sản phẩm</label>
+                                <textarea id="description" name="description" class="ckeditor"></textarea>
+                            </div>
+
+                            <div class="form-footer">
+                                <button type="submit" class="btn btn-success">Thêm sản phẩm</button>
+                            </div>
+
+                        </fieldset>
+                    </form>
                 </div>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="price">Giá</label>
-                    <input id="price" name="price" placeholder="Giá" class="form-control input-md" type="number">
-                </div>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="amount">Số lượng</label>
-                    <input id="amount" name="amount" placeholder="Số lượng"
-                            class="form-control input-md" required="" type="number">
-                </div>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="product-imgs">HÌNH ẢNH SẢN PHẨM</label>
-                    <div class="form-group-container">
-                        <input id="product-imgs" accept="image/*" required="" name="product-imgs"
-                            class="form-control input-md" onchange="preview()" type="file" multiple>
-                        <label for="product-imgs">
-                            <i class="fas fa-upload"></i>
-                            Chọn ảnh sản phẩm &nbsp;
-                        </label>
-                        <p id="num-of-file">Chưa có ảnh nào được chọn</p>
-                        <div id="images-upload">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Textarea -->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="description">Mô tả sản phẩm</label>
-                    <textarea id="description" name="description" class="ckeditor"></textarea>
-                </div>
-
-                <!-- Text input-->
-                <div class="form-footer">
-                    <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
-                    <a type="button" href="/admin/products" class="btn btn-secondary">Huỷ</a>
-                </div>
-
-            </fieldset>
-        </form>
+            </div>
+        </div>
     </div>
-
 </div>
 
-{{!-- Body: end --}}
+<div class='modal fade' id='deleteModal'>
+    <div class='modal-dialog' role='document'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <h5 class='modal-title' id='exampleModalLabel'>Xóa sản phẩm</h5>
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+            </div>
+            <div class='modal-body'>
+                Bạn có muốn xóa sản phẩm này ??
+            </div>
+            <div class='modal-footer'>
+                <button type='button' class='btn btn-secondary' data-dismiss='modal'>Hủy</button>
+                <a type='button' id='deleteBtn' class='btn btn-danger'>Xóa</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-<!-- Footer -->
 <script>
     let fileInput = document.getElementById("product-imgs")
     let imageContainer = document.getElementById('images-upload')
@@ -109,7 +127,5 @@
             reader.readAsDataURL(i)
         }
     }
-
     CKEDITOR.replace('ckeditor')
-
 </script>

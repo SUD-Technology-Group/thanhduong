@@ -7,65 +7,61 @@
     </button>
 </div>
 {{/if}}
-<div class="container">
-    <div class="addProduct-body">
 
-        <form class="form-horizontal p-3" enctype="multipart/form-data" method="POST">
-            <fieldset>
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="title">TÊN tin tức</label>
-                    <input id="title" name="title" placeholder="Tên tin tức" value="{{new.title}}"
-                        class="form-control input-md" required="" type="text">
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='card shadow'>
+                <div class='card-header d-flex justify-content-between'>
+                    <h4>{{pageName}}</h4>
+                    <a type="button" href="/admin/news" class="btn btn-secondary">Trở lại</a>
                 </div>
+                <div class='card-body'>
+                    <form class="form" enctype="multipart/form-data" method="POST">
+                        <fieldset>
 
-                <!-- Textarea -->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="description">Mô tả tin tức</label>
-                    <textarea id="description" name="description" class="p-2" style="width: 100%; height: 100px;">{{new.description}}</textarea>
+                            <div class="form-group">
+                                <label class="control-label text-uppercase" for="title">TÊN tin tức<span style="color:red">*</span></label>
+                                <input id="title" name="title" placeholder="Tên tin tức" value="{{new.title}}"
+                                    class="form-control" required="" type="text">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label text-uppercase" for="new-imgs">HÌNH ẢNH tin tức</label>
+                                <div class="form-group-container">
+                                    <input id="new-imgs" accept="image/*" name="new-imgs"
+                                        class="form-control-file" onchange="preview()" type="file" >
+                                    <p id="num-of-file">Có 1 ảnh được chọn</p>
+                                    <div id="images-upload">
+                                        <img src="{{new.image}}" alt="" width="50%">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label text-uppercase" for="description">Mô tả tin tức</label>
+                                <textarea id="description" name="description" class="p-2" style="width: 100%; height: 100px;">{{new.description}}</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label text-uppercase" for="content">Nội dung tin tức</label>
+                                <textarea id="content" name="content" class="ckeditor">{{{new.content}}}</textarea>
+                            </div>
+
+                            <input type="text" name="id" class="d-none" value="{{new._id}}">
+
+                            <div class="form-footer">
+                                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                            </div>
+
+                        </fieldset>
+                    </form>
                 </div>
-
-                <!-- Textarea -->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="content">Nội dung tin tức</label>
-                    <textarea id="content" name="content" class="ckeditor">{{{new.content}}}</textarea>
-                </div>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="new-imgs">HÌNH ẢNH tin tức</label>
-                    <div class="form-group-container">
-                        <input id="new-imgs" accept="image/*" name="new-imgs"
-                            class="form-control input-md" onchange="preview()" type="file" >
-                        <label for="new-imgs">
-                            <i class="fas fa-upload"></i>
-                            Chọn ảnh tin tức &nbsp;
-                        </label>
-                        <p id="num-of-file">Có 1 ảnh được chọn</p>
-                        <div id="images-upload">
-                            <img src="{{new.image}}" alt="" width="50%">
-                        </div>
-                    </div>
-                </div>
-
-                <input type="text" name="id" class="d-none" value="{{new._id}}">
-
-                <!-- Text input-->
-                <div class="form-footer">
-                    <button type="submit" class="btn btn-primary">Cập nhật</button>
-                    <a type="button" href="/admin/news" class="btn btn-secondary">Huỷ</a>
-                </div>
-
-            </fieldset>
-        </form>
+            </div>
+        </div>
     </div>
-
 </div>
 
-{{!-- Body: end --}}
-
-
-<!-- Footer -->
 <script>
     let fileInput = document.getElementById("new-imgs")
     let imageContainer = document.getElementById('images-upload')
