@@ -216,7 +216,7 @@
                                     <p>Giá: liên hệ</p>
                                 {{/if}}
                             </div>
-                            <a href='#'>
+                            <a href='products/{{slug}}'>
                                 <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
                                     Mua ngay
                                 </button>
@@ -252,7 +252,7 @@
                                     <p>Giá: liên hệ</p>
                                 {{/if}}
                             </div>
-                            <a href='#'>
+                            <a href='products/{{slug}}'>
                                 <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
                                     Mua ngay
                                 </button>
@@ -268,7 +268,7 @@
         <div class='menu-title mb-5 mt-5'>
             Pallet nhựa
         </div>
-        
+
         <div class='row'>
             {{#each products}}
                 <div class='col-md-3 col-sm-4 mb-4'>
@@ -288,7 +288,7 @@
                                     <p>Giá: liên hệ</p>
                                 {{/if}}
                             </div>
-                            <a href='#'>
+                            <a href='products/{{slug}}'>
                                 <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
                                     Mua ngay
                                 </button>
@@ -304,13 +304,13 @@
         <div class='menu-title mb-5 mt-5'>
             Sóng nhựa
         </div>
-        
+
         <div class='row'>
             {{#each products}}
                 <div class='col-md-3 col-sm-4 mb-4'>
                     <a href='products/{{slug}}' class='product-box'>
                         <div class='product-img-box'>
-                            <img src='{{images}}' alt={{name}} class='w-100' />
+                            <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                         </div>
 
                         <div class='product-content-box'>
@@ -324,7 +324,7 @@
                                     <p>Giá: liên hệ</p>
                                 {{/if}}
                             </div>
-                            <a href='#'>
+                            <a href='products/{{slug}}'>
                                 <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
                                     Mua ngay
                                 </button>
@@ -333,6 +333,78 @@
                     </a>
                 </div>
             {{/each}}
+        </div>
+    </div>
+
+    <div class='container'>
+        <div class='menu-title mb-5 mt-5'>
+            QUY TRÌNH BÁN HÀNG
+        </div>
+        <div class='steps__image'>
+            <img src='/img/steps.png' alt='step' />
+            <img src='/img/steps.png' alt='step' />
+            <img src='/img/steps.png' alt='step' />
+            <img src='/img/steps.png' alt='step' />
+            <img src='/img/steps.png' alt='step' />
+            <img src='/img/steps.png' alt='step' />
+        </div>
+    </div>
+
+    <div class='mt-5' style="background-image: url(https://palletnhuanhapkhau.com/img_data/images/br-khachhang341149918659.jpg);">
+        <div class='menu-title mb-5 mt-5' style="color: #ffff; padding-top: 30px;">
+            Ý KIẾN KHÁCH HÀNG
+        </div>
+        <div class="feedback__container">
+            <article class="feedback__article">
+                <div class='feedback__image'>
+                    <img src="https://palletnhuanhapkhau.com/img_data/images/AT801829723560.jpg" alt="customer">
+                </div>
+                <div class="feedback__icon">
+                    <div class="feedback__icon__quote">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+                    <div class="feedback__icon__start">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="feedback__text">
+                    <div class="feedback__text__review">
+                        <p>Công Ty uy tín , tu vấn nhiệt tình , hỗ trợ nhanh chóng </p>
+                    </div>
+                    <div class="feedback__text__name">
+                        <p>--Ms.Liên--</p>
+                    </div>
+                </div>
+            </article>
+            <article class="feedback__article">
+                <div class='feedback__image'>
+                    <img src="https://palletnhuanhapkhau.com/img_data/images/tds2_nlij246919308556.png" alt="customer">
+                </div>
+                <div class="feedback__icon">
+                    <div class="feedback__icon__quote">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+                    <div class="feedback__icon__start">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="feedback__text">
+                    <div class="feedback__text__review">
+                        <p>Pallet Nhựa cũ giá tốt , chất lượng , đa dạng màu sắc và mẫu mã</p>
+                    </div>
+                    <div class="feedback__text__name">
+                        <p>--Mr.Hùng --</p>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
 

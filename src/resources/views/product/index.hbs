@@ -4,7 +4,8 @@
             <div class='background-text'>
                 <h1>Sản phẩm</h1>
                 <h3>
-                    <a href="/">Trang chủ</a> / Sản phẩm
+                    <a href='/'>Trang chủ</a>
+                    / Sản phẩm
                 </h3>
             </div>
         </div>
@@ -30,38 +31,23 @@
                 {{/each}}
             </ul>
         </div>
-        
+
         <div class='grid-content-right'>
             {{#each products}}
-            <a href="products/{{slug}}" class='product-article'>
-                <div class='product-image'>
-                    <img
-                        src='{{images.[0]}}'
-                        alt='product-image'
-                    />
-                    <div class='product-heart'>
-                        <i class='uil uil-heart'></i>
+                <a href='products/{{slug}}' class='product-article'>
+                    <div class='product-image rounded-top'>
+                        <img src='{{images.[0]}}' alt='product-image' />
                     </div>
-                    <div class='product-cart'>
-                        <i class='uil uil-shopping-bag'></i>
+                    <div class='product-info rounded'>
+                        <div class='product-name'>
+                            <h5>{{name}}</h5>
+                        </div>
+                        <div class='product-price'>
+                            <p>{{formatCurrency price}} VNĐ</p>
+                        </div>
+                        <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
                     </div>
-                </div>
-                <div class='product-info'>
-                    <div class='product-name'>
-                        <h5>{{name}}</h5>
-                    </div>
-                    <div class='product-start'>
-                        <i class='uil uil-favorite'></i>
-                        <i class='uil uil-favorite'></i>
-                        <i class='uil uil-favorite'></i>
-                        <i class='uil uil-favorite'></i>
-                        <i class='uil uil-favorite'></i>
-                    </div>
-                    <div class="product-price">
-                        <p>{{formatCurrency price}}</p>
-                    </div>
-                </div>
-            </a>
+                </a>
             {{/each}}
         </div>
     </div>
