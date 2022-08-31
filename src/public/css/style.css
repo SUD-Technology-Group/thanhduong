@@ -644,6 +644,54 @@ section.v-about {
     font-weight: bold;
 }
 
+.partner__container {
+    display: flex;
+    justify-content: center;
+    margin-left: 18rem;
+}
+
+.partner__logo img {
+    height: 8rem;
+}
+
+.contact__now__content {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact__now__information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    gap: 2rem;
+}
+
+.contact__now__information span {
+    display: flex;
+    align-items: center;
+    color: #080808;
+}
+
+.contact__now__information span div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__now__information span div a {
+    color: #080808;
+}
+
+.contact__now__information span div a:hover {
+    transition: all 0.5s;
+    color: #0072b7;
+}
+
+.contact__now__information span i {
+    color: var(--vang);
+}
+
 /* Homepage End */
 
 /* Introduction Start */
