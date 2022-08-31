@@ -6,44 +6,52 @@
         </button>
     </div>
 {{/if}}
+
 <div class='container'>
-    <div class='addProduct-body'>
-
-        <form class='form-horizontal p-3' method='POST'>
-            <fieldset>
-                <!-- Text input-->
-                <div class='form-group'>
-                    <label class='control-label text-uppercase' for='name'>Tên danh mục</label>
-                    <input
-                        id='name'
-                        name='name'
-                        placeholder='Tên danh mục'
-                        class='form-control input-md'
-                        required=''
-                        type='text'
-                    />
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='card shadow'>
+                <div class='card-header d-flex justify-content-between'>
+                    <h4>{{pageName}}</h4>
+                    <a type="button" href="/admin/categories" class="btn btn-secondary">Trở lại</a>
                 </div>
+                <div class='card-body'>
+                    <form class='form' method='POST'>
+                        <fieldset>
+                            <!-- Text input-->
+                            <div class='form-group'>
+                                <label class='control-label text-uppercase' for='name'>Tên danh mục<span style="color:red">*</span></label>
+                                <input
+                                    id='name'
+                                    name='name'
+                                    placeholder='Tên danh mục'
+                                    class='form-control input-md'
+                                    required=''
+                                    type='text'
+                                />
+                            </div>
 
-                <!-- Select Basic -->
-                <div class='form-group'>
-                    <label class='control-label text-uppercase' for='parent'>DANH MỤC cha</label>
-                    <select id='parent' name='parent' class='form-control'>
-                        <option value=''>Không có</option>
-                        {{#each categories}}
-                            {{#unless parent}}
-                                <option value='{{_id}}'>{{name}}</option>
-                            {{/unless}}
-                        {{/each}}
-                    </select>
+                            <div class='form-group'>
+                                <label class='control-label text-uppercase' for='parent'>DANH MỤC cha</label>
+                                <select id='parent' name='parent' class='form-control'>
+                                    <option value=''>Không có</option>
+                                    {{#each categories}}
+                                        {{#unless parent}}
+                                            <option value='{{_id}}'>{{name}}</option>
+                                        {{/unless}}
+                                    {{/each}}
+                                </select>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class='form-footer'>
+                                <button type='submit' class='btn btn-success'>Thêm danh mục</button>
+                            </div>
+
+                        </fieldset>
+                    </form>
                 </div>
-
-                <!-- Text input-->
-                <div class='form-footer'>
-                    <button type='submit' class='btn btn-primary'>Thêm danh mục</button>
-                    <a type='button' href='/admin/categories' class='btn btn-secondary'>Huỷ</a>
-                </div>
-
-            </fieldset>
-        </form>
+            </div>
+        </div>
     </div>
 </div>

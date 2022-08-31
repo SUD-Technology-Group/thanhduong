@@ -1,4 +1,3 @@
-{{!-- Body: start --}}
 {{#if error}}
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
     {{error}}
@@ -7,93 +6,93 @@
     </button>
 </div>
 {{/if}}
-<div class="container">
-    <div class="addProduct-body">
 
-        <form class="form-horizontal p-3" enctype="multipart/form-data" method="POST">
-            <fieldset>
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="name">TÊN SẢN PHẨM</label>
-                    <input id="name" name="name" placeholder="Tên sản phẩm" value="{{product.name}}"
-                        class="form-control input-md" required="" type="text">
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='card shadow'>
+                <div class='card-header d-flex justify-content-between'>
+                    <h4>{{pageName}}</h4>
+                    <a type="button" href="/admin/products" class="btn btn-secondary">Trở lại</a>
                 </div>
+                <div class='card-body'>
+                    <form class="form" enctype="multipart/form-data" method="POST">
+                        <fieldset>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label class="control-label text-uppercase" for="name">TÊN SẢN PHẨM<span style="color:red">*</span></label>
+                                    <input id="name" name="name" placeholder="Tên sản phẩm" value="{{product.name}}"
+                                        class="form-control" required="" type="text">
+                                </div>
 
-                <!-- Select Basic -->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="category">DANH MỤC SẢN PHẨM</label>
-                    <select id="category" name="category" class="form-control" value="{{product.category}}">
-                        <option value="">-- Không --</option>
-                        {{#each categories}}
-                            {{#noChild name ../categories }}
-                                <option
-                                value="{{_id}}"
-                                {{#equal ../product.category.name name}} selected {{/equal}}
-                                >{{name}}
-                                </option>
-                            {{/noChild}}
-                        {{/each}}
-                    </select>
+                                <div class="form-group col">
+                                    <label class="control-label text-uppercase" for="category">DANH MỤC SẢN PHẨM</label>
+                                    <select id="category" name="category" class="form-control" value="{{product.category}}">
+                                        <option value="">-- Không --</option>
+                                        {{#each categories}}
+                                            {{#noChild name ../categories }}
+                                                <option
+                                                value="{{_id}}"
+                                                {{#equal ../product.category.name name}} selected {{/equal}}
+                                                >{{name}}
+                                                </option>
+                                            {{/noChild}}
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label class="control-label text-uppercase" for="price">Giá</label>
+                                    <input id="price" value="{{product.price}}" name="price" placeholder="Giá" class="form-control input-md" type="number">
+                                    <p class="mt-2 mb-0 text-muted">*Mặc định: Liên hệ</p>
+                                </div>
+
+                                <div class="form-group col">
+                                    <label class="control-label text-uppercase" for="amount">Số lượng<span style="color:red">*</span></label>
+                                    <input id="amount" value="{{product.amount}}" name="amount" placeholder="Số lượng"
+                                            class="form-control" required="" type="number">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label text-uppercase" for="product-imgs">HÌNH ẢNH SẢN PHẨM</label>
+                                <div class="form-group-container">
+                                    <input id="product-imgs" accept="image/*" name="product-imgs"
+                                        class="form-control-file" onchange="preview()" type="file" multiple>
+                                    <p id="num-of-file">Có {{product.images.length}} ảnh được chọn</p>
+                                    <div id="images-upload">
+                                    {{#each product.images}}
+                                        <figure>
+                                            <img src="{{this}}" alt="" width="50%">
+                                        </figure>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Textarea -->
+                            <div class="form-group">
+                                <label class="control-label text-uppercase" for="description">Mô tả sản phẩm</label>
+                                <textarea id="description" name="description" class="ckeditor">{{{product.description}}}</textarea>
+                            </div>
+
+                            <input type="text" name="id" class="d-none" value="{{product._id}}">
+
+                            <!-- Text input-->
+                            <div class="form-footer">
+                                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                            </div>
+
+                        </fieldset>
+                    </form>
                 </div>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="price">Giá</label>
-                    <input id="price" value="{{product.price}}" name="price" placeholder="Giá" class="form-control input-md" type="number">
-                </div>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="amount">Số lượng</label>
-                    <input id="amount" value="{{product.amount}}" name="amount" placeholder="Số lượng"
-                            class="form-control input-md" required="" type="number">
-                </div>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="product-imgs">HÌNH ẢNH SẢN PHẨM</label>
-                    <div class="form-group-container">
-                        <input id="product-imgs" accept="image/*" name="product-imgs"
-                            class="form-control input-md" onchange="preview()" type="file" multiple>
-                        <label for="product-imgs">
-                            <i class="fas fa-upload"></i>
-                            Chọn ảnh sản phẩm &nbsp;
-                        </label>
-                        <p id="num-of-file">Có {{product.images.length}} ảnh được chọn</p>
-                        <div id="images-upload">
-                        {{#each product.images}}
-                            <figure>
-                                <img src="{{this}}" alt="" width="50%">
-                            </figure>
-                            {{/each}}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Textarea -->
-                <div class="form-group">
-                    <label class="control-label text-uppercase" for="description">Mô tả sản phẩm</label>
-                    <textarea id="description" name="description" class="ckeditor">{{{product.description}}}</textarea>
-                </div>
-
-                <input type="text" name="id" class="d-none" value="{{product._id}}">
-
-                <!-- Text input-->
-                <div class="form-footer">
-                    <button type="submit" class="btn btn-primary">Cập nhật</button>
-                    <a type="button" href="/admin/products" class="btn btn-secondary">Huỷ</a>
-                </div>
-
-            </fieldset>
-        </form>
+            </div>
+        </div>
     </div>
-
 </div>
 
-{{!-- Body: end --}}
-
-
-<!-- Footer -->
 <script>
     let fileInput = document.getElementById("product-imgs")
     let imageContainer = document.getElementById('images-upload')
