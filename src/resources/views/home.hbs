@@ -164,7 +164,7 @@
 </section>
 
 <div class='home-content'>
-    <div class='home-banner-2 mt-5 mb-5'>
+    <div class='home-banner-2 mb-5'>
         <div class='home-banner-content'>
             <article class='home-banner-article'>
                 <div class='home-banner-icon'>
@@ -180,7 +180,6 @@
                 </div>
                 <div class='home-banner-text'>
                     <h3>Cam kết</h3>
-                    {{! <p>Thanh toán online dễ dàng 24/7</p> }}
                 </div>
             </article>
             <article class='home-banner-article'>
@@ -195,17 +194,15 @@
     </div>
 
     <div class='container'>
-        <div class='menu-title mb-5'>
-            Sản phẩm mới
-        </div>
+        <div class='menu-title mb-5'>Sản phẩm mới</div>
         <div class='row'>
             {{#each products}}
-                <div class='col-md-3 col-sm-4 mb-4'>
+                <div class='col-md-3 col-sm-4 mb-4 rounded'>
                     <a href='products/{{slug}}' class='product-box'>
-                        <div class='product-img-box'>
+                        <div class='product-img-box rounded-top'>
                             <img src='{{images}}' alt={{name}} class='w-100' />
                         </div>
-                        <div class='product-content-box'>
+                        <div class='product-content-box rounded-bottom'>
                             <div class='product-title'>
                                 <a href='products/{{slug}}'>{{name}}</a>
                             </div>
@@ -216,8 +213,8 @@
                                     <p>Giá: liên hệ</p>
                                 {{/if}}
                             </div>
-                            <a href='products/{{slug}}'>
-                                <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
+                            <a href='products/{{slug}}' class='product__btn'>
+                                <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
                                     Mua ngay
                                 </button>
                             </a>
@@ -237,11 +234,11 @@
             {{#each products}}
                 <div class='col-md-3 col-sm-4 mb-4'>
                     <a href='products/{{slug}}' class='product-box'>
-                        <div class='product-img-box'>
+                        <div class='product-img-box rounded'>
                             <img src='{{images}}' alt={{name}} class='w-100' />
                         </div>
 
-                        <div class='product-content-box'>
+                        <div class='product-content-box rounded-bottom'>
                             <div class='product-title'>
                                 <a href='products/{{slug}}'>{{name}}</a>
                             </div>
@@ -252,8 +249,8 @@
                                     <p>Giá: liên hệ</p>
                                 {{/if}}
                             </div>
-                            <a href='products/{{slug}}'>
-                                <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
+                            <a href='products/{{slug}}' class='product__btn'>
+                                <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
                                     Mua ngay
                                 </button>
                             </a>
@@ -273,11 +270,11 @@
             {{#each products}}
                 <div class='col-md-3 col-sm-4 mb-4'>
                     <a href='products/{{slug}}' class='product-box'>
-                        <div class='product-img-box'>
+                        <div class='product-img-box rounded'>
                             <img src='{{images}}' alt={{name}} class='w-100' />
                         </div>
 
-                        <div class='product-content-box'>
+                        <div class='product-content-box rounded-bottom'>
                             <div class='product-title'>
                                 <a href='products/{{slug}}'>{{name}}</a>
                             </div>
@@ -288,8 +285,8 @@
                                     <p>Giá: liên hệ</p>
                                 {{/if}}
                             </div>
-                            <a href='products/{{slug}}'>
-                                <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
+                            <a href='products/{{slug}}' class='product__btn'>
+                                <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
                                     Mua ngay
                                 </button>
                             </a>
@@ -309,11 +306,11 @@
             {{#each products}}
                 <div class='col-md-3 col-sm-4 mb-4'>
                     <a href='products/{{slug}}' class='product-box'>
-                        <div class='product-img-box'>
+                        <div class='product-img-box rounded'>
                             <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                         </div>
 
-                        <div class='product-content-box'>
+                        <div class='product-content-box rounded-bottom'>
                             <div class='product-title'>
                                 <a href='products/{{slug}}'>{{name}}</a>
                             </div>
@@ -324,8 +321,8 @@
                                     <p>Giá: liên hệ</p>
                                 {{/if}}
                             </div>
-                            <a href='products/{{slug}}'>
-                                <button type='button' class='btn btn-primary btn-lg' style='margin-top: 8px;'>
+                            <a href='products/{{slug}}' class='product__btn'>
+                                <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
                                     Mua ngay
                                 </button>
                             </a>
@@ -354,7 +351,7 @@
         class='mt-5'
         style='background-image: url(https://palletnhuanhapkhau.com/img_data/images/br-khachhang341149918659.jpg);'
     >
-        <div class='menu-title mb-5 mt-5' style='color: #ffff; padding-top: 30px;'>
+        <div class='mb-5 mt-5' style='color: #ffff; padding-top: 30px; text-align: center; font-size: 2rem;'>
             Ý KIẾN KHÁCH HÀNG
         </div>
         <div class='feedback__container'>
@@ -475,28 +472,30 @@
                 />
             </div>
         </div>
-        <div class='swiper-pagination'>test</div>
+        <div class='swiper-pagination'></div>
     </div>
 
     <div class='container'>
         <div class='menu-title mb-5 mt-5'>LIÊN HỆ NGAY HÔM NAY</div>
         <div class='contact__now__content'>
             <div class='contact__now__information'>
-                <span class="fs-3">
+                <span class='fs-3'>
                     <i class='fa-solid fa-square-phone fs-1 me-3'></i>
-                    <strong class="fs-4 me-1">0971 632 793</strong> / <strong class="fs-4 ms-1">0901 770 979</strong>
+                    <strong class='fs-4 me-1'>0971 632 793</strong>
+                    /
+                    <strong class='fs-4 ms-1'>0901 770 979</strong>
                 </span>
                 <span>
                     <i class='fa-solid fa-square-envelope fs-1 me-3'></i>
                     <div>
-                        <a href="mailto:palletthanhduong.vn@gmail.com">palletthanhduong.vn@gmail.com</a>
+                        <a href='mailto:palletthanhduong.vn@gmail.com'>palletthanhduong.vn@gmail.com</a>
                     </div>
                 </span>
                 <span>
                     <i class='fa-solid fa-earth-africa fs-1 me-3'></i>
                     <div>
-                        <a href="https://palletthanhduong.vn">https://palletthanhduong.vn</a>  
-                        <a href="https://palletthanhduong.com">https://palletthanhduong.com</a>
+                        <a href='https://palletthanhduong.vn'>https://palletthanhduong.vn</a>
+                        <a href='https://palletthanhduong.com'>https://palletthanhduong.com</a>
                     </div>
                 </span>
                 <span>
@@ -572,5 +571,5 @@
 <script src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js'></script>
 <script>
     var swiper = new Swiper(".mySwiper", { slidesPerView: 8, spaceBetween: 20, pagination: { el: ".swiper-pagination",
-    clickable: false }, autoplay: { }, reverseDirection: true, });
+    clickable: false }, autoplay: { delay: 2000, }, reverseDirection: true, });
 </script>

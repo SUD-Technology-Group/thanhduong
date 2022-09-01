@@ -214,7 +214,6 @@ button#close-menu-btn-2 {
 
 .home-banner-2 {
     width: 100%;
-    margin-top: 200px;
     background-color: var(--vang);
     padding: 4rem 0;
 }
@@ -259,17 +258,36 @@ img {
     transition: all 0.4s ease;
 }
 
-.home-content {
-    margin-top: 80px;
-}
-
 .menu-title {
+    position: relative;
     width: 100%;
     text-align: center;
     font-size: 25px;
     text-transform: uppercase;
     color: var(--vang);
     font-weight: 600;
+}
+
+.menu-title::after {
+    position: absolute;
+    content: '';
+    width: 36%;
+    height: 4px;
+    top: 16px;
+    right:0;
+    background: var(--cam);
+    box-shadow: rgb(17 17 26 / 10%) 0px 8px 24px, rgb(17 17 26 / 10%) 0px 16px 56px, rgb(17 17 26 / 10%) 0px 24px 80px;
+}
+
+.menu-title::before {
+    position: absolute;
+    content: '';
+    width: 36%;
+    height: 4px;
+    top: 16px;
+    left: 0;
+    background: var(--cam);
+    box-shadow: rgb(17 17 26 / 10%) 0px 8px 24px, rgb(17 17 26 / 10%) 0px 16px 56px, rgb(17 17 26 / 10%) 0px 24px 80px;
 }
 
 .product-box {
@@ -323,6 +341,12 @@ img {
     color: #1d6397;
     font-weight: bold;
     font-style: italic;
+}
+
+.product__btn button {
+    background-color: var(--cam);
+    border-color: var(--cam);
+    color: #080808;
 }
 
 .product-content-box {
@@ -493,6 +517,7 @@ section.v-about {
 
 .v-about_title h2 span {
     color: var(--cam);
+    font-size: 2rem;
 }
 
 .v-about_title:before {
@@ -647,7 +672,7 @@ section.v-about {
 .partner__container {
     display: flex;
     justify-content: center;
-    margin-left: 18rem;
+    width: fit-content;
 }
 
 .partner__logo img {
@@ -696,7 +721,7 @@ section.v-about {
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-    top: 358rem !important;
+    top: 353rem !important;
 }
 
 /* Homepage End */
@@ -1154,16 +1179,21 @@ section.v-about {
 }
 
 .news-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
     cursor: pointer;
 }
 
 .news-image {
-    width: 100%;
     position: relative;
+    height: 80%;
     overflow: hidden;
 }
 
 .news-image img {
+    height: 100%;
     width: 100%;
     transition: transform 0.5s ease;
 }
@@ -1172,20 +1202,34 @@ section.v-about {
     transform: scale(1.5);
 }
 
-.news-title {
-    position: absolute;
-    width: 100%;
-    max-height: 100%;
-    padding-left: 1.5rem;
-    padding-right: 1.5em;
-    color: #ffffff;
-    bottom: 0;
-    left: 12px;
+.news-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #100c08;
 }
 
-.news-title p {
+.news-description {
+    height: 50%;
+}
+
+.news-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-icons span {
     font-size: 18px;
-    font-weight: 700;
+}
+
+.new-icons i {
+    font-size: 22px;
+}
+
+.new-icons i:hover {
+    color: var(--cam);
 }
 /* News End */
 
@@ -1857,7 +1901,7 @@ section.v-about {
 
 .social-icons-container {
     position: fixed;
-    top: 14rem;
+    bottom: 8rem;
     right: 14px;
     width: 50px;
     height: fit-content;
