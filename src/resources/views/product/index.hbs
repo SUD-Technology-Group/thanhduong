@@ -17,38 +17,133 @@
                 {{#each categories}}
                     <li>
                         <i class='uil uil-arrow-right'></i>
-                        {{name}}
-                    </li>
-                {{/each}}
-            </ul>
-            <ul>
-                <h4>Sản phẩm khuyến mãi</h4>
-                {{#each categories}}
-                    <li>
-                        <i class='uil uil-arrow-right'></i>
-                        {{name}}
+                        <a href="#{{name}}" style="color: #333;">{{name}}</a>
                     </li>
                 {{/each}}
             </ul>
         </div>
 
         <div class='grid-content-right'>
-            {{#each products}}
-                <a href='products/{{slug}}' class='product-article'>
-                    <div class='product-image rounded-top'>
-                        <img src='{{images.[0]}}' alt='product-image' />
-                    </div>
-                    <div class='product-info rounded'>
-                        <div class='product-name'>
-                            <h5>{{name}}</h5>
+            <div class='grid-content-right-title h-divider'>
+                 <div class="shadow__custom"></div>
+                <div class="text" id="Pallet Gỗ">
+                    <i>Pallet Gỗ</i>
+                </div>
+            </div>
+            <div class='grid-content-right-product'>
+                {{#each products}}
+                    <a href='products/{{slug}}' class='product-article'>
+                        <div class='product-image rounded-top'>
+                            <img src='{{images.[0]}}' alt='product-image' />
                         </div>
-                        <div class='product-price'>
-                            <p>{{formatCurrency price}} VNĐ</p>
+                        <div class='product-info rounded'>
+                            <div class='product-name'>
+                                <h5>{{name}}</h5>
+                            </div>
+                            <div class='product-price'>
+                                <p>{{formatCurrency price}} VNĐ</p>
+                            </div>
+                            <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
                         </div>
-                        <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
-                    </div>
-                </a>
-            {{/each}}
+                    </a>
+                {{/each}}
+            </div>
+            <div class='grid-content-right-title h-divider'>
+                 <div class="shadow__custom"></div>
+                <div class="text" id="Pallet Nhựa">
+                    <i>Pallet Nhựa</i>
+                </div>
+            </div>
+            <div class='grid-content-right-product'>
+                {{#each products}}
+                    <a href='products/{{slug}}' class='product-article'>
+                        <div class='product-image rounded-top'>
+                            <img src='{{images.[0]}}' alt='product-image' />
+                        </div>
+                        <div class='product-info rounded'>
+                            <div class='product-name'>
+                                <h5>{{name}}</h5>
+                            </div>
+                            <div class='product-price'>
+                                <p>{{formatCurrency price}} VNĐ</p>
+                            </div>
+                            <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
+                        </div>
+                    </a>
+                {{/each}}
+            </div>
+            <div class='grid-content-right-title h-divider'>
+                 <div class="shadow__custom"></div>
+                <div class="text" id="Sóng nhựa">
+                    <i>Sóng Nhựa</i>
+                </div>
+            </div>
+            <div class='grid-content-right-product'>
+                {{#each products}}
+                    <a href='products/{{slug}}' class='product-article'>
+                        <div class='product-image rounded-top'>
+                            <img src='{{images.[0]}}' alt='product-image' />
+                        </div>
+                        <div class='product-info rounded'>
+                            <div class='product-name'>
+                                <h5>{{name}}</h5>
+                            </div>
+                            <div class='product-price'>
+                                <p>{{formatCurrency price}} VNĐ</p>
+                            </div>
+                            <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
+                        </div>
+                    </a>
+                {{/each}}
+            </div>
+            <div class='grid-content-right-title h-divider'>
+                 <div class="shadow__custom"></div>
+                <div class="text" id="Pallet Nhựa cũ">
+                    <i>Pallet Nhựa Cũ</i>
+                </div>
+            </div>
+            <div class='grid-content-right-product'>
+                {{#each products}}
+                    <a href='products/{{slug}}' class='product-article'>
+                        <div class='product-image rounded-top'>
+                            <img src='{{images.[0]}}' alt='product-image' />
+                        </div>
+                        <div class='product-info rounded'>
+                            <div class='product-name'>
+                                <h5>{{name}}</h5>
+                            </div>
+                            <div class='product-price'>
+                                <p>{{formatCurrency price}} VNĐ</p>
+                            </div>
+                            <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
+                        </div>
+                    </a>
+                {{/each}}
+            </div>
+            <div class='grid-content-right-title h-divider'>
+                 <div class="shadow__custom"></div>
+                <div class="text" id="Pallet Nhựa mới">
+                    <i>Pallet Nhựa Mới</i>
+                </div>
+            </div>
+            <div class='grid-content-right-product'>
+                {{#each products}}
+                    <a href='products/{{slug}}' class='product-article'>
+                        <div class='product-image rounded-top'>
+                            <img src='{{images.[0]}}' alt='product-image' />
+                        </div>
+                        <div class='product-info rounded'>
+                            <div class='product-name'>
+                                <h5>{{name}}</h5>
+                            </div>
+                            <div class='product-price'>
+                                <p>{{formatCurrency price}} VNĐ</p>
+                            </div>
+                            <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
+                        </div>
+                    </a>
+                {{/each}}
+            </div>
         </div>
     </div>
 </div>
