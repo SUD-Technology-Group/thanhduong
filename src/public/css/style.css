@@ -274,7 +274,7 @@ img {
     width: 36%;
     height: 4px;
     top: 16px;
-    right:0;
+    right: 0;
     background: var(--cam);
     box-shadow: rgb(17 17 26 / 10%) 0px 8px 24px, rgb(17 17 26 / 10%) 0px 16px 56px, rgb(17 17 26 / 10%) 0px 24px 80px;
 }
@@ -721,7 +721,7 @@ section.v-about {
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-    top: 353rem !important;
+    top: 355rem !important;
 }
 
 /* Homepage End */
@@ -1183,6 +1183,8 @@ section.v-about {
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
     cursor: pointer;
 }
 
@@ -1208,6 +1210,7 @@ section.v-about {
     flex-direction: column;
     justify-content: space-between;
     color: #100c08;
+    margin: 0 20px 18px;
 }
 
 .news-description {
@@ -1831,6 +1834,182 @@ section.v-about {
     font-weight: bold;
 }
 /* Detail End */
+
+/* Sale Start */
+.sale__title {
+    margin-top: 16rem;
+}
+
+.sale__banner {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 18px;
+}
+
+.sale__banner__image {
+    overflow: hidden;
+}
+
+.sale__banner__image img {
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.sale__banner__image:hover img {
+    transform: scale(1.5);
+    opacity: 0.9;
+}
+
+.sale__banner__text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--cam);
+    color: #080808;
+    padding: 35px 34px;
+}
+
+.sale__banner__text strong {
+    font-size: 20px;
+}
+
+.sale__banner__text p {
+    font-size: 16px;
+    margin: 0 !important;
+}
+
+.sale__product__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sale__product__container__title {
+    margin-top: 2rem;
+}
+
+.sale__product__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8rem;
+}
+
+.sale__product__box {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.sale__product__box__image {
+    overflow: hidden;
+}
+
+.sale__product__box__image img {
+    position: relative;
+}
+
+.sale__product__box__image:hover img {
+    transform: scale(1.5);
+    transition: transform all ease-in-out;
+}
+
+.ribbon {
+    height: 188px;
+    position: absolute;
+    margin-bottom: 30px;
+    background-size: cover;
+    text-transform: uppercase;
+    color: white;
+}
+
+.ribbon1 {
+    position: absolute;
+    bottom: 457px;
+    left: 92px;
+}
+
+.ribbon1:after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 53px solid transparent;
+    border-right: 53px solid transparent;
+    border-top: 10px solid #f8463f;
+}
+
+.ribbon1 span {
+    position: relative;
+    display: block;
+    text-align: center;
+    background: #f8463f;
+    font-size: 14px;
+    line-height: 1;
+    padding: 12px 8px 10px;
+    border-top-right-radius: 8px;
+    width: 90px;
+}
+
+.ribbon1 span:before,
+.ribbon1 span:after {
+    position: absolute;
+    content: '';
+}
+
+.ribbon1 span:before {
+    height: 6px;
+    width: 6px;
+    left: -6px;
+    top: 0;
+    background: #f8463f;
+}
+
+.ribbon1 span:after {
+    height: 6px;
+    width: 8px;
+    left: -8px;
+    top: 0;
+    border-radius: 8px 8px 0 0;
+    background: #c02031;
+}
+
+.sale__product__box__text {
+    margin-left: 14px;
+}
+
+.sale__product__box__text__title {
+    margin-top: 8px;
+}
+
+.sale__product__box__text__title p {
+    margin-bottom: 4px !important;
+    font-size: 16px;
+}
+
+.sale__product__box__text__price {
+    margin-bottom: 10px;
+}
+
+.sale__product__box__text__old__price i {
+    font-style: italic;
+    text-decoration: line-through;
+    color: #7f7f7f;
+}
+
+.sale__product__box__text__new__price i {
+    font-weight: bold;
+    color: #1d6397;
+}
+
+.sale__product__box__button {
+    margin-left: 14px;
+    margin-bottom: 8px;
+}
+
+/* Sale End */
 
 /* Footer Start */
 .information {
