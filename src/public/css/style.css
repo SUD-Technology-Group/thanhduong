@@ -244,7 +244,11 @@ button#close-menu-btn-2 {
 }
 
 .home-banner-icon i {
-    font-size: 50px;
+    font-size: 40px;
+}
+
+.home-banner-text {
+    margin-top: 14px;
 }
 
 .home-banner-text h3 {
@@ -346,7 +350,11 @@ img {
 .product__btn button {
     background-color: var(--cam);
     border-color: var(--cam);
-    color: #080808;
+    color: #ffffff;
+}
+
+.product__btn button:hover {
+    color: var(--vang);
 }
 
 .product-content-box {
