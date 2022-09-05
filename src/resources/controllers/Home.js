@@ -2,6 +2,7 @@ const { productService, newService } = require('../services');
 const catchAsync = require('../utils/catchAsync');
 
 const HomeController = {
+    // GET /
     index: catchAsync(async (req, res) => {
         const products = await productService.getAll();
         const news = await newService.getAll();

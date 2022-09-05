@@ -42,8 +42,7 @@ const ProductController = {
 
     // POST /admin/products/create
     create: catchAsync(async (req, res) => {
-        const { name, category, price, amount, description } = req.body;
-        const slug = createSlug(name);
+        const slug = createSlug(req.body.name);
 
         const product = await productService.get({ slug });
         if (product) {
@@ -56,22 +55,24 @@ const ProductController = {
             let url = '/uploads/product-imgs/' + f.filename;
             images.push(url);
         });
+
+        const category = req.body.category || null;
+
+        let property = { new: false, feature: false };
+        if (req.body.property) {
+            if (req.body.property == 'Mới') property.new = true;
+            else if (req.body.property == 'Nổi bật') property.feature = true;
+            else property = { new: true, feature: true };
+        }
+
         await productService
-            .create({
-                name,
-                images,
-                category: category || null,
-                description,
-                price,
-                amount,
-                slug,
-            })
+            .create({ ...req.body, images, slug, category, property })
             .then(() => {
                 req.flash('success', 'Thêm sản phẩm thành công');
                 res.redirect('/admin/products');
             })
             .catch((err) => {
-                req.flash('error', 'Thêm sản phẩm thất bại');
+                req.flash('error', 'Thêm sản phẩm thất bại' + err);
                 res.redirect('/admin/products/create');
             });
     }),
@@ -86,12 +87,11 @@ const ProductController = {
 
     // POST /admin/products/update/:id
     update: catchAsync(async (req, res) => {
-        const { id, name, category, price, amount, description } = req.body;
         const slug = req.params.id;
-        const newSlug = createSlug(name);
+        const newSlug = createSlug(req.body.name);
 
         const product = await productService.get({ slug: newSlug });
-        if (product && product._id != id) {
+        if (product && product._id != req.body.id) {
             req.flash('error', 'Tên sản phẩm đã tồn tại');
             return res.redirect(`/admin/products/update/${slug}`);
         }
@@ -112,17 +112,18 @@ const ProductController = {
                 images.push(url);
             });
         }
+        
+        const category = req.body.category || null;
+
+        let property = { new: false, feature: false };
+        if (req.body.property) {
+            if (req.body.property == 'Mới') property.new = true;
+            else if (req.body.property == 'Nổi bật') property.feature = true;
+            else property = { new: true, feature: true };
+        }
 
         await productService
-            .update(slug, {
-                name,
-                images,
-                category: category || null,
-                description,
-                price,
-                amount,
-                slug: newSlug,
-            })
+            .update(slug, { ...req.body, images, slug, category, property })
             .then(() => {
                 req.flash('success', 'Cập nhật sản phẩm thành công');
                 res.redirect('/admin/products');
