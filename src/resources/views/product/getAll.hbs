@@ -32,7 +32,7 @@
                                 <th scope='col'>Hình ảnh</th>
                                 <th scope='col'>Tên</th>
                                 <th scope='col'>Loại</th>
-                                <th scope='col'>Mô tả</th>
+                                <th scope='col'>Thuộc tính</th>
                                 <th scope='col'>Giá</th>
                                 <th scope='col'>Số lượng</th>
                                 <th scope='col'>Thao tác</th>
@@ -45,13 +45,13 @@
                                         <td><img src='{{images.[0]}}' alt='' width='70%' /></td>
                                         <td>{{name}}</td>
                                         <td>{{category.name}}</td>
-                                        <td>...</td>
-                                        <td>{{price}}</td>
+                                        <td>{{#if property.new}} Mới{{/if}},{{#if property.feature}} Nổi bật{{/if}}</td>
+                                        <td>{{formatCurrency price}}</td>
                                         <td>{{amount}}</td>
                                         <td class='d-flex'>
                                             <!-- Button trigger modal -->
                                             <a class='text-info w-100' href='/admin/products/demo/{{slug}}'>
-                                                <i class='fas fa-info-circle fa-lg'></i>
+                                                <i class="fa-solid fa-eye fa-lg"></i>
                                             </a>
                                             <!-- Button trigger modal -->
                                             <a class='text-warning w-100' href='/admin/products/update/{{slug}}'>

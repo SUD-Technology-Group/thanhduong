@@ -1,4 +1,5 @@
 const ContactController = {
+    // GET /contact
     index: (req, res) => {
         res.render('contact');
     }

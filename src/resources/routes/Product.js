@@ -4,6 +4,8 @@ const upload = require('../middlewares/uploadFlie');
 
 const { productController } = require('../controllers');
 
+// Path /admin/products
+
 router.get('/', productController.getAll);
 router.get('/demo/:id', productController.demo);
 router.get('/create', productController.createView);

@@ -4,6 +4,8 @@ const upload = require('../middlewares/uploadFlie');
 
 const { newController } = require('../controllers');
 
+// Path /admin/news
+
 router.get('/', newController.getAll);
 router.get('/demo/:id', newController.demo);
 router.get('/create', newController.createView);

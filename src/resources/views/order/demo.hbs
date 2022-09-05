@@ -1,0 +1,50 @@
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='card shadow'>
+                <div class='card-header d-flex justify-content-between'>
+                    <h4>{{pageName}}</h4>
+                    <a type='button' href='/admin/news' class='btn btn-secondary'>Trở lại</a>
+                </div>
+                <div class='card-body'>
+                    <div class='news__detail__container'>
+                        <div class='news__detail__container__left'>
+                            <div class='news__detail__sub__title'>
+                                <a href='/news'>
+                                    <p>BÀI VIẾT PALLET NHỰA, TIN TỨC MỚI</p>
+                                </a>
+                            </div>
+                            <div class='news__detail__content'>
+                                <div class='news__detail__content__header'>
+                                    <h3>{{new.title}}</h3>
+                                </div>
+                                <div class='news__detail__content__time'>
+                                    <p>{{new.createdAt}}</p>
+                                </div>
+                                <div class='news__detail__content__img'>
+                                    <img src='{{new.image}}' alt='image' />
+                                    <p>{{new.title}}</p>
+                                </div>
+                                <div class='news__detail__content__text'>
+                                    {{{new.content}}}
+                                </div>
+                                <div class='news__detail__content__watch__more'>
+                                    <span>Để xem thêm nhiều sản phẩm vui lòng</span>
+                                    <a href='/products'>Click Tại Đây</a>
+                                </div>
+                                <div class='news__detail__content__fanpage'>
+                                    <p>Fanpage:</p>
+                                    <span>
+                                        <a
+                                            href='https://www.facebook.com/palletthanhduong.vn'
+                                        >https://www.facebook.com/palletthanhduong.vn</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
