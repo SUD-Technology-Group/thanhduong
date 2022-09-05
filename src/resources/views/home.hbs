@@ -168,7 +168,7 @@
         <div class='home-banner-content'>
             <article class='home-banner-article'>
                 <div class='home-banner-icon'>
-                    <i class="fa-solid fa-crown"></i>
+                    <i class='fa-solid fa-crown'></i>
                 </div>
                 <div class='home-banner-text'>
                     <h3>Chất Lượng</h3>
@@ -176,7 +176,7 @@
             </article>
             <article class='home-banner-article'>
                 <div class='home-banner-icon'>
-                    <i class="fa-solid fa-handshake"></i>
+                    <i class='fa-solid fa-handshake'></i>
                 </div>
                 <div class='home-banner-text'>
                     <h3>Cam Kết</h3>
@@ -184,7 +184,7 @@
             </article>
             <article class='home-banner-article'>
                 <div class='home-banner-icon'>
-                    <i class="fa-solid fa-truck-fast"></i>
+                    <i class='fa-solid fa-truck-fast'></i>
                 </div>
                 <div class='home-banner-text'>
                     <h3>Vận Chuyển</h3>
@@ -197,30 +197,28 @@
         <div class='menu-title mb-5'>Sản phẩm mới</div>
         <div class='row'>
             {{#each products}}
-                <div class='col-md-3 col-sm-4 mb-4 rounded'>
-                    <a href='products/{{slug}}' class='product-box'>
-                        <div class='product-img-box'>
-                            <img src='{{images.[0]}}' alt={{name}} class='w-100' />
-                        </div>
-                        <div class='product-content-box rounded-bottom'>
-                            <div class='product-title'>
-                                <a href='products/{{slug}}'>{{name}}</a>
+                {{#if property.new}}
+                    <div class='col-md-3 col-sm-4 mb-4 rounded'>
+                        <a href='products/{{slug}}' class='product-box'>
+                            <div class='product-img-box'>
+                                <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                             </div>
-                            <div class='product-price'>
-                                {{#if price}}
-                                    <p>{{formatCurrency price}} VND</p>
-                                {{else}}
-                                    <p>Giá: liên hệ</p>
-                                {{/if}}
+                            <div class='product-content-box rounded-bottom'>
+                                <div class='product-title'>
+                                    <a href='products/{{slug}}'>{{name}}</a>
+                                </div>
+                                <div class='product-price'>
+                                    <p>{{formatCurrency price}}</p>
+                                </div>
+                                <a href='products/{{slug}}' class='product__btn'>
+                                    <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
+                                        Mua ngay
+                                    </button>
+                                </a>
                             </div>
-                            <a href='products/{{slug}}' class='product__btn'>
-                                <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
-                                    Mua ngay
-                                </button>
-                            </a>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                {{/if}}
             {{/each}}
         </div>
     </div>
@@ -242,11 +240,7 @@
                                 <a href='products/{{slug}}'>{{name}}</a>
                             </div>
                             <div class='product-price'>
-                                {{#if price}}
-                                    <p>{{formatCurrency price}} VND</p>
-                                {{else}}
-                                    <p>Giá: Liên hệ</p>
-                                {{/if}}
+                                <p>{{formatCurrency price}}</p>
                             </div>
                             <a href='products/{{slug}}' class='product__btn'>
                                 <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
@@ -277,11 +271,7 @@
                                 <a href='products/{{slug}}'>{{name}}</a>
                             </div>
                             <div class='product-price'>
-                                {{#if price}}
-                                    <p>{{formatCurrency price}} VND</p>
-                                {{else}}
-                                    <p>Giá: liên hệ</p>
-                                {{/if}}
+                                <p>{{formatCurrency price}}</p>
                             </div>
                             <a href='products/{{slug}}' class='product__btn'>
                                 <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
@@ -313,11 +303,7 @@
                                 <a href='products/{{slug}}'>{{name}}</a>
                             </div>
                             <div class='product-price'>
-                                {{#if price}}
-                                    <p>{{formatCurrency price}} VND</p>
-                                {{else}}
-                                    <p>Giá: liên hệ</p>
-                                {{/if}}
+                                <p>{{formatCurrency price}}</p>
                             </div>
                             <a href='products/{{slug}}' class='product__btn'>
                                 <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
