@@ -50,13 +50,17 @@ ul li {
 
 .nav-menu .sub-nav {
     text-align: start;
-    margin-left: 21.5px;
+    margin-left: 19.5px;
     padding-left: 8px;
 }
 
 ul.nav-menu,
 .header-right-corner ul {
     margin-top: 2rem;
+}
+
+.header-right-corner a {
+    color: #000 !important;
 }
 
 .sub-nav-inside {
@@ -170,7 +174,7 @@ ul.nav-menu,
 
 .header-body-2 ul.sub-nav {
     margin-top: 0;
-    margin-left: 19.5px;
+    margin-left: 17.5px;
 }
 
 .header-body-2 ul {

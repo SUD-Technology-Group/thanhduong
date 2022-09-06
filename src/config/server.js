@@ -31,7 +31,7 @@ function init() {
 
                 formatCurrency: function (price) {
                     if (price) return price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.') + ' VNĐ';
-                    return 'Liên hệ';
+                    return 'Giá: Liên hệ';
                 },
             },
         }),
