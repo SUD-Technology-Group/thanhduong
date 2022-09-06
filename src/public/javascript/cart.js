@@ -1,3 +1,5 @@
+$('.alert').hide('fade');
+
 var shoppingCart = (function () {
     // Private methods and propeties
     cart = [];
@@ -122,6 +124,13 @@ var shoppingCart = (function () {
 // Add item
 $('.add-to-cart').click(function (event) {
     event.preventDefault();
+    
+    $('.alert').show('fade', () => {
+        setTimeout(() => {
+            $('.alert').hide('fade');
+        }, 5000)
+    });
+    
     var name = $(this).data('name');
     var price = $(this).data('price');
     const image = $(this).data('image');
