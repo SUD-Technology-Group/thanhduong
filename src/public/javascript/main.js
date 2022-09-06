@@ -149,3 +149,4 @@ subImages.forEach((image) => {
         mainImage.setAttribute('src', image.getAttribute('src'));
     });
 });
+
