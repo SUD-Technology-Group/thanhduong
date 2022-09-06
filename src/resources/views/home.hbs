@@ -203,7 +203,7 @@
                             <div class='product-img-box'>
                                 <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                             </div>
-                            <div class='product-content-box rounded-bottom'>
+                            <div class='product-content-box rounded-bottom' style="height: fit-content;">
                                 <div class='product-title'>
                                     <a href='products/{{slug}}'>{{name}}</a>
                                 </div>
@@ -225,37 +225,6 @@
 
     <div class='container'>
         <div class='menu-title mb-5 mt-5'>
-            Pallet gỗ
-        </div>
-
-        <div class='row'>
-            {{#each products}}
-                <div class='col-md-3 col-sm-4 mb-4'>
-                    <a href='products/{{slug}}' class='product-box'>
-                        <div class='product-img-box'>
-                            <img src='{{images.[0]}}' alt={{name}} class='w-100' />
-                        </div>
-                        <div class='product-content-box rounded-bottom'>
-                            <div class='product-title'>
-                                <a href='products/{{slug}}'>{{name}}</a>
-                            </div>
-                            <div class='product-price'>
-                                <p>{{formatCurrency price}}</p>
-                            </div>
-                            <a href='products/{{slug}}' class='product__btn'>
-                                <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
-                                    Mua ngay
-                                </button>
-                            </a>
-                        </div>
-                    </a>
-                </div>
-            {{/each}}
-        </div>
-    </div>
-
-    <div class='container'>
-        <div class='menu-title mb-5 mt-5'>
             Pallet nhựa
         </div>
 
@@ -266,7 +235,7 @@
                         <div class='product-img-box'>
                             <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                         </div>
-                        <div class='product-content-box rounded-bottom'>
+                        <div class='product-content-box rounded-bottom' style="height: fit-content;">
                             <div class='product-title'>
                                 <a href='products/{{slug}}'>{{name}}</a>
                             </div>
@@ -289,7 +258,7 @@
         <div class='menu-title mb-5 mt-5'>
             Sóng nhựa
         </div>
-
+        
         <div class='row'>
             {{#each products}}
                 <div class='col-md-3 col-sm-4 mb-4'>
@@ -298,7 +267,7 @@
                             <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                         </div>
 
-                        <div class='product-content-box rounded-bottom'>
+                        <div class='product-content-box rounded-bottom' style="height: fit-content;">
                             <div class='product-title'>
                                 <a href='products/{{slug}}'>{{name}}</a>
                             </div>
@@ -395,9 +364,9 @@
         </div>
     </div>
 
-    <div class='mySwiper'>
-        <div class='menu-title mb-5 mt-5'>ĐỐI TÁC CỦA THÀNH DƯƠNG</div>
-        <div class='partner__container swiper-wrapper'>
+    <div class='container mySwiper' style="width: 70%;">
+        <div class='menu-title mb-5 mt-5'>ĐỐI TÁC CỦA CHÚNG TÔI</div>
+        <div class='container partner__container swiper-wrapper'>
             <div class='partner__logo swiper-slide'>
                 <img
                     src='https://hhfurniture.com.vn/wp-content/uploads/2022/04/354728d2d7b216ec4fa3-300x300.jpg'
@@ -443,20 +412,7 @@
                     alt='logo'
                 />
             </div>
-            <div class='partner__logo swiper-slide'>
-                <img
-                    src='https://hhfurniture.com.vn/wp-content/uploads/2022/04/a2ab573fa85f6901304e-300x300.jpg'
-                    alt='logo'
-                />
-            </div>
-            <div class='partner__logo swiper-slide'>
-                <img
-                    src='https://hhfurniture.com.vn/wp-content/uploads/2022/04/c377a2e05d809cdec591-300x300.jpg'
-                    alt='logo'
-                />
-            </div>
         </div>
-        <div class='swiper-pagination'></div>
     </div>
 
     <div class='container'>
@@ -554,6 +510,6 @@
 
 <script src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js'></script>
 <script>
-    var swiper = new Swiper(".mySwiper", { slidesPerView: 8, spaceBetween: 20, pagination: { el: ".swiper-pagination",
+    var swiper = new Swiper(".mySwiper", { slidesPerView: 6, spaceBetween: 20, pagination: { el: ".swiper-pagination",
     clickable: false }, autoplay: { delay: 2000, }, reverseDirection: true, });
 </script>

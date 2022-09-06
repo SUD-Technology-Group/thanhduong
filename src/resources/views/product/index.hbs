@@ -14,46 +14,22 @@
         <div class='grid-content-left'>
             <ul>
                 <h4>Danh mục sản phẩm</h4>
-                {{#each categories}}
-                    <li>
-                        <i class='uil uil-arrow-right'></i>
-                        <a href='#{{name}}' style='color: #333;'>{{name}}</a>
-                    </li>
-                {{/each}}
+                <li>
+                    <a href='#Pallet Nhựa' style='color: #333;' class="item__container">
+                        Pallet Nhựa
+                    </a>
+                    <div class="sub__item__container">
+                        <a href="#Pallet Nhựa cũ" class="sub__item">+ Pallet Nhựa Cũ</a>
+                        <a href="#Pallet Nhựa mới" class="sub__item">+ Pallet Nhựa Mới</a>
+                    </div>
+                </li>
+                <li>
+                    <a href='#Sóng nhựa' style='color: #333;'>Sóng Nhựa</a>
+                </li>
             </ul>
         </div>
 
         <div class='grid-content-right'>
-            <div class='grid-content-right-title h-divider'>
-                <div class='shadow__custom'></div>
-                <div class='text' id='Pallet Gỗ'>
-                    <i>Pallet Gỗ</i>
-                </div>
-            </div>
-            <div class='grid-content-right-product'>
-                {{#each products}}
-                    <a href='products/{{slug}}' class='product-article'>
-                        <div class='product-image rounded-top'>
-                            <img src='{{images.[0]}}' alt='product-image' />
-                        </div>
-                        <div class='product-info rounded'>
-                            <div class='product-name'>
-                                <h5>{{name}}</h5>
-                            </div>
-                            <div class='product-price'>
-                                <p>{{formatCurrency price}}</p>
-                            </div>
-                            <button
-                                type='button'
-                                data-name='{{name}}'
-                                data-price='{{price}}'
-                                data-image='{{images.[0]}}'
-                                class='btn btn-outline-info px-3 rounded-pil add-to-cart'
-                            >Thêm vào giỏ hàng</button>
-                        </div>
-                    </a>
-                {{/each}}
-            </div>
             <div class='grid-content-right-title h-divider'>
                 <div class='shadow__custom'></div>
                 <div class='text' id='Pallet Nhựa'>
