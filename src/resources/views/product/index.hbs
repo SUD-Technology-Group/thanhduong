@@ -17,7 +17,7 @@
                 {{#each categories}}
                     <li>
                         <i class='uil uil-arrow-right'></i>
-                        <a href="#{{name}}" style="color: #333;">{{name}}</a>
+                        <a href='#{{name}}' style='color: #333;'>{{name}}</a>
                     </li>
                 {{/each}}
             </ul>
@@ -25,8 +25,8 @@
 
         <div class='grid-content-right'>
             <div class='grid-content-right-title h-divider'>
-                 <div class="shadow__custom"></div>
-                <div class="text" id="Pallet Gỗ">
+                <div class='shadow__custom'></div>
+                <div class='text' id='Pallet Gỗ'>
                     <i>Pallet Gỗ</i>
                 </div>
             </div>
@@ -43,14 +43,20 @@
                             <div class='product-price'>
                                 <p>{{formatCurrency price}} VNĐ</p>
                             </div>
-                            <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
+                            <button
+                                type='button'
+                                data-name='{{name}}'
+                                data-price='{{price}}'
+                                data-image='{{images.[0]}}'
+                                class='btn btn-outline-info px-3 rounded-pil add-to-cart'
+                            >Thêm vào giỏ hàng</button>
                         </div>
                     </a>
                 {{/each}}
             </div>
             <div class='grid-content-right-title h-divider'>
-                 <div class="shadow__custom"></div>
-                <div class="text" id="Pallet Nhựa">
+                <div class='shadow__custom'></div>
+                <div class='text' id='Pallet Nhựa'>
                     <i>Pallet Nhựa</i>
                 </div>
             </div>
@@ -67,14 +73,20 @@
                             <div class='product-price'>
                                 <p>{{formatCurrency price}} VNĐ</p>
                             </div>
-                            <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
+                            <button
+                                type='button'
+                                data-name='{{name}}'
+                                data-price='{{price}}'
+                                data-image='{{images.[0]}}'
+                                class='btn btn-outline-info px-3 rounded-pil add-to-cart'
+                            >Thêm vào giỏ hàng</button>
                         </div>
                     </a>
                 {{/each}}
             </div>
             <div class='grid-content-right-title h-divider'>
-                 <div class="shadow__custom"></div>
-                <div class="text" id="Sóng nhựa">
+                <div class='shadow__custom'></div>
+                <div class='text' id='Sóng nhựa'>
                     <i>Sóng Nhựa</i>
                 </div>
             </div>
@@ -91,14 +103,20 @@
                             <div class='product-price'>
                                 <p>{{formatCurrency price}} VNĐ</p>
                             </div>
-                            <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
+                            <button
+                                type='button'
+                                data-name='{{name}}'
+                                data-price='{{price}}'
+                                data-image='{{images.[0]}}'
+                                class='btn btn-outline-info px-3 rounded-pil add-to-cart'
+                            >Thêm vào giỏ hàng</button>
                         </div>
                     </a>
                 {{/each}}
             </div>
             <div class='grid-content-right-title h-divider'>
-                 <div class="shadow__custom"></div>
-                <div class="text" id="Pallet Nhựa cũ">
+                <div class='shadow__custom'></div>
+                <div class='text' id='Pallet Nhựa cũ'>
                     <i>Pallet Nhựa Cũ</i>
                 </div>
             </div>
@@ -115,14 +133,20 @@
                             <div class='product-price'>
                                 <p>{{formatCurrency price}} VNĐ</p>
                             </div>
-                            <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
+                            <button
+                                type='button'
+                                data-name='{{name}}'
+                                data-price='{{price}}'
+                                data-image='{{images.[0]}}'
+                                class='btn btn-outline-info px-3 rounded-pil add-to-cart'
+                            >Thêm vào giỏ hàng</button>
                         </div>
                     </a>
                 {{/each}}
             </div>
             <div class='grid-content-right-title h-divider'>
-                 <div class="shadow__custom"></div>
-                <div class="text" id="Pallet Nhựa mới">
+                <div class='shadow__custom'></div>
+                <div class='text' id='Pallet Nhựa mới'>
                     <i>Pallet Nhựa Mới</i>
                 </div>
             </div>
@@ -139,7 +163,13 @@
                             <div class='product-price'>
                                 <p>{{formatCurrency price}} VNĐ</p>
                             </div>
-                            <button type='button' class='btn btn-outline-info px-3 rounded-pil'>Thêm vào giỏ hàng</button>
+                            <button
+                                type='button'
+                                data-name='{{name}}'
+                                data-price='{{price}}'
+                                data-image='{{images.[0]}}'
+                                class='btn btn-outline-info px-3 rounded-pil add-to-cart'
+                            >Thêm vào giỏ hàng</button>
                         </div>
                     </a>
                 {{/each}}
