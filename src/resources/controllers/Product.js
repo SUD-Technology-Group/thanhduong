@@ -57,6 +57,7 @@ const ProductController = {
         });
 
         const category = req.body.category || null;
+        const price = { origin: req.body.price, sale: req.body.sale };
 
         let property = { new: false, feature: false };
         if (req.body.property) {
@@ -66,13 +67,13 @@ const ProductController = {
         }
 
         await productService
-            .create({ ...req.body, images, slug, category, property })
+            .create({ ...req.body, price, images, slug, category, property })
             .then(() => {
                 req.flash('success', 'Thêm sản phẩm thành công');
                 res.redirect('/admin/products');
             })
             .catch((err) => {
-                req.flash('error', 'Thêm sản phẩm thất bại' + err);
+                req.flash('error', 'Thêm sản phẩm thất bại');
                 res.redirect('/admin/products/create');
             });
     }),
@@ -112,8 +113,9 @@ const ProductController = {
                 images.push(url);
             });
         }
-        
+
         const category = req.body.category || null;
+        const price = { origin: req.body.price, sale: req.body.sale };
 
         let property = { new: false, feature: false };
         if (req.body.property) {
@@ -123,7 +125,7 @@ const ProductController = {
         }
 
         await productService
-            .update(slug, { ...req.body, images, slug, category, property })
+            .update(slug, { ...req.body, price, images, slug, category, property })
             .then(() => {
                 req.flash('success', 'Cập nhật sản phẩm thành công');
                 res.redirect('/admin/products');

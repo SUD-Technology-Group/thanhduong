@@ -1,5 +1,3 @@
-$('.alert').hide('fade');
-
 var shoppingCart = (function () {
     // Private methods and propeties
     cart = [];

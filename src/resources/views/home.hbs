@@ -198,25 +198,27 @@
         <div class='row'>
             {{#each products}}
                 {{#if property.new}}
-                    <div class='col-md-3 col-sm-4 mb-4 rounded'>
-                        <a href='products/{{slug}}' class='product-box'>
-                            <div class='product-img-box'>
-                                <img src='{{images.[0]}}' alt={{name}} class='w-100' />
-                            </div>
-                            <div class='product-content-box rounded-bottom' style="height: fit-content;">
-                                <div class='product-title'>
-                                    <a href='products/{{slug}}'>{{name}}</a>
+                    <div class='col-md-3 col-sm-4 mb-4'>
+                        <div class="card h-100 border-0">
+                            <a href='products/{{slug}}' class='product-box'>
+                                <div class='product-img-box'>
+                                    <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                                 </div>
-                                <div class='product-price'>
-                                    <p>{{formatCurrency price}}</p>
+                                <div class='product-content-box rounded-bottom card-body'>
+                                    <div class='product-title h-50'>
+                                        <a href='products/{{slug}}'>{{name}}</a>
+                                    </div>
+                                    <div class='product-price'>
+                                        <p>{{formatCurrency price}}</p>
+                                    </div>
+                                    <a href='products/{{slug}}' class='product__btn' >
+                                        <button type='button' class='btn btn-lg mt-2 mb-4'>
+                                            Mua ngay
+                                        </button>
+                                    </a>
                                 </div>
-                                <a href='products/{{slug}}' class='product__btn'>
-                                    <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
-                                        Mua ngay
-                                    </button>
-                                </a>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
                 {{/if}}
             {{/each}}
@@ -230,26 +232,54 @@
 
         <div class='row'>
             {{#each products}}
-                <div class='col-md-3 col-sm-4 mb-4'>
-                    <a href='products/{{slug}}' class='product-box'>
-                        <div class='product-img-box'>
-                            <img src='{{images.[0]}}' alt={{name}} class='w-100' />
-                        </div>
-                        <div class='product-content-box rounded-bottom' style="height: fit-content;">
-                            <div class='product-title'>
-                                <a href='products/{{slug}}'>{{name}}</a>
-                            </div>
-                            <div class='product-price'>
-                                <p>{{formatCurrency price}}</p>
-                            </div>
-                            <a href='products/{{slug}}' class='product__btn'>
-                                <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
-                                    Mua ngay
-                                </button>
+                {{#equal category.name "Pallet Nhựa cũ"}}
+                    <div class='col-md-3 col-sm-4 mb-4'>
+                        <div class="card h-100 border-0">
+                            <a href='products/{{slug}}' class='product-box'>
+                                <div class='product-img-box'>
+                                    <img src='{{images.[0]}}' alt={{name}} class='w-100' />
+                                </div>
+                                <div class='product-content-box rounded-bottom card-body'>
+                                    <div class='product-title h-50'>
+                                        <a href='products/{{slug}}'>{{name}}</a>
+                                    </div>
+                                    <div class='product-price'>
+                                        <p>{{formatCurrency price}}</p>
+                                    </div>
+                                    <a href='products/{{slug}}' class='product__btn' >
+                                        <button type='button' class='btn btn-lg mt-2 mb-4'>
+                                            Mua ngay
+                                        </button>
+                                    </a>
+                                </div>
                             </a>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                {{/equal}}
+                {{#equal category.name "Pallet Nhựa mới"}}
+                    <div class='col-md-3 col-sm-4 mb-4'>
+                        <div class="card h-100 border-0">
+                            <a href='products/{{slug}}' class='product-box'>
+                                <div class='product-img-box'>
+                                    <img src='{{images.[0]}}' alt={{name}} class='w-100' />
+                                </div>
+                                <div class='product-content-box rounded-bottom card-body'>
+                                    <div class='product-title h-50'>
+                                        <a href='products/{{slug}}'>{{name}}</a>
+                                    </div>
+                                    <div class='product-price'>
+                                        <p>{{formatCurrency price}}</p>
+                                    </div>
+                                    <a href='products/{{slug}}' class='product__btn' >
+                                        <button type='button' class='btn btn-lg mt-2 mb-4'>
+                                            Mua ngay
+                                        </button>
+                                    </a>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {{/equal}}
             {{/each}}
         </div>
     </div>
@@ -258,30 +288,33 @@
         <div class='menu-title mb-5 mt-5'>
             Sóng nhựa
         </div>
-        
+
         <div class='row'>
             {{#each products}}
-                <div class='col-md-3 col-sm-4 mb-4'>
-                    <a href='products/{{slug}}' class='product-box'>
-                        <div class='product-img-box rounded'>
-                            <img src='{{images.[0]}}' alt={{name}} class='w-100' />
-                        </div>
-
-                        <div class='product-content-box rounded-bottom' style="height: fit-content;">
-                            <div class='product-title'>
-                                <a href='products/{{slug}}'>{{name}}</a>
-                            </div>
-                            <div class='product-price'>
-                                <p>{{formatCurrency price}}</p>
-                            </div>
-                            <a href='products/{{slug}}' class='product__btn'>
-                                <button type='button' class='btn btn-lg' style='margin-top: 8px;'>
-                                    Mua ngay
-                                </button>
+                {{#equal category.name "Sóng nhựa"}}
+                    <div class='col-md-3 col-sm-4 mb-4'>
+                        <div class="card h-100 border-0">
+                            <a href='products/{{slug}}' class='product-box'>
+                                <div class='product-img-box'>
+                                    <img src='{{images.[0]}}' alt={{name}} class='w-100' />
+                                </div>
+                                <div class='product-content-box rounded-bottom card-body'>
+                                    <div class='product-title h-50'>
+                                        <a href='products/{{slug}}'>{{name}}</a>
+                                    </div>
+                                    <div class='product-price'>
+                                        <p>{{formatCurrency price}}</p>
+                                    </div>
+                                    <a href='products/{{slug}}' class='product__btn' >
+                                        <button type='button' class='btn btn-lg mt-2 mb-4'>
+                                            Mua ngay
+                                        </button>
+                                    </a>
+                                </div>
                             </a>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                {{/equal}}
             {{/each}}
         </div>
     </div>
@@ -364,7 +397,7 @@
         </div>
     </div>
 
-    <div class='container mySwiper' style="width: 70%;">
+    <div class='container mySwiper' style='width: 70%;'>
         <div class='menu-title mb-5 mt-5'>ĐỐI TÁC CỦA CHÚNG TÔI</div>
         <div class='container partner__container swiper-wrapper'>
             <div class='partner__logo swiper-slide'>

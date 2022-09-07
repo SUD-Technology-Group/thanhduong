@@ -26,7 +26,7 @@
                         Thêm sản phẩm</a>
                 </div>
                 <div class='card-body'>
-                    <table class='table table-hover data-table' style='table-layout:fixed;'>
+                    <table class='table table-hover data-table'>
                         <thead class='thead-light'>
                             <tr>
                                 <th scope='col'>Hình ảnh</th>
@@ -45,13 +45,15 @@
                                         <td><img src='{{images.[0]}}' alt='' width='70%' /></td>
                                         <td>{{name}}</td>
                                         <td>{{category.name}}</td>
-                                        <td>{{#if property.new}} Mới{{/if}},{{#if property.feature}} Nổi bật{{/if}}</td>
-                                        <td>{{formatCurrency price}}</td>
+                                        <td>{{#if property.new}} Mới{{/if}}{{#if property.feature}}, Nổi bật{{/if}}</td>
+                                        <td>Gốc:
+                                            {{formatCurrency price.origin}}<br />
+                                            {{#if price.sale}}Sale: {{formatCurrency price.sale}}{{/if}}</td>
                                         <td>{{amount}}</td>
                                         <td class='d-flex'>
                                             <!-- Button trigger modal -->
                                             <a class='text-info w-100' href='/admin/products/demo/{{slug}}'>
-                                                <i class="fa-solid fa-eye fa-lg"></i>
+                                                <i class='fa-solid fa-eye fa-lg'></i>
                                             </a>
                                             <!-- Button trigger modal -->
                                             <a class='text-warning w-100' href='/admin/products/update/{{slug}}'>
