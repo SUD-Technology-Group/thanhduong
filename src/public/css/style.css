@@ -355,6 +355,10 @@ img {
     font-style: italic;
 }
 
+.product-price p:nth-last-child(1) {
+    color: #ff0000;
+}
+
 .product__btn button {
     background-color: var(--cam);
     border-color: var(--cam);
@@ -1927,6 +1931,7 @@ section.v-about {
 
 .sale__product__box__image img {
     position: relative;
+    width: 100%;
 }
 
 .sale__product__box__image:hover img {
@@ -2014,12 +2019,12 @@ section.v-about {
 .sale__product__box__text__old__price i {
     font-style: italic;
     text-decoration: line-through;
-    color: #7f7f7f;
+    color: #1d6397;
 }
 
 .sale__product__box__text__new__price i {
     font-weight: bold;
-    color: #1d6397;
+    color: #ff0000;
 }
 
 .sale__product__box__button {

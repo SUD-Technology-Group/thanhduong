@@ -46,11 +46,12 @@
                                     <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                                 </div>
                                 <div class='product-content-box rounded-bottom card-body pt-0'>
-                                    <div class='product-title h-50'>
+                                    <div class='product-title '>
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
-                                        <p>{{formatCurrency price}}</p>
+                                        <p>Giá: {{formatCurrency price.origin}}</p>
+                                        <p>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
                                     </div>
                                     <button
                                         type='button'
