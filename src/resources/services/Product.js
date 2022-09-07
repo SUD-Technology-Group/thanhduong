@@ -5,6 +5,10 @@ const ProductService = {
         return await Product.findOne(payloads).populate('category').lean();
     },
 
+    getMany: async (payloads) => {
+        return await Product.find(payloads).populate('category').lean();
+    },
+
     getAll: async () => {
         return await Product.find({}).populate('category').lean();
     },

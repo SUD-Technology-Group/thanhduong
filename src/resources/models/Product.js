@@ -11,7 +11,10 @@ const Product = new Schema(
             feature: Boolean,
         },
         description: { type: String },
-        price: { type: Number },
+        price: {
+            origin: Number,
+            sale: Number,
+        },
         amount: { type: Number, required: true },
         slug: { type: String, required: true },
     },

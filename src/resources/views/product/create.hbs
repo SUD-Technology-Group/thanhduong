@@ -36,6 +36,7 @@
                                             {{/noChild}}
                                         {{/each}}
                                     </select>
+                                    <p class="mt-2 mb-0 text-muted">*Mặc định: Không</p>
                                 </div>
                             </div>
 
@@ -53,16 +54,21 @@
 
                             <div class="form-row">
                                 <div class="form-group col">
-                                    <label class="control-label text-uppercase" for="price">Giá</label>
-                                    <input id="price" name="price" placeholder="Giá" class="form-control input-md" type="number">
+                                    <label class="control-label text-uppercase" for="price">Giá gốc</label>
+                                    <input id="price" name="price" placeholder="Giá gốc" class="form-control input-md" type="number">
                                     <p class="mt-2 mb-0 text-muted">*Mặc định: Liên hệ</p>
                                 </div>
 
                                 <div class="form-group col">
-                                    <label class="control-label text-uppercase" for="amount">Số lượng<span style="color:red">*</span></label>
-                                    <input id="amount" name="amount" placeholder="Số lượng"
-                                    class="form-control input-md" required="" type="number">
+                                    <label class="control-label text-uppercase" for="sale">Giá khuyến mãi</label>
+                                    <input id="sale" name="sale" placeholder="Giá khuyến mãi" class="form-control input-md" type="number">
                                 </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label text-uppercase" for="amount">Số lượng<span style="color:red">*</span></label>
+                                <input id="amount" name="amount" placeholder="Số lượng"
+                                class="form-control input-md w-50" required="" type="number">
                             </div>
                             
                             <div class="form-group">
@@ -88,26 +94,6 @@
                         </fieldset>
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class='modal fade' id='deleteModal'>
-    <div class='modal-dialog' role='document'>
-        <div class='modal-content'>
-            <div class='modal-header'>
-                <h5 class='modal-title' id='exampleModalLabel'>Xóa sản phẩm</h5>
-                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                    <span aria-hidden='true'>&times;</span>
-                </button>
-            </div>
-            <div class='modal-body'>
-                Bạn có muốn xóa sản phẩm này ??
-            </div>
-            <div class='modal-footer'>
-                <button type='button' class='btn btn-secondary' data-dismiss='modal'>Hủy</button>
-                <a type='button' id='deleteBtn' class='btn btn-danger'>Xóa</a>
             </div>
         </div>
     </div>
