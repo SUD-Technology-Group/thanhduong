@@ -22,8 +22,8 @@ router.get('/news', newController.index);
 router.get('/news/:id', newController.detail);
 
 router.get('/contact', contactController.index);
+
 router.get('/sales', saleController.index);
-router.get('/sales/:slug', saleController.detail);
 
 router.get('/cart', cartController.index);
 router.post('/cart', cartController.create);
