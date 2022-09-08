@@ -64,7 +64,26 @@
             </div>
             <div class='header-right-corner'>
                 <ul>
-                    <li><i class='fa fa-search'></i></li>
+                    <li class='search__icon'>
+                        <i class='fa fa-search'></i>
+                        <span class='search__box__container'>
+                            <div class='search__box'>
+                                <div class='search__box__left'>
+                                    <input type='search' />
+                                </div>
+                                <div class='search__box__right'>
+                                    <div class='searchGlass'>
+                                        <a href='/result'>
+                                            <i class='fa-solid fa-magnifying-glass'></i>
+                                        </a>
+                                    </div>
+                                    <div class='spinner'>
+                                        <i class='fa-solid fa-spinner'></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                    </li>
                     <li><i class='fa fa-user'></i></li>
                     <li>
                         <a href='/cart'>
@@ -130,7 +149,26 @@
             </div>
             <div class='header-right-corner'>
                 <ul>
-                    <li><i class='fa fa-search'></i></li>
+                    <li class='search__icon__2'>
+                        <i class='fa fa-search'></i>
+                        <span class='search__box__container__2'>
+                            <div class='search__box__2'>
+                                <div class='search__box__left__2'>
+                                    <input type='search' />
+                                </div>
+                                <div class='search__box__right__2'>
+                                    <div class='searchGlass__2'>
+                                        <a href='/result'>
+                                            <i class='fa-solid fa-magnifying-glass'></i>
+                                        </a>
+                                    </div>
+                                    <div class='spinner__2'>
+                                        <i class='fa-solid fa-spinner'></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                    </li>
                     <li><i class='fa fa-user'></i></li>
                     <li>
                         <a href='/cart'>
@@ -144,9 +182,9 @@
 </header>
 
 <style>
-    ul { { { !-- margin-top: 50px; -- } } } .nav-menu li:hover { background-color: var(--vang); transition: all 0.05s;} a {
-    text-decoration: none; color: var(--cam); font-size: 14px; transition: all .2s; } li ul { position: absolute; top:
-    40px; margin-top: 0; padding: 5px 10px; /* left: -50%; */ left: -9999px; width: 220px; opacity: 0; transform:
+    ul { { { !-- margin-top: 50px; -- } } } .nav-menu li:hover { background-color: var(--vang); transition: all 0.05s;}
+    a { text-decoration: none; color: var(--cam); font-size: 14px; transition: all .2s; } li ul { position: absolute;
+    top: 40px; margin-top: 0; padding: 5px 10px; /* left: -50%; */ left: -9999px; width: 220px; opacity: 0; transform:
     translateY(50px); transition: opacity, transform .5s; } li ul::before { content: ''; display: none; position:
     absolute; border: 10px solid transparent; border-bottom-color: #d8b646; top: -15px; left: 50%; margin-left: -10px; }
     li ul li { display: block; background: var(--vang); } li ul li:hover { opacity: .8; } li ul a { color: #fff;

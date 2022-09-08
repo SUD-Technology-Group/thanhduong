@@ -187,6 +187,75 @@ ul.nav-menu,
     margin-top: 1rem;
 }
 
+.search__icon,
+.search__icon__2 {
+    position: relative;
+}
+
+.search__icon:hover .search__box__container,
+.search__icon__2:hover .search__box__container__2 {
+    display: block;
+}
+
+.search__box__container,
+.search__box__container__2 {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: none;
+    background-color: #fdfff5;
+}
+
+.search__box,
+.search__box__2 {
+    display: flex;
+    align-items: center;
+    padding: 8px 40px;
+}
+
+.search__box__left input,
+.search__box__left__2 input {
+    border-style: solid;
+    border-width: thin;
+    border-right: none;
+    outline: none;
+    border-color: #f5f5f5;
+    background-color: transparent;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 6px 14px;
+}
+
+.search__box__right,
+.search__box__right__2 {
+    background-color: #333333;
+    padding: 7px 10px;
+}
+
+.search__box__right i,
+.search__box__right__2 i {
+    color: #ffffff;
+}
+
+.spinner,
+.spinner__2 {
+    display: none;
+}
+
+.fa-spinner {
+    animation: rotator 1.4s linear infinite;
+}
+
+@keyframes rotator {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
 button#open-menu-btn {
     display: none;
 }
@@ -791,7 +860,7 @@ section.v-about {
     align-items: center;
 }
 
-.section__header h3{
+.section__header h3 {
     font-size: 18px;
     color: var(--vang);
     margin-bottom: 8px;
@@ -2215,6 +2284,38 @@ section.v-about {
     }
 }
 
+@keyframes colors {
+    0% {
+        stroke: #4285f4;
+    }
+    25% {
+        stroke: #de3e35;
+    }
+    50% {
+        stroke: #f7c223;
+    }
+    75% {
+        stroke: #1b9a59;
+    }
+    100% {
+        stroke: #4285f4;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 187;
+    }
+    50% {
+        stroke-dashoffset: 187/4;
+        transform: rotate(135deg);
+    }
+    100% {
+        stroke-dashoffset: 187;
+        transform: rotate(450deg);
+    }
+}
+
 .footer__grid {
     gap: 4rem;
 }
@@ -2247,6 +2348,15 @@ section.v-about {
     gap: 2rem;
 }
 /* Footer End */
+
+/* Search Page Start */
+.search__container .background-image {
+    height: 100%;
+    background-image: url('https://muabanpalletnhuacu.com/wp-content/uploads/2022/02/banner7.jpg');
+    background-size: cover;
+    position: relative;
+}
+/* Search Page End */
 
 /* Tablet Responsive Start*/
 @media screen and (max-width: 1024px) {

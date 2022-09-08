@@ -8,6 +8,7 @@ const {
     contactController,
     cartController,
     saleController,
+    searchController,
 } = require('../controllers');
 
 // Path /
@@ -27,5 +28,7 @@ router.get('/sales', saleController.index);
 
 router.get('/cart', cartController.index);
 router.post('/cart', cartController.create);
+
+router.get('/result', searchController.index);
 
 module.exports = router;

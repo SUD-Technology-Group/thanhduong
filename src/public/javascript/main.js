@@ -150,3 +150,34 @@ subImages.forEach((image) => {
     });
 });
 
+//Toggle Spinner load animation when searching
+const searchInput = document.querySelector('.search__box__left input');
+const searchInput2 = document.querySelector('.search__box__left__2 input');
+const searchGlass = document.querySelector('.searchGlass');
+const spinner = document.querySelector('.spinner');
+const searchGlass2 = document.querySelector('.searchGlass__2');
+const spinner2 = document.querySelector('.spinner__2');
+
+searchInput.addEventListener('keypress', () => {
+    searchGlass.style.display = 'none';
+    spinner.style.display = 'block';
+});
+
+searchInput.addEventListener('keyup', () => {
+    setTimeout(() => {
+        searchGlass.style.display = 'block';
+        spinner.style.display = 'none';
+    }, 3000);
+});
+
+searchInput2.addEventListener('keypress', () => {
+    searchGlass2.style.display = 'none';
+    spinner2.style.display = 'block';
+});
+
+searchInput2.addEventListener('keyup', () => {
+    setTimeout(() => {
+        searchGlass2.style.display = 'block';
+        spinner2.style.display = 'none';
+    }, 3000);
+});
