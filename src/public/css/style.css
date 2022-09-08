@@ -418,13 +418,13 @@ img {
     color: var(--vang) !important;
 }
 
-.product-price {
+.origin__price {
     color: #1d6397;
     font-weight: bold;
     font-style: italic;
 }
 
-.product-price p:nth-last-child(1) {
+.sale__price {
     color: #ff0000;
 }
 

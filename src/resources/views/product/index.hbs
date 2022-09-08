@@ -50,8 +50,10 @@
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
-                                        <p>Giá: {{formatCurrency price.origin}}</p>
-                                        <p>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                        {{#if price.sale}}
+                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        {{/if}}
                                     </div>
                                     <button
                                         type='button'

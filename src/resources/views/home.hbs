@@ -209,8 +209,10 @@
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
-                                        <p>Giá: {{formatCurrency price.origin}}</p>
-                                        <p>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                        {{#if price.sale}}
+                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        {{/if}}
                                     </div>
                                     <a href='products/{{slug}}' class='product__btn' >
                                         <button type='button' class='btn btn-lg mt-2 mb-4'>
@@ -245,8 +247,10 @@
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
-                                        <p>Giá: {{formatCurrency price.origin}}</p>
-                                        <p>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                        {{#if price.sale}}
+                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        {{/if}}
                                     </div>
                                     <a href='products/{{slug}}' class='product__btn' >
                                         <button type='button' class='btn btn-lg mt-2 mb-4'>
@@ -270,8 +274,10 @@
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
-                                        <p>Giá: {{formatCurrency price.origin}}</p>
-                                        <p>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                        {{#if price.sale}}
+                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        {{/if}}
                                     </div>
                                     <a href='products/{{slug}}' class='product__btn' >
                                         <button type='button' class='btn btn-lg mt-2 mb-4'>
@@ -306,8 +312,10 @@
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
-                                        <p>Giá: {{formatCurrency price.origin}}</p>
-                                        <p>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                        {{#if price.sale}}
+                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        {{/if}}
                                     </div>
                                     <a href='products/{{slug}}' class='product__btn' >
                                         <button type='button' class='btn btn-lg mt-2 mb-4'>
