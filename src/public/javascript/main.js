@@ -179,5 +179,21 @@ searchInput2.addEventListener('keyup', () => {
     setTimeout(() => {
         searchGlass2.style.display = 'block';
         spinner2.style.display = 'none';
-    }, 3000);
+    }, 4000);
+});
+
+//Catch enter button when user press enter in mobile
+const searchBar = document.querySelector('.nav__menu__input input');
+const searchBar2 = document.querySelector('.nav__menu__2__input input');
+
+searchBar.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+        location.href = '/result'
+    }
+});
+
+searchBar2.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+        location.href = '/result'
+    }
 });

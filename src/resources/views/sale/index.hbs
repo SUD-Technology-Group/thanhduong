@@ -25,12 +25,9 @@
             {{#each products}}
                 <div class='sale__product__box rounded'>
                     <div class='sale__product__box__image'>
-                        <a href='sales/slug'>
+                        <a href='sales/{{slug}}'>
                             <img src='{{images.[0]}}' alt='product' class='rounded-top' />
                         </a>
-                        <div class='ribbon'>
-                            <span class='ribbon1'><span>{{this.price.sale.discount}}</span></span>
-                        </div>
                     </div>
                     <div class='sale__product__box__text'>
                         <div class='sale__product__box__text__title'>
