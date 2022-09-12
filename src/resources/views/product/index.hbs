@@ -61,9 +61,13 @@
                                     <button
                                         type='button'
                                         data-name='{{name}}'
-                                        data-price='{{price}}'
+                                        {{#if price.sale}}
+                                            data-price='{{price.sale}}'
+                                        {{else}}
+                                            data-price='{{price.origin}}'
+                                        {{/if}}
                                         data-image='{{images.[0]}}'
-                                        class='btn btn-outline-info px-3 rounded-pil add-to-cart mt-2 mb-4'
+                                        class='btn btn-outline-info px-3 rounded-pil add-to-cart my-2'
                                     >Thêm vào giỏ hàng</button>
                                 </div>
                             </a>

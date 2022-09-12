@@ -1,5 +1,27 @@
 <section class='h-100' style='background-color: #eee; margin-top: 13rem;'>
     <div class='container-fluid p-5 h-100'>
+        {{#if success}}
+            <script>
+                sessionStorage.clear();
+            </script>
+            <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                {{success}}
+                <span
+                    style='font-size: 20px; cursor: pointer; padding: 5px 0 0 10px'
+                    onclick="$('.alert').hide('fade');"
+                >&times;</span>
+            </div>
+        {{/if}}
+
+        {{#if error}}
+            <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                {{error}}
+                <span
+                    style='font-size: 20px; cursor: pointer; padding: 5px 0 0 10px'
+                    onclick="$('.alert').hide('fade');"
+                >&times;</span>
+            </div>
+        {{/if}}
         <div class='row d-flex justify-content-center align-items-center h-100'>
             <div class='col'>
                 <div class='card'>
@@ -24,14 +46,16 @@
                                     <div class='card-body'>
                                         <h4>Thông tin khách hàng</h4>
 
-                                        <form class='mt-4' method='post'>
+                                        <form class='form mt-4' method='post'>
                                             <div class='row mb-4'>
                                                 <div class='col-md-6'>
                                                     <div class='form-outline form-white'>
                                                         <label class='form-label' for='name'>Họ và tên</label>
                                                         <input
                                                             type='text'
+                                                            required
                                                             class='form-control'
+                                                            name='name'
                                                             placeholder='Họ và tên'
                                                             id='name'
                                                         />
@@ -42,7 +66,9 @@
                                                         <label class='form-label' for='phone'>Số điện thoại</label>
                                                         <input
                                                             type='text'
+                                                            required
                                                             id='phone'
+                                                            name='phone'
                                                             class='form-control'
                                                             placeholder='Số điện thoại'
                                                         />
@@ -53,7 +79,9 @@
                                                 <label class='form-label' for='name'>Email</label>
                                                 <input
                                                     type='email'
+                                                    required
                                                     id='email'
+                                                    name='email'
                                                     class='form-control'
                                                     placeholder='Email'
                                                 />
@@ -63,17 +91,22 @@
                                                 <label class='form-label' for='phone'>Địa chỉ</label>
                                                 <input
                                                     type='text'
+                                                    required
                                                     id='address'
+                                                    name='address'
                                                     class='form-control'
                                                     placeholder='Địa chỉ'
                                                 />
                                             </div>
+
+                                            <input type='hidden' name='products' id='products' />
 
                                             <hr class='my-4' />
 
                                             <div class='d-flex justify-content-between mb-3'>
                                                 <p class='mb-2'>Tạm tính</p>
                                                 <p class='mb-2 total-cart'></p>
+                                                <input type='hidden' name='total' id='total-inp' />
                                             </div>
 
                                             <button type='submit' class='btn btn-success btn-block btn-lg'>
@@ -94,3 +127,20 @@
         </div>
     </div>
 </section>
+
+<script>
+    $('#products').val(sessionStorage.getItem('shoppingCart'));
+    $('.form').submit((e) => {
+        if (!sessionStorage.getItem('shoppingCart')) {
+            e.preventDefault(); 
+            alert('Giỏ hàng của bạn đang trống!');
+        }
+
+        if ($('#phone').val().charAt(0) != '0' ||  $('#phone').val().length > 10) {
+            e.preventDefault(); 
+            alert('Vui lòng kiểm tra lại số điện thoại!');
+            $('#phone').focus();
+        }
+
+    })
+</script>

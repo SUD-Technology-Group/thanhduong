@@ -41,8 +41,7 @@ const newController = {
 
     // POST /admin/news/create
     create: catchAsync(async (req, res) => {
-        const { title, content, description } = req.body;
-        const slug = createSlug(title);
+        const slug = createSlug(req.body.title);
 
         const newObj = await newService.get({ slug });
         if (newObj) {
@@ -52,7 +51,7 @@ const newController = {
 
         const image = `/uploads/new-imgs/${req.file.filename}`;
         await newService
-            .create({ title, content, image, slug, description })
+            .create({ ...req.body, image, slug })
             .then(() => {
                 req.flash('success', 'Thêm tin tức thành công');
                 res.redirect('/admin/news');
@@ -72,12 +71,11 @@ const newController = {
 
     // POST /admin/news/update
     update: catchAsync(async (req, res) => {
-        const { id, title, content, description } = req.body;
         const slug = req.params.id;
-        const newSlug = createSlug(title);
+        const newSlug = createSlug(req.body.title);
 
         const newObj = await newService.get({ slug: newSlug });
-        if (newObj && newObj._id != id) {
+        if (newObj && newObj._id != req.body.id) {
             req.flash('error', 'Tên tin tức đã tồn tại');
             return res.redirect(`/admin/news/update/${slug}`);
         }
@@ -94,7 +92,7 @@ const newController = {
         }
 
         await newService
-            .update(slug, { title, content, image, description, slug: newSlug })
+            .update(slug, { ...req.body, image, slug: newSlug })
             .then(() => {
                 req.flash('success', 'Cập nhật tin tức thành công');
                 res.redirect('/admin/news');
