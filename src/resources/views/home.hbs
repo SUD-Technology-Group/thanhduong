@@ -209,8 +209,12 @@
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
-                                        <p>Giá: {{formatCurrency price.origin}}</p>
-                                        <p>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                        {{#if price.sale}}
+                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        {{else}}
+                                        <p class="sale__price" style="opacity: 0;">Giá khuyến mãi: None</p>
+                                        {{/if}}
                                     </div>
                                     <a href='products/{{slug}}' class='product__btn' >
                                         <button type='button' class='btn btn-lg my-2'>
@@ -245,8 +249,12 @@
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
-                                        <p>Giá: {{formatCurrency price.origin}}</p>
-                                        <p>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                        {{#if price.sale}}
+                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        {{else}}
+                                        <p class="sale__price" style="opacity: 0;">Giá khuyến mãi: None</p>
+                                        {{/if}}
                                     </div>
                                     <a href='products/{{slug}}' class='product__btn' >
                                         <button type='button' class='btn btn-lg my-2'>
@@ -270,8 +278,12 @@
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
-                                        <p>Giá: {{formatCurrency price.origin}}</p>
-                                        <p>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                        {{#if price.sale}}
+                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        {{else}}
+                                        <p class="sale__price" style="opacity: 0;">Giá khuyến mãi: None</p>
+                                        {{/if}}
                                     </div>
                                     <a href='products/{{slug}}' class='product__btn' >
                                         <button type='button' class='btn btn-lg my-2'>
@@ -306,8 +318,12 @@
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
-                                        <p>Giá: {{formatCurrency price.origin}}</p>
-                                        <p>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                        {{#if price.sale}}
+                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                        {{else}}
+                                        <p class="sale__price" style="opacity: 0;">Giá khuyến mãi: None</p>
+                                        {{/if}}
                                     </div>
                                     <a href='products/{{slug}}' class='product__btn' >
                                         <button type='button' class='btn btn-lg my-2'>
@@ -457,26 +473,26 @@
         <div class='contact__now__content'>
             <div class='contact__now__information'>
                 <span class='fs-3'>
-                    <i class='fa-solid fa-square-phone fs-1 me-3'></i>
-                    <strong class='fs-4 me-1'>0971 632 793</strong>
+                    <i class='fa-solid fa-square-phone fs-1 me-md-3'></i>
+                    <strong class='fs-lg-5 me-1'>0971 632 793</strong>
                     /
-                    <strong class='fs-4 ms-1'>0901 770 979</strong>
+                    <strong class='fs-lg-5 ms-1'>0901 770 979</strong>
                 </span>
                 <span>
-                    <i class='fa-solid fa-square-envelope fs-1 me-3'></i>
+                    <i class='fa-solid fa-square-envelope fs-1 me-md-3'></i>
                     <div>
                         <a href='mailto:palletthanhduong.vn@gmail.com'>palletthanhduong.vn@gmail.com</a>
                     </div>
                 </span>
                 <span>
-                    <i class='fa-solid fa-earth-africa fs-1 me-3'></i>
+                    <i class='fa-solid fa-earth-africa fs-1 me-md-3'></i>
                     <div>
                         <a href='https://palletthanhduong.vn'>https://palletthanhduong.vn</a>
                         <a href='https://palletthanhduong.com'>https://palletthanhduong.com</a>
                     </div>
                 </span>
                 <span>
-                    <i class='fa-solid fa-location-dot fs-1 me-3'></i>
+                    <i class='fa-solid fa-location-dot fs-1 me-md-3'></i>
                     21/8/9 Võ Thị Thừa, Khu phố 3, Phường An Phú Đông, Quận 12, Thành phố Hồ Chí Minh, Việt Nam
                 </span>
             </div>
@@ -547,6 +563,17 @@
 
 <script src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js'></script>
 <script>
-    var swiper = new Swiper(".mySwiper", { slidesPerView: 6, spaceBetween: 20, pagination: { el: ".swiper-pagination",
-    clickable: false }, autoplay: { delay: 2000, }, reverseDirection: true, });
+    var swiper = new Swiper(".mySwiper", { 
+            slidesPerView: 4, 
+            spaceBetween: 0, 
+            pagination: { el: ".swiper-pagination",clickable: false }, 
+            autoplay: { delay: 2000, }, 
+            reverseDirection: true,
+            breakpoints: {
+                1200: {
+                    slidesPerView: 6,
+                }
+            }
+        }
+    );
 </script>

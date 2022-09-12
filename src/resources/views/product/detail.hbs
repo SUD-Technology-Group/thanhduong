@@ -20,7 +20,8 @@
                 </div>
                 <div class='detail__container__right__desc'>
                     {{#if product.price}}
-                        <p>Giá: <span>{{formatCurrency product.price}} VND</span></p>
+                        <p>Giá: <span>{{formatCurrency product.price.origin}}</span></p>
+                        <p>Giá khuyến mãi: <span>{{formatCurrency product.price.sale}}</span></p>
                     {{else}}
                         <p>Giá: liên hệ</p>
                     {{/if}}
