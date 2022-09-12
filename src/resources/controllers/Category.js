@@ -21,8 +21,7 @@ const categoryController = {
 
     // POST /admin/categories/create
     create: catchAsync(async (req, res) => {
-        const { name, parent } = req.body;
-        const slug = createSlug(name);
+        const slug = createSlug(req.body.name);
 
         const category = await categoryService.get({ slug });
         if (category) {
@@ -30,8 +29,10 @@ const categoryController = {
             return res.redirect('/admin/categories/create');
         }
 
+        const parent = req.body.parent || null;
+
         await categoryService
-            .create({ name, parent: parent || null, slug })
+            .create({ ...req.body, parent, slug })
             .then(() => {
                 req.flash('success', 'Thêm danh mục thành công');
                 res.redirect('/admin/categories');
@@ -52,18 +53,19 @@ const categoryController = {
 
     // POST /admin/categories/update
     update: catchAsync(async (req, res) => {
-        const { id, name, parent } = req.body;
         const slug = req.params.id;
-        const newSlug = createSlug(name);
+        const newSlug = createSlug(req.body.name);
 
         const category = await categoryService.get({ slug: newSlug });
-        if (category && category._id != id) {
+        if (category && category._id != req.body.id) {
             req.flash('error', 'Tên danh mục đã tồn tại');
             return res.redirect(`/admin/categories/update/${slug}`);
         }
+        
+        const parent = req.body.parent || null;
 
         await categoryService
-            .update(slug, { name, parent: parent || null, slug: newSlug })
+            .update(slug, { ...req.body, parent, slug: newSlug })
             .then(() => {
                 req.flash('success', 'Cập nhật danh mục thành công');
                 res.redirect('/admin/categories');

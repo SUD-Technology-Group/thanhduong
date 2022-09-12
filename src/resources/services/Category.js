@@ -1,8 +1,8 @@
 const { Category } = require('../models');
 
 const CategoryService = {
-    get: async (payloads) => {
-        return await Category.findOne(payloads).populate('parent').lean();
+    get: async (payloads, field) => {
+        return await Category.findOne(payloads, field).populate('parent').lean();
     },
 
     getAll: async () => {

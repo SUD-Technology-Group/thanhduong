@@ -23,7 +23,7 @@ var shoppingCart = (function () {
         loadCart();
     }
 
-    // Public methods and propeties
+    // Public methods and properties
     var obj = {};
 
     // Add to cart
@@ -137,7 +137,7 @@ $('.add-to-cart').click(function (event) {
 });
 
 function formatCurrency(price) {
-    if (price && price != 0) return price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.') + ' VNĐ';
+    if (price && price != 0) return price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.') + ' ₫';
     return 'Liên hệ';
 }
 
@@ -181,6 +181,7 @@ function displayCart() {
     }
     $('.show-cart').html(output);
     $('.total-cart').html(formatCurrency(shoppingCart.totalCart()));
+    $('#total-inp').val(shoppingCart.totalCart());
     $('.total-count').html(shoppingCart.totalCount());
 }
 

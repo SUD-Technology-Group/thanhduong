@@ -4,45 +4,77 @@
             <div class='card shadow'>
                 <div class='card-header d-flex justify-content-between'>
                     <h4>{{pageName}}</h4>
-                    <a type='button' href='/admin/news' class='btn btn-secondary'>Trở lại</a>
+                    <a type='button' href='/admin/orders' class='btn btn-secondary'>Trở lại</a>
                 </div>
                 <div class='card-body'>
-                    <div class='news__detail__container'>
-                        <div class='news__detail__container__left'>
-                            <div class='news__detail__sub__title'>
-                                <a href='/news'>
-                                    <p>BÀI VIẾT PALLET NHỰA, TIN TỨC MỚI</p>
-                                </a>
+                    <div class='mt-1'>
+                        <h5 class='mb-4 text-info'><i class="fa-solid fa-bag-shopping"></i> Thông tin đơn hàng</h5>
+                        <p><strong class='mr-2'>Mã đơn hàng: </strong>{{order.code}}</p>
+                        <p><strong class='mr-2'>Thời gian đặt: </strong>{{order.createdAt}}</p>
+                        <p><strong class='mr-2'>Trạng thái: </strong>{{{order.status}}}</p>
+                    </div>
+                    <div class='row mt-4'>
+                        <div class='col border-right'>
+                            <h5 class='mb-4 text-info'><i class='fa-solid fa-user'></i> Thông tin khách hàng</h5>
+                            <div>
+                            {{#with order.customer}}
+                                <div class='d-flex justify-content-between'>
+                                    <strong>Họ tên: </strong>
+                                    <p>{{name}}</p>
+                                </div>
+                                <div class='d-flex justify-content-between'>
+                                    <strong>Số điện thoại: </strong>
+                                    <p>{{phone}}</p>
+                                </div>
+                                <div class='d-flex justify-content-between'>
+                                    <strong>Email: </strong>
+                                    <p>{{email}}</p>
+                                </div>
+                                <div class='d-flex justify-content-between'>
+                                    <strong>Địa chỉ: </strong>
+                                    <p>{{address}}</p>
+                                </div>
+                            {{/with}}
                             </div>
-                            <div class='news__detail__content'>
-                                <div class='news__detail__content__header'>
-                                    <h3>{{new.title}}</h3>
+                        </div>
+                        <hr />
+                        <div class='col'>
+                            <h5 class='mb-4 text-info'><i class='fa-solid fa-cart-shopping'></i> Sản phẩm</h5>
+                            {{#each order.items}}
+                                <div class='card mb-3'>
+                                    <div class='card-body'>
+                                        <div class='d-flex justify-content-between align-items-center'>
+                                            {{#with product}}
+                                                <div>
+                                                    <img
+                                                        src='{{images.[0]}}'
+                                                        class='img-fluid rounded-3'
+                                                        alt='Shopping item'
+                                                        style='width: 80px;'
+                                                    />
+                                                </div>
+                                                <h6 style='width: 100px;'>{{name}}</h6>
+                                                <p>
+                                                    {{#if price.sale}}
+                                                        {{formatCurrency price.sale}}
+                                                    {{else}}
+                                                        {{formatCurrency price.origin}}
+                                                    {{/if}}
+                                                </p>
+                                            {{/with}}
+                                            <p>{{quantity}}</p>
+                                            <p>{{formatCurrency total}}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class='news__detail__content__time'>
-                                    <p>{{new.createdAt}}</p>
-                                </div>
-                                <div class='news__detail__content__img'>
-                                    <img src='{{new.image}}' alt='image' />
-                                    <p>{{new.title}}</p>
-                                </div>
-                                <div class='news__detail__content__text'>
-                                    {{{new.content}}}
-                                </div>
-                                <div class='news__detail__content__watch__more'>
-                                    <span>Để xem thêm nhiều sản phẩm vui lòng</span>
-                                    <a href='/products'>Click Tại Đây</a>
-                                </div>
-                                <div class='news__detail__content__fanpage'>
-                                    <p>Fanpage:</p>
-                                    <span>
-                                        <a
-                                            href='https://www.facebook.com/palletthanhduong.vn'
-                                        >https://www.facebook.com/palletthanhduong.vn</a>
-                                    </span>
-                                </div>
+                            {{/each}}
+                            <div class='d-flex justify-content-between'>
+                                <strong>Tạm tính: </strong>
+                                <p>{{formatCurrency order.total}}</p>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

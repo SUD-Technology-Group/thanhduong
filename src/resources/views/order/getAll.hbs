@@ -22,17 +22,16 @@
             <div class='card shadow'>
                 <div class='card-header d-flex justify-content-between'>
                     <h4>{{pageName}}</h4>
-                    <a href='/admin/orders/create' class='btn btn-success'><i class='fa-solid fa-plus'></i>
-                        Thêm tin tức</a>
                 </div>
                 <div class='card-body'>
                     <table class='table table-hover mt-2 data-table' style='table-layout:fixed;'>
                         <thead class='thead-light'>
                             <tr>
+                                <th scope='col'>Mã đơn hàng</th>
                                 <th scope='col'>Khách hàng</th>
                                 <th scope='col'>Tổng cộng</th>
-                                <th scope='col'>Sản phẩm</th>
                                 <th scope='col'>Trạng thái</th>
+                                <th scope='col'>Thời gian</th>  
                                 <th scope='col'>Thao tác</th>
                             </tr>
                         </thead>
@@ -40,17 +39,18 @@
                             {{#if orders}}
                                 {{#each orders}}
                                     <tr>
+                                        <td>{{code}}</td>
                                         <td>{{customer.name}}</td>
-                                        <td>{{total}}</td>
-                                        <td>...</td>
-                                        <td>{{status}}</td>
+                                        <td>{{formatCurrency total}}</td>
+                                        <td>{{{status}}}</td>
+                                        <td>{{createdAt}}</td>
                                         <td class='d-flex'>
                                             <!-- Button trigger modal -->
-                                            <a class='text-info w-100' href='/admin/orders/demo/{{slug}}'>
+                                            <a class='text-info w-100' href='/admin/orders/demo/{{code}}'>
                                                 <i class="fa-solid fa-eye fa-lg"></i>
                                             </a>
                                             <!-- Button trigger modal -->
-                                            <a class='text-warning w-100' href='/admin/orders/update/{{slug}}'>
+                                            <a class='text-warning w-100' href='/admin/orders/update/{{code}}'>
                                                 <i class='fas fa-edit fa-lg'></i>
                                             </a>
                                             <!-- Button trigger modal -->
@@ -58,7 +58,7 @@
                                                 class='text-danger w-100'
                                                 data-toggle='modal'
                                                 data-target='#deleteModal'
-                                                onclick="$('#deleteBtn').attr('href', '/admin/orders/delete/{{slug}}')"
+                                                onclick="$('#deleteBtn').attr('href', '/admin/orders/delete/{{code}}')"
                                             >
                                                 <i class='fas fa-trash fa-lg'></i>
                                             </a>
@@ -67,6 +67,7 @@
                                 {{/each}}
                             {{else}}
                                 <tr><td></td>
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
