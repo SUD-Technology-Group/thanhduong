@@ -83,6 +83,8 @@ reasons.forEach((item) => {
 const openButton = document.querySelector('.open-menu-btn');
 const closeButton = document.querySelector('.close-menu-btn');
 const navMenu = document.querySelector('.nav-menu');
+const navMenu2 = document.querySelector('.nav-menu-2');
+
 
 openButton.addEventListener('click', () => {
     navMenu.style.display = 'block';
@@ -98,7 +100,6 @@ closeButton.addEventListener('click', () => {
 
 const openButton2 = document.querySelector('.open-menu-btn-2');
 const closeButton2 = document.querySelector('.close-menu-btn-2');
-const navMenu2 = document.querySelector('.nav-menu-2');
 
 openButton2.addEventListener('click', () => {
     navMenu2.style.display = 'block';

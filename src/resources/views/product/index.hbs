@@ -27,10 +27,10 @@
                     <a href='#Sóng nhựa' style='color: #333;'>Sóng Nhựa</a>
                 </li>
                 <li>
-                    <a href='#Pallet Sắt' style='color: #333;'>Pallet Gỗ</a>
+                    <a href='#Pallet Gỗ' style='color: #333;'>Pallet Gỗ</a>
                 </li>
                 <li>
-                    <a href='#Pallet Gỗ' style='color: #333;'>Pallet Sắt</a>
+                    <a href='#Pallet Sắt' style='color: #333;'>Pallet Sắt</a>
                 </li>
             </ul>
         </div>
@@ -51,10 +51,11 @@
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
-                                        <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
                                         {{#if price.sale}}
+                                        <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
                                         <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
                                         {{else}}
+                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
                                         <p class="sale__price" style="opacity: 0;">Giá khuyến mãi: None</p>
                                         {{/if}}
                                     </div>
