@@ -9,7 +9,6 @@ const ProductController = {
     index: catchAsync(async (req, res) => {
         const products = await productService.getAll();
         const categories = await categoryService.getAll();
-        console.log(categories);
         res.render('product', { products, categories });
     }),
 
