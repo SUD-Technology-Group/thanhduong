@@ -1,12 +1,12 @@
 const { Product } = require('../models');
 
 const ProductService = {
-    get: async (payloads) => {
-        return await Product.findOne(payloads).populate('category').lean();
+    get: async (payloads, field) => {
+        return await Product.findOne(payloads, field).populate('category').lean();
     },
 
-    getMany: async (payloads) => {
-        return await Product.find(payloads).populate('category').lean();
+    getMany: async (payloads, field) => {
+        return await Product.find(payloads, field).populate('category').lean();
     },
 
     getAll: async () => {
