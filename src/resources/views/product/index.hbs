@@ -14,24 +14,6 @@
         <div class='grid-content-left'>
             <ul>
                 <h4>Danh mục sản phẩm</h4>
-                <li>
-                    <a href='#Pallet Nhựa' style='color: #333;' class="item__container">
-                        Pallet Nhựa
-                    </a>
-                    <div class="sub__item__container">
-                        <a href="#Pallet Nhựa cũ" class="sub__item">+ Pallet Nhựa Cũ</a>
-                        <a href="#Pallet Nhựa mới" class="sub__item">+ Pallet Nhựa Mới</a>
-                    </div>
-                </li>
-                <li>
-                    <a href='#Sóng nhựa' style='color: #333;'>Sóng Nhựa</a>
-                </li>
-                <li>
-                    <a href='#Pallet Gỗ' style='color: #333;'>Pallet Gỗ</a>
-                </li>
-                <li>
-                    <a href='#Pallet Sắt' style='color: #333;'>Pallet Sắt</a>
-                </li>
                 {{#each categories}}
                     {{#unless parent}}
                     <li>
@@ -62,14 +44,6 @@
                                     <div class='product-img-box'>
                                         <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                                     </div>
-                                    <div class='product-price'>
-                                        {{#if price.sale}}
-                                        <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
-                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
-                                        {{else}}
-                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
-                                        <p class="sale__price" style="opacity: 0;">Giá khuyến mãi: None</p>
-                                        {{/if}}
                                     <div class='product-content-box rounded-bottom card-body pt-0'>
                                         <div class='product-title h-50'>
                                             <a href='products/{{slug}}'>{{name}}</a>
@@ -80,6 +54,7 @@
                                                 <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
                                             {{else}}
                                                 <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                                <p class="sale__price" style="opacity: 0;">Giá khuyến mãi: None</p>
                                             {{/if}}
                                         </div>
                                         <button

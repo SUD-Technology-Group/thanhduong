@@ -147,10 +147,6 @@ ul.nav-menu,
     align-items: center;
 }
 
-.header-logo img {
-    width: 100%;
-}
-
 .header-body--content {
     display: flex;
     width: 100%;
@@ -178,8 +174,22 @@ ul.nav-menu,
     justify-content: space-between;
 }
 
+.header-logo {
+    height: 100%;
+}
+
+.header-logo img {
+    height: 100%;
+}
+
+.header-body-2 .header-logo {
+    height: 100%;
+    width: 20%;
+}
+
 .header-body-2 .header-logo img {
     width: 100%;
+    height: 100%;
 }
 
 .header-body-2 ul.sub-nav {
@@ -262,7 +272,7 @@ ul.nav-menu,
 
 /* Homepage Start */
 .home-banner {
-    margin-top: 15rem;
+    margin-top: 12rem;
 }
 
 .owl-stage {
@@ -2289,13 +2299,13 @@ section.v-about {
 
     .header__responsive__icons {
         display: flex;
-        gap: 6rem;
+        gap: 4rem;
         align-items: center;
     }
 
     .header__responsive__icons__left {
         display: flex;
-        gap: 6rem;
+        gap: 2rem;
         align-items: center;
     }
 

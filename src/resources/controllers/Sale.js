@@ -9,7 +9,7 @@ const saleController = {
                 ((product.price.origin - product.price.sale) * 100) / product.price.origin,
             );
         });
-        res.render('sale', { products });
+        res.render('sale/index.hbs', { products });
     }),
 };
 
