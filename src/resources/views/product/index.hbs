@@ -14,67 +14,67 @@
         <div class='grid-content-left'>
             <ul>
                 <h4>Danh mục sản phẩm</h4>
-                <li>
-                    <a href='#Pallet Nhựa' style='color: #333;' class="item__container">
-                        Pallet Nhựa
-                    </a>
-                    <div class="sub__item__container">
-                        <a href="#Pallet Nhựa cũ" class="sub__item">+ Pallet Nhựa Cũ</a>
-                        <a href="#Pallet Nhựa mới" class="sub__item">+ Pallet Nhựa Mới</a>
-                    </div>
-                </li>
-                <li>
-                    <a href='#Sóng nhựa' style='color: #333;'>Sóng Nhựa</a>
-                </li>
-                <li>
-                    <a href='#Pallet Sắt' style='color: #333;'>Pallet Gỗ</a>
-                </li>
-                <li>
-                    <a href='#Pallet Gỗ' style='color: #333;'>Pallet Sắt</a>
-                </li>
+                {{#each categories}}
+                    {{#unless parent}}
+                    <li>
+                        <a href='#{{name}}' style='color: #333;' class="item__container">{{name}}</a>
+                        {{#each ../categories}}
+                            {{#if ../name}}
+                                {{#equal ../name parent.name}}
+                                    <div class="my-1"><a href="#{{name}}" class="text-dark">+ {{name}}</a></div>
+                                {{/equal}}
+                            {{/if}}
+                        {{/each}}
+                    </li>
+                    {{/unless}}
+                {{/each}}
             </ul>
         </div>
 
         <div class='grid-content-right'>
             {{#each categories}}
-                <div class='menu-title mb-5'>{{name}}</div>
-                <div class='grid-content-right-product'>
-                    {{#each ../products}}
-                        {{#equal category.name ../name}}
-                        <div class="card h-100 border-0" id="{{category.name}}">
-                            <a href='products/{{slug}}' class='product-box'>
-                                <div class='product-img-box'>
-                                    <img src='{{images.[0]}}' alt={{name}} class='w-100' />
-                                </div>
-                                <div class='product-content-box rounded-bottom card-body pt-0'>
-                                    <div class='product-title '>
-                                        <a href='products/{{slug}}'>{{name}}</a>
+                {{#noChild name ../categories }}
+                <div class="mb-3">
+                    <div class='menu-title mb-4' id="{{name}}">{{name}}</div>
+                    <div class='grid-content-right-product'>
+                        {{#each ../products}}
+                            {{#equal category.name ../name}}
+                            <div class="card h-100 border-0">
+                                <a href='products/{{slug}}' class='product-box'>
+                                    <div class='product-img-box'>
+                                        <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                                     </div>
-                                    <div class='product-price'>
-                                        <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
-                                        {{#if price.sale}}
-                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
-                                        {{else}}
-                                        <p class="sale__price" style="opacity: 0;">Giá khuyến mãi: None</p>
-                                        {{/if}}
+                                    <div class='product-content-box rounded-bottom card-body pt-0'>
+                                        <div class='product-title h-50'>
+                                            <a href='products/{{slug}}'>{{name}}</a>
+                                        </div>
+                                        <div class='product-price'>
+                                            {{#if price.sale}}
+                                                <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
+                                                <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                            {{else}}
+                                                <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                            {{/if}}
+                                        </div>
+                                        <button
+                                            type='button'
+                                            data-name='{{name}}'
+                                            {{#if price.sale}}
+                                                data-price='{{price.sale}}'
+                                            {{else}}
+                                                data-price='{{price.origin}}'
+                                            {{/if}}
+                                            data-image='{{images.[0]}}'
+                                            class='btn btn-outline-info px-3 rounded-pil add-to-cart my-2'
+                                        >Thêm vào giỏ hàng</button>
                                     </div>
-                                    <button
-                                        type='button'
-                                        data-name='{{name}}'
-                                        {{#if price.sale}}
-                                            data-price='{{price.sale}}'
-                                        {{else}}
-                                            data-price='{{price.origin}}'
-                                        {{/if}}
-                                        data-image='{{images.[0]}}'
-                                        class='btn btn-outline-info px-3 rounded-pil add-to-cart my-2'
-                                    >Thêm vào giỏ hàng</button>
-                                </div>
-                            </a>
-                        </div>
-                        {{/equal}}
-                    {{/each}}
+                                </a>
+                            </div>
+                            {{/equal}}
+                        {{/each}}
+                    </div>
                 </div>
+                {{/noChild}}
             {{/each}}
         </div>
     </div>
