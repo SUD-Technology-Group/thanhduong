@@ -32,6 +32,7 @@
         </div>
 
         <div class='grid-content-right'>
+            {{#if categories}}
             {{#each categories}}
                 {{#noChild name ../categories }}
                 <div class="mb-3">
@@ -76,6 +77,9 @@
                 </div>
                 {{/noChild}}
             {{/each}}
+            {{else}}
+                <h2>Hiện chưa có kết quả trùng khớp!</h3>
+            {{/if}}
         </div>
     </div>
 </div>

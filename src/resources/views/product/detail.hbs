@@ -19,11 +19,11 @@
                     <h3>{{product.name}}</h3>
                 </div>
                 <div class='detail__container__right__desc'>
-                    {{#if product.price}}
+                    {{#if product.price.sale}}
                         <p>Giá: <span>{{formatCurrency product.price.origin}}</span></p>
                         <p>Giá khuyến mãi: <span>{{formatCurrency product.price.sale}}</span></p>
                     {{else}}
-                        <p>Giá: liên hệ</p>
+                        <p>Giá: {{formatCurrency product.price.origin}}</p>
                     {{/if}}
                     <p>DANH MỤC: <span>{{product.category.name}}</span></p>
                 </div>

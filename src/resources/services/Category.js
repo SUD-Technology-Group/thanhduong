@@ -5,6 +5,10 @@ const CategoryService = {
         return await Category.findOne(payloads, field).populate('parent').lean();
     },
 
+    getMany: async (payloads, field) => {
+        return await Category.find(payloads, field).populate('parent').lean();
+    },
+
     getAll: async () => {
         return await Category.find({}).populate('parent').lean();
     },

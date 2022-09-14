@@ -7,8 +7,9 @@ const ProductController = {
     // Client
     // GET /products
     index: catchAsync(async (req, res) => {
-        const products = await productService.getAll();
-        const categories = await categoryService.getAll();
+        const products = await productService.getMany({ name: { $regex: req.query.search || '', $options: 'i' } });
+        const categoryList = products.map((item) => item.category.name);
+        const categories = await categoryService.getMany({ name: { $in: categoryList } });
         res.render('product', { products, categories });
     }),
 

@@ -7,6 +7,7 @@ const flash = require('express-flash');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+require('dotenv').config()
 
 function init() {
     app.use(cors());
