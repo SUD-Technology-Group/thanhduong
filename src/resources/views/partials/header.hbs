@@ -73,19 +73,21 @@
                         <i class='fa fa-search'></i>
                         <span class='search__box__container'>
                             <div class='search__box'>
-                                <div class='search__box__left'>
-                                    <input type='search' />
-                                </div>
-                                <div class='search__box__right'>
-                                    <div class='searchGlass'>
-                                        <a href='/result' style='color: #333;'>
-                                            <i class='fa-solid fa-magnifying-glass'></i>
-                                        </a>
+                                <form action='/products' method='get' class='d-flex'>
+                                    <div class='search__box__left'>
+                                        <input type='text' name='search' />
                                     </div>
-                                    <div class='spinner'>
-                                        <i class='fa-solid fa-spinner'></i>
+                                    <div class='search__box__right'>
+                                        <div class='searchGlass'>
+                                            <button type='submit' class='btn p-0' style='color: #333;'>
+                                                <i class='fa-solid fa-magnifying-glass'></i>
+                                            </button>
+                                        </div>
+                                        <div class='spinner'>
+                                            <i class='fa-solid fa-spinner'></i>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </span>
                     </li>
@@ -183,19 +185,21 @@
                         <i class='fa fa-search'></i>
                         <span class='search__box__container__2'>
                             <div class='search__box__2'>
-                                <div class='search__box__left__2'>
-                                    <input type='search' />
-                                </div>
-                                <div class='search__box__right__2'>
-                                    <div class='searchGlass__2'>
-                                        <a href='/result'>
-                                            <i class='fa-solid fa-magnifying-glass'></i>
-                                        </a>
+                                <form action='/products' method='get' class='d-flex'>
+                                    <div class='search__box__left__2'>
+                                        <input type='text' name='search' />
                                     </div>
-                                    <div class='spinner__2'>
-                                        <i class='fa-solid fa-spinner'></i>
+                                    <div class='search__box__right__2'>
+                                        <div class='searchGlass__2'>
+                                            <button type='submit' class='btn p-0' style='color: #333;'>
+                                                <i class='fa-solid fa-magnifying-glass'></i>
+                                            </button>
+                                        </div>
+                                        <div class='spinner__2'>
+                                            <i class='fa-solid fa-spinner'></i>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </span>
                     </li>

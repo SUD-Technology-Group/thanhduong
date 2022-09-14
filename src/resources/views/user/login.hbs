@@ -1,0 +1,38 @@
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <link rel='icon' type='image/x-icon' href='/img/logo2.png' />
+        <title>Đăng nhập</title>
+        <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; } body { display: flex;
+            justify-content: center; align-items: center; min-height: 100vh; background: #d8ca4f; } .container { width:
+            100%; display: flex; max-width: 300px; background: #fff; border-radius: 15px; } .login { width: 400px; }
+            form { width: 250px; margin: 60px auto; } h1 { margin: 20px; text-align: center; font-weight: bolder;
+            text-transform: uppercase; } hr { border-top: 3px solid orange; } p { text-align: center; margin: 10px;
+            font-size: 13px; } form label { display: block; font-size: 16px; font-weight: 600; padding: 5px; margin-top:
+            8px; } input { width: 100%; margin: 2px; boder: none; outline: none; padding: 8px; border-radius: 9px;
+            border: 1px solid gray; } button { border: none; outline: none; padding: 8px; width: 100%; color: white;
+            font-size: 16px; cursor: pointer; margin-top: 15px; border-radius: 8px; background: orange; } .forget {
+            font-size: 12px; margin-top: 16px; text-align: right; } a { text-decoration: none; color: orange; } .signup
+            { display: inline; margin-bottom: cpx; }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='login'>
+                <form method='post'>
+                    <h1>Đăng nhập</h1>
+                    <hr />
+                    <label for='username'>Tên đăng nhập</label>
+                    <input required type='username' name='username' placeholder='Tên đăng nhập' />
+                    <label for='password'>Mật khẩu</label>
+                    <input required type='password' name='password' placeholder='Mật khẩu' />
+                    <p style='margin-top:10px; color:red'>{{error}}</p>
+                    <button type='submit'>Đăng nhập</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
