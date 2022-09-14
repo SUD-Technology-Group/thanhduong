@@ -91,8 +91,8 @@ const ProductController = {
         const slug = req.params.id;
         const newSlug = createSlug(req.body.name);
 
-        const product = await productService.get({ slug: newSlug });
-        if (product && product._id != req.body.id) {
+        const product = await productService.get({ slug: newSlug, _id: { $ne: req.body.id } });
+        if (product) {
             req.flash('error', 'Tên sản phẩm đã tồn tại');
             return res.redirect(`/admin/products/update/${slug}`);
         }

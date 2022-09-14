@@ -69,13 +69,13 @@ const newController = {
         res.render('new/update', { pageName: 'Chỉnh sửa tin tức', layout: 'admin', new: newObj, error });
     }),
 
-    // POST /admin/news/update
+    // POST /admin/news/update/id
     update: catchAsync(async (req, res) => {
         const slug = req.params.id;
         const newSlug = createSlug(req.body.title);
 
-        const newObj = await newService.get({ slug: newSlug });
-        if (newObj && newObj._id != req.body.id) {
+        const newObj = await newService.get({ slug: newSlug, _id: { $ne: req.body.id } });
+        if (newObj) {
             req.flash('error', 'Tên tin tức đã tồn tại');
             return res.redirect(`/admin/news/update/${slug}`);
         }

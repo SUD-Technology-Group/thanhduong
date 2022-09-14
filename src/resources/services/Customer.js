@@ -17,12 +17,12 @@ const CustomerService = {
         return await Customer.create(payloads);
     },
 
-    update: async (slug, payloads) => {
-        return await Customer.findOneAndUpdate({ slug }, payloads);
+    update: async (phone, payloads) => {
+        return await Customer.findOneAndUpdate({ phone }, payloads);
     },
 
-    delete: async (slug) => {
-        return await Customer.findOneAndDelete({ slug });
+    delete: async (phone) => {
+        return await Customer.findOneAndDelete({ phone });
     },
 };
 

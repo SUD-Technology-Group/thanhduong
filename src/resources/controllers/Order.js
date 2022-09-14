@@ -1,7 +1,6 @@
 const { orderService, customerService, productService } = require('../services');
 const catchAsync = require('../utils/catchAsync');
 const createCode = require('../utils/createCode');
-const createSlug = require('../utils/createSlug');
 
 const orderController = {
     // Server
@@ -9,7 +8,11 @@ const orderController = {
     getAll: catchAsync(async (req, res) => {
         const success = req.flash('success') || '';
         const error = req.flash('error') || '';
-        const orders = await orderService.getAll();
+        const query = [
+            '<span class="badge badge-pill badge-success">Hoàn tất</span>',
+            '<span class="badge badge-pill badge-danger">Huỷ</span>',
+        ];
+        const orders = await orderService.getMany({ status: { $nin: query } });
         res.render('order/getAll', { layout: 'admin', pageName: 'Danh sách đơn hàng', orders, success, error });
     }),
 
@@ -19,6 +22,16 @@ const orderController = {
         res.render('order/demo', { pageName: 'Chi tiết đơn hàng', layout: 'admin', order });
     }),
 
+    // GET /admin/orders/log
+    log: catchAsync(async (req, res) => {
+        const query = [
+            '<span class="badge badge-pill badge-success">Hoàn tất</span>',
+            '<span class="badge badge-pill badge-danger">Huỷ</span>',
+        ];
+        const orders = await orderService.getMany({ status: { $in: query } });
+        res.render('order/log', { pageName: 'Lịch sử giao dịch', layout: 'admin', orders });
+    }),
+
     // POST /admin/orders/create
     create: catchAsync(async (req, res) => {
         let customer = {
@@ -26,9 +39,8 @@ const orderController = {
             email: req.body.email,
             address: req.body.address,
             phone: req.body.phone,
-            slug: createSlug(req.body.name),
         };
-        const foundCustomer = await customerService.get({ slug: customer.slug });
+        const foundCustomer = await customerService.get({ phone: customer.phone });
         if (foundCustomer) customer = foundCustomer;
         else customer = await customerService.create({ ...customer });
 
@@ -54,60 +66,59 @@ const orderController = {
             })
             .then(() => {
                 req.flash('success', 'Đặt hàng thành công');
-                res.redirect('/cart');
             })
             .catch((err) => {
-                req.flash('error', 'Đặt hàng thất bại ' + err);
-                res.redirect('/cart');
+                req.flash('error', 'Đặt hàng thất bại');
             });
+        res.redirect('/cart');
     }),
 
     // GET /admin/orders/update/id
     updateView: catchAsync(async (req, res) => {
         const error = req.flash('error') || '';
-        const order = await orderService.get({ slug: req.params.id });
+        const order = await orderService.get({ code: req.params.id });
         res.render('order/update', { pageName: 'Chỉnh sửa đơn hàng', layout: 'admin', order, error });
     }),
 
-    // POST /admin/orders/update
+    // POST /admin/orders/update/id
     update: catchAsync(async (req, res) => {
         let customer = {
             name: req.body.name,
             email: req.body.email,
             address: req.body.address,
             phone: req.body.phone,
-            slug: createSlug(req.body.name),
         };
-        const foundCustomer = await customerService.get({ slug: customer.slug });
-        if (foundCustomer) customer = foundCustomer;
-        else customer = await customerService.create({ ...customer });
-
-        const productsName = JSON.parse(req.body.products[0]).map((item) => item.name);
-        const products = await productService.getMany({ name: { $in: productsName } });
+        const foundCustomer = await customerService.get({ phone: customer.phone });
+        if (foundCustomer) customer = await customerService.update(foundCustomer.phone, { ...customer });
+        else {
+            customer = await customerService.create({ ...customer });
+            const oldPhone = (await orderService.get({ code: req.params.id }, 'customer')).customer.phone;
+            await customerService.delete(oldPhone);
+        }
 
         await orderService
-            .update(code, { ...req.body, slug: newSlug })
+            .update(req.params.id, { customer, status: req.body.status })
             .then(() => {
                 req.flash('success', 'Cập nhật đơn hàng thành công');
                 res.redirect('/admin/orders');
             })
             .catch((err) => {
                 req.flash('error', 'Cập nhật đơn hàng thất bại');
-                res.redirect(`/admin/orders/update/${code}`);
+                res.redirect(`/admin/orders/update/${req.body.code}`);
             });
     }),
 
-    // GET /admin/orders/delete/id
-    delete: catchAsync(async (req, res) => {
+    // GET /admin/orders/cancel/id
+    cancel: catchAsync(async (req, res) => {
         await orderService
-            .delete(req.params.id)
+            .update(req.params.id, { status: '<span class="badge badge-pill badge-danger">Huỷ</span>' })
             .then(() => {
-                req.flash('success', 'Xoá đơn hàng thành công');
+                req.flash('success', 'Huỷ đơn hàng thành công');
             })
             .catch((err) => {
-                req.flash('error', 'Xoá đơn hàng thất bại');
+                req.flash('error', 'Huỷ đơn hàng thất bại');
             });
-        res.redirect('/admin/orders');
+        res.redirect('/admin/orders/log');
     }),
 };
 
