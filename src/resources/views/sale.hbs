@@ -2,10 +2,7 @@
     <div class='menu-title sale__title'>Khuyến mãi</div>
     <div class='sale__banner'>
         <div class='sale__banner__image'>
-            <img
-                src='/img/sale.jpg'
-                alt='sale banner'
-            />
+            <img src='/img/sale.jpg' alt='sale banner' />
         </div>
         <div class='sale__banner__text'>
             <h3>Khuyến mãi</h3>
@@ -24,106 +21,33 @@
             Pallet
         </div>
         <div class='sale__product__content'>
-            <div class='sale__product__box rounded'>
-                <div class='sale__product__box__image'>
-                    <a href='sales/slug'>
-                        <img src='https://picsum.photos/200/300' alt='product' class='rounded-top' />
-                    </a>
-                    <div class='ribbon'>
-                        <span class='ribbon1'><span>Giảm 10%</span></span>
+            {{#each products}}
+                <div class='sale__product__box rounded'>
+                    <div class='sale__product__box__image'>
+                        <a href='sales/{{slug}}'>
+                            <img src='{{images.[0]}}' alt='product' class='rounded-top' />
+                        </a>
                     </div>
-                </div>
-                <div class='sale__product__box__text'>
-                    <div class='sale__product__box__text__title'>
-                        <p>Old Pallet</p>
-                    </div>
-                    <div class='sale__product__box__text__price'>
-                        <div class='sale__product__box__text__old__price'>
-                            <i>1.0000.0000 VNĐ</i>
+                    <div class='sale__product__box__text'>
+                        <div class='sale__product__box__text__title'>
+                            <p>{{name}}</p>
                         </div>
-                        <div class='sale__product__box__text__new__price'>
-                            <i>990 VNĐ</i>
-                        </div>
-                    </div>
-                </div>
-                <div class='sale__product__box__button'>
-                    <a href='sales/slug'>
-                        <button type='button' class='btn btn-outline-warning'>Mua ngay</button>
-                    </a>
-                </div>
-            </div>
-            <div class='sale__product__box'>
-                <div class='sale__product__box__image'>
-                    <img src='https://picsum.photos/200/300' alt='product' />
-                    <div class='ribbon'>
-                        <span class='ribbon1'><span>Giảm 10%</span></span>
-                    </div>
-                </div>
-                <div class='sale__product__box__text'>
-                    <div class='sale__product__box__text__title'>
-                        <p>Old Pallet</p>
-                    </div>
-                    <div class='sale__product__box__text__price'>
-                        <div class='sale__product__box__text__old__price'>
-                            <i>1.0000.0000 VNĐ</i>
-                        </div>
-                        <div class='sale__product__box__text__new__price'>
-                            <i>990 VNĐ</i>
+                        <div class='sale__product__box__text__price'>
+                            <div class='sale__product__box__text__old__price'>
+                                <i>Giá: {{formatCurrency price.origin}}</i>
+                            </div>
+                            <div class='sale__product__box__text__new__price'>
+                                <i>Giá khuyến mãi: {{formatCurrency price.sale}}</i>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class='sale__product__box__button'>
-                    <button type='button' class='btn btn-outline-warning'>Mua ngay</button>
-                </div>
-            </div>
-            <div class='sale__product__box'>
-                <div class='sale__product__box__image'>
-                    <img src='https://picsum.photos/200/300' alt='product' />
-                    <div class='ribbon'>
-                        <span class='ribbon1'><span>Giảm 10%</span></span>
+                    <div class='sale__product__box__button my-3'>
+                        <a href='sales/slug'>
+                            <button type='button' class='btn btn-outline-warning'>Mua ngay</button>
+                        </a>
                     </div>
                 </div>
-                <div class='sale__product__box__text'>
-                    <div class='sale__product__box__text__title'>
-                        <p>Old Pallet</p>
-                    </div>
-                    <div class='sale__product__box__text__price'>
-                        <div class='sale__product__box__text__old__price'>
-                            <i>1.0000.0000 VNĐ</i>
-                        </div>
-                        <div class='sale__product__box__text__new__price'>
-                            <i>990 VNĐ</i>
-                        </div>
-                    </div>
-                </div>
-                <div class='sale__product__box__button'>
-                    <button type='button' class='btn btn-outline-warning'>Mua ngay</button>
-                </div>
-            </div>
-            <div class='sale__product__box'>
-                <div class='sale__product__box__image'>
-                    <img src='https://picsum.photos/200/300' alt='product' />
-                    <div class='ribbon'>
-                        <span class='ribbon1'><span>Giảm 10%</span></span>
-                    </div>
-                </div>
-                <div class='sale__product__box__text'>
-                    <div class='sale__product__box__text__title'>
-                        <p>Old Pallet</p>
-                    </div>
-                    <div class='sale__product__box__text__price'>
-                        <div class='sale__product__box__text__old__price'>
-                            <i>1.0000.0000 VNĐ</i>
-                        </div>
-                        <div class='sale__product__box__text__new__price'>
-                            <i>990 VNĐ</i>
-                        </div>
-                    </div>
-                </div>
-                <div class='sale__product__box__button'>
-                    <button type='button' class='btn btn-outline-warning'>Mua ngay</button>
-                </div>
-            </div>
+            {{/each}}
         </div>
     </div>
 </div>

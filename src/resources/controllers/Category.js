@@ -51,17 +51,17 @@ const categoryController = {
         res.render('category/update', { pageName: 'Chỉnh sửa danh mục', layout: 'admin', category, categories, error });
     }),
 
-    // POST /admin/categories/update
+    // POST /admin/categories/update/id
     update: catchAsync(async (req, res) => {
         const slug = req.params.id;
         const newSlug = createSlug(req.body.name);
 
-        const category = await categoryService.get({ slug: newSlug });
-        if (category && category._id != req.body.id) {
+        const category = await categoryService.get({ slug: newSlug, _id: { $ne: req.body.id } });
+        if (category) {
             req.flash('error', 'Tên danh mục đã tồn tại');
             return res.redirect(`/admin/categories/update/${slug}`);
         }
-        
+
         const parent = req.body.parent || null;
 
         await categoryService

@@ -22,8 +22,7 @@
             <div class='card shadow'>
                 <div class='card-header d-flex justify-content-between'>
                     <h4>{{pageName}}</h4>
-                    <a href='/admin/orders/log' class='btn btn-secondary'><i class="fa-solid fa-clock-rotate-left"></i>
-                        Lịch sử giao dịch</a>
+                    <a href='/admin/orders' class='btn btn-secondary'>Trở lại</a>
                 </div>
                 <div class='card-body'>
                     <table class='table table-hover mt-2 data-table' style='table-layout:fixed;'>
@@ -33,7 +32,7 @@
                                 <th scope='col'>Khách hàng</th>
                                 <th scope='col'>Tổng cộng</th>
                                 <th scope='col'>Trạng thái</th>
-                                <th scope='col'>Thời gian đặt</th>  
+                                <th scope='col'>Thời gian xử lý</th>
                                 <th scope='col'>Thao tác</th>
                             </tr>
                         </thead>
@@ -45,24 +44,11 @@
                                         <td>{{customer.name}}</td>
                                         <td>{{formatCurrency total}}</td>
                                         <td>{{{status}}}</td>
-                                        <td>{{createdAt}}</td>
+                                        <td>{{updatedAt}}</td>
                                         <td class='d-flex'>
                                             <!-- Button trigger modal -->
-                                            <a class='text-info w-100' href='/admin/orders/demo/{{code}}'>
-                                                <i class="fa-solid fa-eye fa-lg"></i>
-                                            </a>
-                                            <!-- Button trigger modal -->
-                                            <a class='text-warning w-100' href='/admin/orders/update/{{code}}'>
-                                                <i class='fas fa-edit fa-lg'></i>
-                                            </a>
-                                            <!-- Button trigger modal -->
-                                            <a
-                                                class='text-danger w-100'
-                                                data-toggle='modal'
-                                                data-target='#deleteModal'
-                                                onclick="$('#deleteBtn').attr('href', '/admin/orders/cancel/{{code}}')"
-                                            >
-                                                <i class="fa-solid fa-ban fa-lg"></i>
+                                            <a class='text-info w-100 text-center' href='/admin/orders/demo/{{code}}'>
+                                                <i class='fa-solid fa-eye fa-lg'></i>
                                             </a>
                                         </td>
                                     </tr>
@@ -79,26 +65,6 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class='modal fade' id='deleteModal'>
-    <div class='modal-dialog' role='document'>
-        <div class='modal-content'>
-            <div class='modal-header'>
-                <h5 class='modal-title' id='exampleModalLabel'>Huỷ đơn hàng</h5>
-                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                    <span aria-hidden='true'>&times;</span>
-                </button>
-            </div>
-            <div class='modal-body'>
-                Bạn có muốn huỷ đơn hàng này?
-            </div>
-            <div class='modal-footer'>
-                <button type='button' class='btn btn-secondary' data-dismiss='modal'>Trở lại</button>
-                <a type='button' id='deleteBtn' class='btn btn-danger'>Huỷ đơn</a>
             </div>
         </div>
     </div>
