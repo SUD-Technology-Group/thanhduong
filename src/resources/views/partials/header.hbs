@@ -42,18 +42,22 @@
                             <i class='fa fa-angle-down'></i>
                         </a>
                         <ul class='sub-nav'>
-                            <li>
-                                <a href='/products#Pallet%20Nhựa'>Pallet nhựa
-                                    <i class='fa fa-angle-down'></i>
-                                </a>
-                                <ul class='sub-nav-inside'>
-                                    <li><a href='/products#Pallet%20Nhựa%20cũ'>Pallet nhựa cũ</a></li>
-                                    <li><a href='/products#Pallet%20Nhựa%20mới'>Pallet nhựa mới</a></li>
-                                </ul>
-                            </li>
-                            <li><a href='/products#Pallet%20Gỗ'>Pallet Gỗ</a></li>
-                            <li><a href='/products#Pallet%20Sắt'>Pallet Sắt</a></li>
-                            <li><a href='/products'>Sóng nhựa</a></li>
+                            {{#each categories}}
+                                {{#unless parent}}
+                                <li>
+                                    <a href='/products?search={{name}}'>{{name}}</a>
+                                    <ul class='sub-nav-inside'>
+                                        {{#each ../categories}}
+                                            {{#if ../name}}
+                                                {{#equal ../name parent.name}}
+                                                    <li><a href='/products#{{name}}'>{{name}}</a></li>
+                                                {{/equal}}
+                                            {{/if}}
+                                        {{/each}}
+                                    </ul>
+                                </li>
+                                {{/unless}}
+                            {{/each}}
                         </ul>
                     </li>
                     <li>
@@ -138,18 +142,22 @@
                             <i class='fa fa-angle-down'></i>
                         </a>
                         <ul class='sub-nav'>
-                            <li>
-                                <a href='/products#Pallet%20Nhựa'>Pallet nhựa
-                                    <i class='fa fa-angle-down'></i>
-                                </a>
-                                <ul class='sub-nav-inside-2'>
-                                    <li><a href='/products#Pallet%20Nhựa%20cũ'>Pallet nhựa cũ</a></li>
-                                    <li><a href='/products#Pallet%20Nhựa%20mới'>Pallet nhựa mới</a></li>
-                                </ul>
-                            </li>
-                            <li><a href='/products#Pallet%20Gỗ'>Pallet Gỗ</a></li>
-                            <li><a href='/products#Pallet%20Sắt'>Pallet Sắt</a></li>
-                            <li><a href='/products#Sóng%20nhựa'>Sóng nhựa</a></li>
+                            {{#each categories}}
+                                {{#unless parent}}
+                                <li>
+                                    <a href='/products?search={{name}}'>{{name}}</a>
+                                    <ul class='sub-nav-inside'>
+                                        {{#each ../categories}}
+                                            {{#if ../name}}
+                                                {{#equal ../name parent.name}}
+                                                    <li><a href='/products#{{name}}'>{{name}}</a></li>
+                                                {{/equal}}
+                                            {{/if}}
+                                        {{/each}}
+                                    </ul>
+                                </li>
+                                {{/unless}}
+                            {{/each}}
                         </ul>
                     </li>
                     <li>

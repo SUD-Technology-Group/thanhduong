@@ -63,18 +63,11 @@
                     </h6>
                     <!-- Links -->
                     <div class='footer-text'>
-                        <p>
-                            <a href='/products' class='text-reset fs-5'>Pallet Nhựa Mới</a>
-                        </p>
-                        <p>
-                            <a href='/products' class='text-reset fs-5'>Pallet Nhựa</a>
-                        </p>
-                        <p>
-                            <a href='/products' class='text-reset fs-5'>Pallet Nhựa Cũ</a>
-                        </p>
-                        <p>
-                            <a href='/products' class='text-reset fs-5'>Sóng Nhựa</a>
-                        </p>
+                        {{#each categories}}
+                            <p>
+                                <a href='/products?search={{name}}' class='text-reset fs-5'>{{name}}</a>
+                            </p>
+                        {{/each}}
                     </div>
                     <div class='footer-check'>
                         <img src='https://namthinh.com/img/thongbaobocongthuong.png' alt='check' />

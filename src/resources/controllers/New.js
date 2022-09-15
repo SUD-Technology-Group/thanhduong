@@ -1,4 +1,4 @@
-const { newService } = require('../services');
+const { newService, categoryService } = require('../services');
 const catchAsync = require('../utils/catchAsync');
 const createSlug = require('../utils/createSlug');
 const fs = require('fs');
@@ -8,14 +8,16 @@ const newController = {
     // GET /news
     index: catchAsync(async (req, res) => {
         const news = await newService.getAll();
-        res.render('new', { news });
+        const categories = await categoryService.getAll();
+        res.render('new', { news, categories });
     }),
 
     // GET /news/id
     detail: catchAsync(async (req, res) => {
         const newObj = await newService.get({ slug: req.params.id });
         const news = await newService.getAll();
-        res.render('new/detail', { new: newObj, news });
+        const categories = await categoryService.getAll();
+        res.render('new/detail', { new: newObj, news, categories });
     }),
 
     // Server

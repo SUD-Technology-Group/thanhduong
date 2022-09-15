@@ -20,7 +20,7 @@ const UserController = {
                     req.flash('error', 'Đăng nhập thất bại');
                     res.redirect('admin/user/login');
                 } else {
-                    req.session.token = token;
+                    res.cookie('AuthToken', token);
                     res.redirect('/admin');
                 }
             });

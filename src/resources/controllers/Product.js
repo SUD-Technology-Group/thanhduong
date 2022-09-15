@@ -7,16 +7,22 @@ const ProductController = {
     // Client
     // GET /products
     index: catchAsync(async (req, res) => {
+        const categories = await categoryService.getAll();
         const products = await productService.getMany({ name: { $regex: req.query.search || '', $options: 'i' } });
-        const categoryList = products.map((item) => item.category.name);
-        const categories = await categoryService.getMany({ name: { $in: categoryList } });
-        res.render('product', { products, categories });
+        const categoryList = [];
+        products.map((item) => {
+            if (item.category.parent) categoryList.push(item.category.parent.name);
+            categoryList.push(item.category.name);
+        });
+        const queryCategories = await categoryService.getMany({ name: { $in: Array.from(new Set(categoryList)) } });
+        res.render('product', { products, queryCategories, categories });
     }),
 
     // GET /products/id
     detail: catchAsync(async (req, res) => {
         const product = await productService.get({ slug: req.params.id });
-        res.render('product/detail', { product });
+        const categories = await categoryService.getAll();
+        res.render('product/detail', { product, categories });
     }),
 
     // Server
