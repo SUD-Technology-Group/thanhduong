@@ -20,7 +20,7 @@
                 </div>
                 <div class='detail__container__right__desc'>
                     {{#if product.price.sale}}
-                        <p>Giá: <span>{{formatCurrency product.price.origin}}</span></p>
+                        <p class='text-decoration-line-through'>Giá: <span>{{formatCurrency product.price.origin}}</span></p>
                         <p>Giá khuyến mãi: <span>{{formatCurrency product.price.sale}}</span></p>
                     {{else}}
                         <p>Giá: {{formatCurrency product.price.origin}}</p>

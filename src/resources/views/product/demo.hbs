@@ -4,12 +4,12 @@
             <div class='card shadow'>
                 <div class='card-header d-flex justify-content-between'>
                     <h4>{{pageName}}</h4>
-                    <a type="button" href="/admin/products" class="btn btn-secondary">Trở lại</a>
+                    <a type='button' href='/admin/products' class='btn btn-secondary'>Trở lại</a>
                 </div>
                 <div class='card-body'>
                     <div class='detail'>
                         <div class='detail__container'>
-                            <div class="detail__content">
+                            <div class='detail__content'>
                                 <div class='detail__container__left'>
                                     <div class='detail__container__left__img'>
                                         <img src='{{product.images.[0]}}' alt='detail' />
@@ -20,7 +20,12 @@
                                         <h3>{{product.name}}</h3>
                                     </div>
                                     <div class='detail__container__right__desc'>
-                                        <p>Giá: <span>{{product.price}}</span></p>
+                                        {{#if product.price.sale}}
+                                            <p class='text-decoration-line-through'>Giá: <span>{{formatCurrency product.price.origin}}</span></p>
+                                            <p>Giá khuyến mãi: <span>{{formatCurrency product.price.sale}}</span></p>
+                                        {{else}}
+                                            <p>Giá: {{formatCurrency product.price.origin}}</p>
+                                        {{/if}}
                                         <p>DANH MỤC: <span>{{product.category.name}}</span></p>
                                     </div>
                                     <div class='detail__container__right__btn'>
@@ -35,7 +40,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="detail__description p-3">
+                            <div class='detail__description p-3'>
                                 {{{product.description}}}
                             </div>
                         </div>

@@ -14,11 +14,11 @@
         <div class='grid-content-left'>
             <ul>
                 <h4>Danh mục sản phẩm</h4>
-                {{#each categories}}
+                {{#each queryCategories}}
                     {{#unless parent}}
                     <li>
-                        <a href='#{{name}}' style='color: #333;' class="item__container">{{name}}</a>
-                        {{#each ../categories}}
+                        <a href='/products?search={{name}}' style='color: #333;' class="item__container">{{name}}</a>
+                        {{#each ../queryCategories}}
                             {{#if ../name}}
                                 {{#equal ../name parent.name}}
                                     <div class="my-1"><a href="#{{name}}" class="text-dark">+ {{name}}</a></div>
@@ -32,9 +32,9 @@
         </div>
 
         <div class='grid-content-right'>
-            {{#if categories}}
-            {{#each categories}}
-                {{#noChild name ../categories }}
+            {{#if queryCategories}}
+            {{#each queryCategories}}
+                {{#noChild name ../queryCategories }}
                 <div class="mb-3">
                     <div class='menu-title mb-4' id="{{name}}">{{name}}</div>
                     <div class='grid-content-right-product'>

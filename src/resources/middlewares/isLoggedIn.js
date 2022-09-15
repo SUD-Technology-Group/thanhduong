@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 
 module.exports = (req, res, next) => {
-    let token = req.session.token
+    let token = req.cookies['AuthToken']
     if (!token) {
         res.status(403)
         req.flash('error', 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại')
