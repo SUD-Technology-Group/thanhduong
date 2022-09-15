@@ -1,20 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const {
-    homeController,
-    aboutController,
+    pagesController,
     productController,
     newController,
-    contactController,
-    cartController,
-    saleController,
     orderController,
 } = require('../controllers');
 
 // Path /
 
-router.get('/', homeController.index);
-router.get('/about', aboutController.index);
+router.get('/', pagesController.index);
+router.get('/about', pagesController.about);
 
 router.get('/products', productController.index);
 router.get('/products/:id', productController.detail);
@@ -22,11 +18,11 @@ router.get('/products/:id', productController.detail);
 router.get('/news', newController.index);
 router.get('/news/:id', newController.detail);
 
-router.get('/contact', contactController.index);
+router.get('/contact', pagesController.contact);
 
-router.get('/sales', saleController.index);
+router.get('/sales', pagesController.sale);
 
-router.get('/cart', cartController.index);
+router.get('/cart', pagesController.cart);
 router.post('/cart', orderController.create);
 
 module.exports = router;

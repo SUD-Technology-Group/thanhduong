@@ -8,12 +8,12 @@ const userRouter = require('./User');
 const isLoggedIn = require('../middlewares/isLoggedIn');
 
 // Controller
-const { adminController } = require('../controllers');
+const { pagesController } = require('../controllers');
 
 // Path /admin
 
 // Home
-router.get('/', isLoggedIn, adminController.index);
+router.get('/', isLoggedIn, pagesController.admin);
 
 // Login
 router.use('/user', userRouter);
