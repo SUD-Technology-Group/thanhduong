@@ -568,13 +568,13 @@
 <script src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js'></script>
 <script>
     var swiper = new Swiper(".mySwiper", { 
-            slidesPerView: 4, 
-            spaceBetween: 0, 
-            pagination: { el: ".swiper-pagination",clickable: false }, 
-            autoplay: { delay: 2000, }, 
+            slidesPerView: 1, 
+            spaceBetween: 30, 
+            pagination: { el: ".swiper-pagination",clickable: false },
+            autoplay: {delay: 2000},
             reverseDirection: true,
             breakpoints: {
-                1200: {
+                600: {
                     slidesPerView: 6,
                 }
             }

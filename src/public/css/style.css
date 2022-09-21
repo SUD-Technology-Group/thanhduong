@@ -2774,6 +2774,15 @@ section.v-about {
 
 /* Mobile Responsive Start  */
 @media screen and (max-width: 600px) {
+    .partner__logo img {
+        height: 6rem;
+        width: 6rem;
+    }
+
+    .mySwiper {
+        margin-left: 3rem !important;
+    }
+
     .map-title p {
         font-size: 12px;
     }
