@@ -605,13 +605,12 @@
 <script>
     var swiper = new Swiper(".mySwiper", { 
             slidesPerView: 1, 
-            spaceBetween: 30, 
-            pagination: { el: ".swiper-pagination",clickable: false },
-            autoplay: {delay: 2000},
-            reverseDirection: true,
+            spaceBetween: 20, 
+            pagination: { el: ".swiper-pagination",clickable: true },
             breakpoints: {
                 600: {
                     slidesPerView: 6,
+                    autoplay: {delay: 2000},
                 }
             }
         }
