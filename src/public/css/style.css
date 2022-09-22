@@ -93,7 +93,7 @@ ul.nav-menu,
     width: 100%;
     color: #000;
     z-index: 999;
-    background-color: #ffffff;
+    background-color: #3e3e45;
     position: fixed;
     top: 0;
 }
@@ -101,6 +101,10 @@ ul.nav-menu,
 .header-top {
     height: 40px;
     background-color: #f6d99f;
+}
+
+.header-top--content span {
+    font-weight: bold;
 }
 
 .header-hotline span {
@@ -112,13 +116,13 @@ ul.nav-menu,
 }
 
 .buy-box {
-    background-color: deepskyblue;
+    background-color: #eed202;
     padding: 3px 10px 5px;
     border-radius: 5px;
 }
 
 .buy-box a {
-    color: #ed1c24;
+    color: #ffffff;
     font-size: 13px;
 }
 
@@ -164,6 +168,10 @@ ul.nav-menu,
     float: left;
     display: flex;
     align-items: center;
+}
+
+.header-right-corner i {
+    color: var(--vang);
 }
 
 .header-body-2 {
