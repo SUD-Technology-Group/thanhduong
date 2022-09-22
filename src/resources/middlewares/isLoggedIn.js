@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
     jwt.verify(token, process.env.JWT_SECRET, (err, data) => {
         if (err) {
             res.status(403)
-            req.flash('error', 'Token không hợp lệ vui lòng đăng nhập lại')
+            req.flash('error', 'Token không hợp lệ, vui lòng đăng nhập lại')
             return res.redirect('/admin/user/login')
         }
         next()
