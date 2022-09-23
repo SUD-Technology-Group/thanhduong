@@ -27,7 +27,7 @@
                         khẩu từ các nước Hàn Quốc, Nhật Bản, Thái Lan, Trung Quốc…</p>
                     <div class='v-about_img'>
                         <div class='owl-carousel owl-theme owl-loaded owl-drag' id='owl-about'>
-                            <div class='owl-stage-outer' style="height: 14rem;">
+                            <div class='owl-stage-outer' style='height: 14rem;'>
                                 <div
                                     class='owl-stage'
                                     id='test'
@@ -199,7 +199,7 @@
             {{#each products}}
                 {{#if property.new}}
                     <div class='col-md-3 col-sm-4 mb-4'>
-                        <div class="card h-100 border-0">
+                        <div class='card h-100 border-0'>
                             <a href='products/{{slug}}' class='product-box'>
                                 <div class='product-img-box'>
                                     <img src='{{images.[0]}}' alt={{name}} class='w-100' />
@@ -210,13 +210,14 @@
                                     </div>
                                     <div class='product-price'>
                                         {{#if price.sale}}
-                                        <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
-                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                            <p class='origin__price line-through'>Giá:
+                                                {{formatCurrency price.origin}}</p>
+                                            <p class='sale__price'>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
                                         {{else}}
-                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                            <p class='origin__price'>Giá: {{formatCurrency price.origin}}</p>
                                         {{/if}}
                                     </div>
-                                    <a href='products/{{slug}}' class='product__btn' >
+                                    <a href='products/{{slug}}' class='product__btn'>
                                         <button type='button' class='btn btn-lg my-2'>
                                             Mua ngay
                                         </button>
@@ -236,7 +237,7 @@
             {{#each products}}
                 {{#if property.feature}}
                     <div class='col-md-3 col-sm-4 mb-4'>
-                        <div class="card h-100 border-0">
+                        <div class='card h-100 border-0'>
                             <a href='products/{{slug}}' class='product-box'>
                                 <div class='product-img-box'>
                                     <img src='{{images.[0]}}' alt={{name}} class='w-100' />
@@ -247,13 +248,14 @@
                                     </div>
                                     <div class='product-price'>
                                         {{#if price.sale}}
-                                        <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
-                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                            <p class='origin__price line-through'>Giá:
+                                                {{formatCurrency price.origin}}</p>
+                                            <p class='sale__price'>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
                                         {{else}}
-                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                            <p class='origin__price'>Giá: {{formatCurrency price.origin}}</p>
                                         {{/if}}
                                     </div>
-                                    <a href='products/{{slug}}' class='product__btn' >
+                                    <a href='products/{{slug}}' class='product__btn'>
                                         <button type='button' class='btn btn-lg my-2'>
                                             Mua ngay
                                         </button>
@@ -274,9 +276,9 @@
 
         <div class='row'>
             {{#each products}}
-                {{#equal category.name "Pallet Nhựa cũ"}}
+                {{#equal category.name 'Pallet Nhựa cũ'}}
                     <div class='col-md-3 col-sm-4 mb-4'>
-                        <div class="card h-100 border-0">
+                        <div class='card h-100 border-0'>
                             <a href='products/{{slug}}' class='product-box'>
                                 <div class='product-img-box'>
                                     <img src='{{images.[0]}}' alt={{name}} class='w-100' />
@@ -287,14 +289,15 @@
                                     </div>
                                     <div class='product-price'>
                                         {{#if price.sale}}
-                                        <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
-                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                            <p class='origin__price line-through'>Giá:
+                                                {{formatCurrency price.origin}}</p>
+                                            <p class='sale__price'>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
                                         {{else}}
-                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
-                                        <p class="sale__price" style="opacity: 0;">Giá khuyến mãi: None</p>
+                                            <p class='origin__price'>Giá: {{formatCurrency price.origin}}</p>
+                                            <p class='sale__price' style='opacity: 0;'>Giá khuyến mãi: None</p>
                                         {{/if}}
                                     </div>
-                                    <a href='products/{{slug}}' class='product__btn' >
+                                    <a href='products/{{slug}}' class='product__btn'>
                                         <button type='button' class='btn btn-lg my-2'>
                                             Mua ngay
                                         </button>
@@ -304,9 +307,9 @@
                         </div>
                     </div>
                 {{/equal}}
-                {{#equal category.name "Pallet Nhựa mới"}}
+                {{#equal category.name 'Pallet Nhựa mới'}}
                     <div class='col-md-3 col-sm-4 mb-4'>
-                        <div class="card h-100 border-0">
+                        <div class='card h-100 border-0'>
                             <a href='products/{{slug}}' class='product-box'>
                                 <div class='product-img-box'>
                                     <img src='{{images.[0]}}' alt={{name}} class='w-100' />
@@ -317,14 +320,15 @@
                                     </div>
                                     <div class='product-price'>
                                         {{#if price.sale}}
-                                        <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
-                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                            <p class='origin__price line-through'>Giá:
+                                                {{formatCurrency price.origin}}</p>
+                                            <p class='sale__price'>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
                                         {{else}}
-                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
-                                        <p class="sale__price" style="opacity: 0;">Giá khuyến mãi: None</p>
+                                            <p class='origin__price'>Giá: {{formatCurrency price.origin}}</p>
+                                            <p class='sale__price' style='opacity: 0;'>Giá khuyến mãi: None</p>
                                         {{/if}}
                                     </div>
-                                    <a href='products/{{slug}}' class='product__btn' >
+                                    <a href='products/{{slug}}' class='product__btn'>
                                         <button type='button' class='btn btn-lg my-2'>
                                             Mua ngay
                                         </button>
@@ -345,27 +349,28 @@
 
         <div class='row'>
             {{#each products}}
-                {{#equal category.name "Sóng nhựa"}}
+                {{#equal category.name 'Sóng nhựa'}}
                     <div class='col-md-3 col-sm-4 mb-4'>
-                        <div class="card h-100 border-0">
+                        <div class='card h-100 border-0'>
                             <a href='products/{{slug}}' class='product-box'>
                                 <div class='product-img-box'>
                                     <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                                 </div>
                                 <div class='product-content-box rounded-bottom card-body'>
-                                    <div class='product-title'h-50>
+                                    <div class='product-title' h-50>
                                         <a href='products/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
                                         {{#if price.sale}}
-                                        <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
-                                        <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                            <p class='origin__price line-through'>Giá:
+                                                {{formatCurrency price.origin}}</p>
+                                            <p class='sale__price'>Giá khuyến mãi: {{formatCurrency price.sale}}</p>
                                         {{else}}
-                                        <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
-                                        <p class="sale__price" style="opacity: 0;">Giá khuyến mãi: None</p>
+                                            <p class='origin__price'>Giá: {{formatCurrency price.origin}}</p>
+                                            <p class='sale__price' style='opacity: 0;'>Giá khuyến mãi: None</p>
                                         {{/if}}
                                     </div>
-                                    <a href='products/{{slug}}' class='product__btn' >
+                                    <a href='products/{{slug}}' class='product__btn'>
                                         <button type='button' class='btn btn-lg my-2'>
                                             Mua ngay
                                         </button>
@@ -468,41 +473,26 @@
             </div>
             <div class='partner__logo swiper-slide'>
                 <img
-                    src='https://hhfurniture.com.vn/wp-content/uploads/2022/04/40b42a2dd54d14134d5c-300x300.jpg'
-                    alt='logo'
-                />
-            </div>
-            <div class='partner__logo swiper-slide'>
-                <img
-                    src='https://hhfurniture.com.vn/wp-content/uploads/2022/04/7a57bfce40ae81f0d8bf-300x300.jpg'
-                    alt='logo'
-                />
-            </div>
-            <div class='partner__logo swiper-slide'>
-                <img
-                    src='https://hhfurniture.com.vn/wp-content/uploads/2022/04/31544eccb1ac70f229bd-300x300.jpg'
-                    alt='logo'
-                />
-            </div>
-            <div class='partner__logo swiper-slide'>
-                <img
                     src='https://hhfurniture.com.vn/wp-content/uploads/2022/04/ad4e55d6aab66be832a7-300x300.jpg'
                     alt='logo'
+                    class="delete-img"
                 />
             </div>
             <div class='partner__logo swiper-slide'>
-                <img src='https://hhfurniture.com.vn/wp-content/uploads/2022/04/86711debe28b23d57a9a.jpg' alt='logo' />
+                <img src='https://hhfurniture.com.vn/wp-content/uploads/2022/04/86711debe28b23d57a9a.jpg' alt='logo' class="delete-img"/>
             </div>
             <div class='partner__logo swiper-slide'>
                 <img
                     src='https://hhfurniture.com.vn/wp-content/uploads/2022/04/236583f37c93bdcde482-286x300.jpg'
                     alt='logo'
+                    class="delete-img"
                 />
             </div>
             <div class='partner__logo swiper-slide'>
                 <img
                     src='https://hhfurniture.com.vn/wp-content/uploads/2022/04/95acff380058c1069849-300x300.jpg'
                     alt='logo'
+                    class="delete-img"
                 />
             </div>
         </div>
@@ -603,16 +593,6 @@
 
 <script src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js'></script>
 <script>
-    var swiper = new Swiper(".mySwiper", { 
-            slidesPerView: 1, 
-            spaceBetween: 20, 
-            pagination: { el: ".swiper-pagination",clickable: true },
-            breakpoints: {
-                600: {
-                    slidesPerView: 6,
-                    autoplay: {delay: 2000},
-                }
-            }
-        }
-    );
+    var swiper = new Swiper(".mySwiper", { slidesPerView: 1, spaceBetween: 20, pagination: { el:
+    ".swiper-pagination",clickable: true }, breakpoints: { 600: { slidesPerView: 6, autoplay: {delay: 2000}, } } } );
 </script>

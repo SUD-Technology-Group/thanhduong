@@ -1,16 +1,16 @@
 <div class='detail'>
     <div class='map-title'>
-        <p><a href="/">Trang chủ</a> / <a href="/products">Sản phẩm</a> / {{product.name}}</p>
+        <p><a href='/'>Trang chủ</a> / <a href='/products'>Sản phẩm</a> / {{product.name}}</p>
     </div>
     <div class='detail__container'>
-        <div class="detail__main">
+        <div class='detail__main'>
             <div class='detail__container__left'>
                 <div class='detail__container__left__img'>
                     <img src='{{product.images.[0]}}' alt='detail' />
                 </div>
-                <div class="detail__container__sub__img">
+                <div class='detail__container__sub__img'>
                     {{#each product.images}}
-                        <img src="{{this}}" alt="sub__image">
+                        <img src='{{this}}' alt='sub__image' />
                     {{/each}}
                 </div>
             </div>
@@ -20,7 +20,8 @@
                 </div>
                 <div class='detail__container__right__desc'>
                     {{#if product.price.sale}}
-                        <p class='text-decoration-line-through'>Giá: <span>{{formatCurrency product.price.origin}}</span></p>
+                        <p class='text-decoration-line-through'>Giá:
+                            <span>{{formatCurrency product.price.origin}}</span></p>
                         <p>Giá khuyến mãi: <span>{{formatCurrency product.price.sale}}</span></p>
                     {{else}}
                         <p>Giá: {{formatCurrency product.price.origin}}</p>
@@ -39,7 +40,7 @@
                 </div>
             </div>
             <div class='detail__container__promise'>
-                <h3>CAM KẾT CỦA THÀNH DƯƠNG</h3>
+                <h4>CAM KẾT CỦA THÀNH DƯƠNG</h4>
                 <div class='detail__container__promise__subtext'>
                     <span>
                         <i class='uil uil-file-search-alt'></i>
@@ -56,72 +57,32 @@
                 </div>
             </div>
         </div>
-        <div class="detail__description">
+        <div class='detail__description'>
             {{{product.description}}}
         </div>
     </div>
-    <div class='question__container'>
-        <div class='question__title'>
-            <h3>HỎI ĐÁP</h3>
-        </div>
-        <p>Chưa có đánh giá nào.</p>
-        <div class='question__form'>
-            <div class='question__form__text'>
-                <div class='question__form__header'>
-                    <p>Hãy là người đầu tiên nhận xét “Pallet Thành Dương” </p>
-                </div>
-                <div class='question__form__starts'>
-                    <p>Đánh giá của bạn *</p>
-                    <div class='starts'>
-                        <span>
-                            <i class='uil uil-star'></i>
-                        </span>
-                        <span>
-                            <i class='uil uil-star'></i>
-                            <i class='uil uil-star'></i>
-                        </span>
-                        <span>
-                            <i class='uil uil-star'></i>
-                            <i class='uil uil-star'></i>
-                            <i class='uil uil-star'></i>
-                        </span>
-                        <span>
-                            <i class='uil uil-star'></i>
-                            <i class='uil uil-star'></i>
-                            <i class='uil uil-star'></i>
-                            <i class='uil uil-star'></i>
-                        </span>
-                        <span>
-                            <i class='uil uil-star'></i>
-                            <i class='uil uil-star'></i>
-                            <i class='uil uil-star'></i>
-                            <i class='uil uil-star'></i>
-                            <i class='uil uil-star'></i>
-                        </span>
-                    </div>
-                </div>
-                <div class='question__form__comment'>
-                    <p>Nhận xét của bạn *</p>
-                    <textarea cols='30' rows='10'></textarea>
-                    <div class='question__form__name__email'>
-                        <div class='question__form__name'>
-                            <label for='name'>Tên *</label>
-                            <input type='text' id='name' />
+    <div class='related__product__container'>
+        <div class='menu-title mb-5 mt-5'>SẢN PHẨM TƯƠNG TỰ</div>
+        <div class='related__product__card__container'>
+            {{#each products}}
+                {{#equal this.category.name ../product.category.name}}
+                <div class='card' style='width: 18rem;'>
+                    <img src='{{images.[0]}}' class='card-img-top' alt='product' />
+                    <div class='card-body'>
+                        <h5 class='card-title'>{{name}}</h5>
+                        <div class='product-price'>
+                            {{#if price.sale}}
+                                <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
+                                <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                {{else}}
+                                <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                {{/if}}
                         </div>
-                        <div class='question__form__email'>
-                            <label for='email'>Email *</label>
-                            <input type='email' id='email' />
-                        </div>
+                        <a href='#' class='btn btn-primary'>Thêm vào giỏ hàng</a>
                     </div>
-                    <div class='question__form__box'>
-                        <input type='checkbox' id='box' />
-                        <label for='box'>Lưu tên của tôi, email, và trang web trong trình duyệt này cho lần bình luận kế
-                            tiếp của tôi.
-                        </label>
-                    </div>
-                    <button class='btn-v-about'>Xem thêm</button>
                 </div>
-            </div>
+                {{/equal}}
+            {{/each}}
         </div>
     </div>
 </div>

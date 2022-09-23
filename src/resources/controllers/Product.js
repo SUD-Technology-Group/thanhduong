@@ -20,9 +20,10 @@ const ProductController = {
 
     // GET /products/id
     detail: catchAsync(async (req, res) => {
+        const products = await productService.getMany({ name: { $regex: req.query.search || '', $options: 'i' } });
         const product = await productService.get({ slug: req.params.id });
         const categories = await categoryService.getAll();
-        res.render('product/detail', { product, categories });
+        res.render('product/detail', { products, product, categories });
     }),
 
     // Server
