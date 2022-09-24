@@ -55,20 +55,20 @@
                             <div class="form-row">
                                 <div class="form-group col">
                                     <label class="control-label text-uppercase" for="price">Giá gốc</label>
-                                    <input id="price" name="price" placeholder="Giá gốc" class="form-control input-md" type="number">
+                                    <input id="price" name="price" placeholder="Giá gốc" class="form-control input-md" type="number" min="0">
                                     <p class="mt-2 mb-0 text-muted">*Mặc định: Liên hệ</p>
                                 </div>
 
                                 <div class="form-group col">
                                     <label class="control-label text-uppercase" for="sale">Giá khuyến mãi</label>
-                                    <input id="sale" name="sale" placeholder="Giá khuyến mãi" class="form-control input-md" type="number">
+                                    <input id="sale" name="sale" placeholder="Giá khuyến mãi" class="form-control input-md" type="number" min="0">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label text-uppercase" for="amount">Số lượng<span style="color:red">*</span></label>
                                 <input id="amount" name="amount" placeholder="Số lượng"
-                                class="form-control input-md w-50" required="" type="number">
+                                class="form-control input-md w-50" required="" type="number" min="0">
                             </div>
                             
                             <div class="form-group">

@@ -61,28 +61,42 @@
             {{{product.description}}}
         </div>
     </div>
-    <div class='related__product__container'>
+    <div class='related__product__container container'>
         <div class='menu-title mb-5 mt-5'>SẢN PHẨM TƯƠNG TỰ</div>
         <div class='related__product__card__container'>
             {{#each products}}
-                {{#equal this.category.name ../product.category.name}}
-                <div class='card' style='width: 18rem;'>
-                    <img src='{{images.[0]}}' class='card-img-top' alt='product' />
-                    <div class='card-body'>
-                        <h5 class='card-title'>{{name}}</h5>
-                        <div class='product-price'>
-                            {{#if price.sale}}
-                                <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
-                                <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
-                                {{else}}
-                                <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
-                                {{/if}}
+                <div class="card h-100 border-0">
+                    <a href='products/{{slug}}' class='product-box'>
+                        <div class='product-img-box'>
+                            <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                         </div>
-                        <a href='#' class='btn btn-primary'>Thêm vào giỏ hàng</a>
-                    </div>
+                        <div class='product-content-box rounded-bottom card-body pt-0'>
+                            <div class='product-title h-50'>
+                                <a href='products/{{slug}}'>{{name}}</a>
+                            </div>
+                            <div class='product-price'>
+                                {{#if price.sale}}
+                                    <p class="origin__price line-through">Giá: {{formatCurrency price.origin}}</p>
+                                    <p class="sale__price">Giá khuyến mãi: {{formatCurrency price.sale}}</p>
+                                {{else}}
+                                    <p class="origin__price">Giá: {{formatCurrency price.origin}}</p>
+                                {{/if}}
+                            </div>
+                            <button
+                                type='button'
+                                data-name='{{name}}'
+                                {{#if price.sale}}
+                                    data-price='{{price.sale}}'
+                                {{else}}
+                                    data-price='{{price.origin}}'
+                                {{/if}}
+                                data-image='{{images.[0]}}'
+                                class='btn btn-outline-info px-3 rounded-pil add-to-cart my-2'
+                            >Thêm vào giỏ hàng</button>
+                        </div>
+                    </a>
                 </div>
-                {{/equal}}
-            {{/each}}
+            {{/each}}     
         </div>
     </div>
 </div>

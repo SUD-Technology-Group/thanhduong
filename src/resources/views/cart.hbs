@@ -131,12 +131,12 @@
 <script>
     $('#products').val(sessionStorage.getItem('shoppingCart'));
     $('.form').submit((e) => {
+        const phone = $('#phone').val()
         if (!sessionStorage.getItem('shoppingCart')) {
             e.preventDefault(); 
             alert('Giỏ hàng của bạn đang trống!');
         }
-
-        if ($('#phone').val().charAt(0) != '0' ||  $('#phone').val().length > 10) {
+        if (phone.charAt(0) != '0' ||  phone.length != 10 || ! /^[0-9]+$/.test(phone)) {
             e.preventDefault(); 
             alert('Vui lòng kiểm tra lại số điện thoại!');
             $('#phone').focus();

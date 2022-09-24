@@ -8,7 +8,9 @@ const ProductController = {
     // GET /products
     index: catchAsync(async (req, res) => {
         const categories = await categoryService.getAll();
-        const products = await productService.getMany({ name: { $regex: req.query.search || '', $options: 'i' } });
+        const products = await productService.getMany({
+            name: { $regex: req.query.search || '', $options: 'i' },
+        });
         const categoryList = [];
         products.map((item) => {
             if (item.category.parent) categoryList.push(item.category.parent.name);
@@ -20,8 +22,8 @@ const ProductController = {
 
     // GET /products/id
     detail: catchAsync(async (req, res) => {
-        const products = await productService.getMany({ name: { $regex: req.query.search || '', $options: 'i' } });
         const product = await productService.get({ slug: req.params.id });
+        const products = await productService.getMany({ category: product.category }, null, { limit: 4 });
         const categories = await categoryService.getAll();
         res.render('product/detail', { products, product, categories });
     }),

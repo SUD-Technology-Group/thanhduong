@@ -197,6 +197,7 @@
         <div class='menu-title mb-5'>Sản phẩm mới</div>
         <div class='row'>
             {{#each products}}
+                {{#if property.amount}}
                 {{#if property.new}}
                     <div class='col-md-3 col-sm-4 mb-4'>
                         <div class='card h-100 border-0'>
@@ -226,6 +227,7 @@
                             </a>
                         </div>
                     </div>
+                {{/if}}
                 {{/if}}
             {{/each}}
         </div>

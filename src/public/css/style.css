@@ -1797,7 +1797,7 @@ section.v-about {
 .related__product__card__container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 8rem;
+    gap: 2rem;
 }
 
 /* Detail End */
