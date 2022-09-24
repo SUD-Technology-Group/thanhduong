@@ -144,9 +144,11 @@ closeModalLoginButton.addEventListener('click', () => {
 //replace main-image when click sub-image - product detail
 const mainImage = document.querySelector('.detail__container__left__img img');
 const subImages = document.querySelectorAll('.detail__container__sub__img img');
+console.log(subImages);
 
 subImages.forEach((image) => {
     image.addEventListener('click', () => {
+        console.log(1);
         mainImage.setAttribute('src', image.getAttribute('src'));
     });
 });

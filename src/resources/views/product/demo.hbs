@@ -14,6 +14,11 @@
                                     <div class='detail__container__left__img'>
                                         <img src='{{product.images.[0]}}' alt='detail' />
                                     </div>
+                                    <div class='detail__container__sub__img'>
+                                        {{#each product.images}}
+                                            <img src='{{this}}' alt='sub__image' />
+                                        {{/each}}
+                                    </div>
                                 </div>
                                 <div class='detail__container__right'>
                                     <div class='detail__container__right__title'>
@@ -21,7 +26,8 @@
                                     </div>
                                     <div class='detail__container__right__desc'>
                                         {{#if product.price.sale}}
-                                            <p class='text-decoration-line-through'>Giá: <span>{{formatCurrency product.price.origin}}</span></p>
+                                            <p class='text-decoration-line-through'>Giá:
+                                                <span>{{formatCurrency product.price.origin}}</span></p>
                                             <p>Giá khuyến mãi: <span>{{formatCurrency product.price.sale}}</span></p>
                                         {{else}}
                                             <p>Giá: {{formatCurrency product.price.origin}}</p>
