@@ -2964,6 +2964,9 @@ section.v-about {
         align-items: start;
     }
 
+    .related__product__card__container {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
 }
 /* Mobile Responsive End  */
