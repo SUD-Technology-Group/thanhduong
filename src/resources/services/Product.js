@@ -6,7 +6,7 @@ const ProductService = {
     },
 
     getMany: async (payloads, field) => {
-        return await Product.find(payloads, field)
+        return await Product.find({ ...payloads, amount: { $gte: 1 } }, field)
             .populate({ path: 'category', populate: { path: 'parent' } })
             .lean();
     },

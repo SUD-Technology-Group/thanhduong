@@ -8,7 +8,9 @@ const ProductController = {
     // GET /products
     index: catchAsync(async (req, res) => {
         const categories = await categoryService.getAll();
-        const products = await productService.getMany({ name: { $regex: req.query.search || '', $options: 'i' } });
+        const products = await productService.getMany({
+            name: { $regex: req.query.search || '', $options: 'i' },
+        });
         const categoryList = [];
         products.map((item) => {
             if (item.category.parent) categoryList.push(item.category.parent.name);

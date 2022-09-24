@@ -11,9 +11,11 @@ const {
 
 router.get('/', pagesController.index);
 router.get('/about', pagesController.about);
-router.get('/contact', pagesController.contact);
 router.get('/sales', pagesController.sale);
 router.get('/cart', pagesController.cart);
+
+router.get('/contact', pagesController.contactView);
+router.post('/contact', pagesController.contact);
 
 router.get('/products', productController.index);
 router.get('/products/:id', productController.detail);

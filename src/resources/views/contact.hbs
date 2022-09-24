@@ -15,15 +15,46 @@
     </div>
     <div class='form-contact'>
         <div class='form-input'>
-            <h4>LIÊN HỆ TƯ VẤN</h4>
-            <input type='text' name='' class='form-input-name' placeholder='Họ và tên' required />
-            <input type='text' class='form-input-phone' placeholder='Số điện thoại' required />
-            <input type='text' class='form-input-email' placeholder='Email' required />
-            <textarea cols='30' rows='10' class='form-input-content' placeholder='Nội dung...'>
-            </textarea>
-            <a href='#'>
-                <button class='btn-v-about'>Đăng ký</button>
-            </a>
+            {{#if success}}
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    {{success}}
+                    <span
+                        style='font-size: 20px; cursor: pointer; padding: 5px 0 0 10px'
+                        onclick="$('.alert').hide('fade');"
+                    >&times;</span>
+                </div>
+            {{/if}}
+
+            {{#if error}}
+                <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    {{error}}
+                    <span
+                        style='font-size: 20px; cursor: pointer; padding: 5px 0 0 10px'
+                        onclick="$('.alert').hide('fade');"
+                    >&times;</span>
+                </div>
+            {{/if}}
+            <h4 class="mt-3">LIÊN HỆ TƯ VẤN</h4>
+            <form method='post' class='form'>
+                <input type='text' name='name' class='form-input-name form-control' placeholder='Họ và tên' required />
+                <input
+                    type='text'
+                    name='phone'
+                    id='phone'
+                    class='form-input-phone form-control'
+                    placeholder='Số điện thoại'
+                    required
+                />
+                <input type='email' name='email' class='form-input-email form-control' placeholder='Email' required />
+                <textarea
+                    cols='30'
+                    rows='10'
+                    name='content'
+                    class='form-input-content form-control'
+                    placeholder='Nội dung...'
+                ></textarea>
+                <button type='submit' class='btn-v-about p-2 mt-4'>Đăng ký</button>
+            </form>
         </div>
         <div class='form-info'>
             <h4>THÔNG TIN LIÊN HỆ</h4>
@@ -96,3 +127,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('.form').submit((e) => { const phone = $('#phone').val() if (phone.charAt(0) != '0' || phone.length != 10 || !
+    /^[0-9]+$/.test(phone)) { e.preventDefault(); alert('Vui lòng kiểm tra lại số điện thoại!'); $('#phone').focus(); }
+    })
+</script>
