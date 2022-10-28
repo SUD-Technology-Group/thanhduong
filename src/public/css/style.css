@@ -67,6 +67,8 @@ ul li {
 .nav-menu-2 li:hover {
     background-color: var(--vang);
     transition: all 0.05s;
+    border: solid transparent;
+    border-radius: 6px;
 }
 
 ul.nav-menu,
@@ -121,9 +123,10 @@ ul.nav-menu,
     border-radius: 5px;
 }
 
-.buy-box a {
+.buy-box span {
     color: #ffffff;
     font-size: 13px;
+    cursor: pointer;
 }
 
 .header-top--content {
@@ -202,7 +205,7 @@ ul.nav-menu,
 
 .header-body-2 ul.sub-nav {
     margin-top: 0;
-    margin-left: 14.5px;
+    margin-left: 13.5px;
 }
 
 .header-body-2 ul {

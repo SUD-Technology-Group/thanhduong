@@ -85,7 +85,6 @@ const closeButton = document.querySelector('.close-menu-btn');
 const navMenu = document.querySelector('.nav-menu');
 const navMenu2 = document.querySelector('.nav-menu-2');
 
-
 openButton.addEventListener('click', () => {
     navMenu.style.display = 'block';
     openButton.style.display = 'none';
@@ -191,12 +190,18 @@ const searchBar2 = document.querySelector('.nav__menu__2__input input');
 
 searchBar.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
-        location.href = '/result'
+        location.href = '/result';
     }
 });
 
 searchBar2.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
-        location.href = '/result'
+        location.href = '/result';
     }
+});
+
+//open modal when click buy-now button
+const buyNowBtn = document.querySelector('.buy-box');
+buyNowBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
 });
