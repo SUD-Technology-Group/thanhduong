@@ -14,20 +14,28 @@
         <div class='grid-content-left'>
             <ul>
                 <h4>Danh mục sản phẩm</h4>
-                {{#each queryCategories}}
-                    {{#unless parent}}
-                    <li>
-                        <a href='/products?search={{name}}' style='color: #333;' class="item__container">{{name}}</a>
-                        {{#each ../queryCategories}}
-                            {{#if ../name}}
-                                {{#equal ../name parent.name}}
-                                    <div class="my-1"><a href="#{{name}}" class="text-dark">+ {{name}}</a></div>
-                                {{/equal}}
-                            {{/if}}
-                        {{/each}}
-                    </li>
-                    {{/unless}}
-                {{/each}}
+                {{#equal queryCategories.length 1}}
+                    {{#each queryCategories}}
+                        <li>
+                            <a href='/{{slug}}' style='color: #333;' class="item__container">{{name}}</a>
+                        </li>
+                    {{/each}}
+                {{else}}
+                    {{#each queryCategories}}
+                        {{#unless parent}}
+                        <li>
+                            <a href='/{{slug}}' style='color: #333;' class="item__container">{{name}}</a>
+                            {{#each ../queryCategories}}
+                                {{#if ../name}}
+                                    {{#equal ../name parent.name}}
+                                        <div class="my-1"><a href="/{{slug}}" class="text-dark">+ {{name}}</a></div>
+                                    {{/equal}}
+                                {{/if}}
+                            {{/each}}
+                        </li>
+                        {{/unless}}
+                    {{/each}}
+                {{/equal}}
             </ul>
         </div>
 
@@ -41,13 +49,13 @@
                         {{#each ../products}}
                             {{#equal category.name ../name}}
                             <div class="card h-100 border-0">
-                                <a href='products/{{slug}}' class='product-box'>
+                                <a href='/{{category.slug}}/{{slug}}' class='product-box'>
                                     <div class='product-img-box'>
                                         <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                                     </div>
                                     <div class='product-content-box rounded-bottom card-body pt-0'>
                                         <div class='product-title h-50'>
-                                            <a href='products/{{slug}}'>{{name}}</a>
+                                            <a href='/{{category.slug}}/{{slug}}'>{{name}}</a>
                                         </div>
                                         <div class='product-price'>
                                             {{#if price.sale}}

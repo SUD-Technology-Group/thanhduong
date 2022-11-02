@@ -20,9 +20,19 @@ const ProductController = {
         res.render('product', { products, queryCategories, categories });
     }),
 
-    // GET /products/id
+    // GET /:category
+    getByCategory: catchAsync(async (req, res) => {
+        const categories = await categoryService.getAll();
+        const category = await categoryService.get({ slug: req.params.category });
+        const queryCategories = await categoryService.getMany({ parent: category });
+        queryCategories.push(category);
+        const products = await productService.getMany({ category: { $in: queryCategories } });
+        res.render('product', { products, queryCategories, categories });
+    }),
+
+    // GET /:category/:slug
     detail: catchAsync(async (req, res) => {
-        const product = await productService.get({ slug: req.params.id });
+        const product = await productService.get({ slug: req.params.slug });
         const products = await productService.getMany(
             {
                 category: product.category,

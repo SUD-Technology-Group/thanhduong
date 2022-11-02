@@ -200,13 +200,13 @@
                 {{#if property.new}}
                     <div class='col-md-3 col-sm-4 mb-4'>
                         <div class='card h-100 border-0'>
-                            <a href='products/{{slug}}' class='product-box'>
+                            <a href='/{{category.slug}}/{{slug}}' class='product-box'>
                                 <div class='product-img-box'>
                                     <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                                 </div>
                                 <div class='product-content-box rounded-bottom card-body'>
                                     <div class='product-title h-50'>
-                                        <a href='products/{{slug}}'>{{name}}</a>
+                                        <a href='/{{category.slug}}/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
                                         {{#if price.sale}}
@@ -217,7 +217,7 @@
                                             <p class='origin__price'>Giá: {{formatCurrency price.origin}}</p>
                                         {{/if}}
                                     </div>
-                                    <a href='products/{{slug}}' class='product__btn'>
+                                    <a href='/{{category.slug}}/{{slug}}' class='product__btn'>
                                         <button type='button' class='btn btn-lg my-2'>
                                             Mua ngay
                                         </button>
@@ -238,13 +238,13 @@
                 {{#if property.feature}}
                     <div class='col-md-3 col-sm-4 mb-4'>
                         <div class='card h-100 border-0'>
-                            <a href='products/{{slug}}' class='product-box'>
+                            <a href='/{{category.slug}}/{{slug}}' class='product-box'>
                                 <div class='product-img-box'>
                                     <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                                 </div>
                                 <div class='product-content-box rounded-bottom card-body'>
                                     <div class='product-title h-50'>
-                                        <a href='products/{{slug}}'>{{name}}</a>
+                                        <a href='/{{category.slug}}/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
                                         {{#if price.sale}}
@@ -255,7 +255,7 @@
                                             <p class='origin__price'>Giá: {{formatCurrency price.origin}}</p>
                                         {{/if}}
                                     </div>
-                                    <a href='products/{{slug}}' class='product__btn'>
+                                    <a href='/{{category.slug}}/{{slug}}' class='product__btn'>
                                         <button type='button' class='btn btn-lg my-2'>
                                             Mua ngay
                                         </button>
@@ -279,13 +279,13 @@
                 {{#equal category.name 'Pallet Nhựa cũ'}}
                     <div class='col-md-3 col-sm-4 mb-4'>
                         <div class='card h-100 border-0'>
-                            <a href='products/{{slug}}' class='product-box'>
+                            <a href='/{{category.slug}}/{{slug}}' class='product-box'>
                                 <div class='product-img-box'>
                                     <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                                 </div>
                                 <div class='product-content-box rounded-bottom card-body'>
                                     <div class='product-title h-50'>
-                                        <a href='products/{{slug}}'>{{name}}</a>
+                                        <a href='/{{category.slug}}/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
                                         {{#if price.sale}}
@@ -297,7 +297,7 @@
                                             <p class='sale__price' style='opacity: 0;'>Giá khuyến mãi: None</p>
                                         {{/if}}
                                     </div>
-                                    <a href='products/{{slug}}' class='product__btn'>
+                                    <a href='/{{category.slug}}/{{slug}}' class='product__btn'>
                                         <button type='button' class='btn btn-lg my-2'>
                                             Mua ngay
                                         </button>
@@ -310,13 +310,13 @@
                 {{#equal category.name 'Pallet Nhựa mới'}}
                     <div class='col-md-3 col-sm-4 mb-4'>
                         <div class='card h-100 border-0'>
-                            <a href='products/{{slug}}' class='product-box'>
+                            <a href='/{{category.slug}}/{{slug}}' class='product-box'>
                                 <div class='product-img-box'>
                                     <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                                 </div>
                                 <div class='product-content-box rounded-bottom card-body'>
                                     <div class='product-title h-50'>
-                                        <a href='products/{{slug}}'>{{name}}</a>
+                                        <a href='/{{category.slug}}/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
                                         {{#if price.sale}}
@@ -328,7 +328,7 @@
                                             <p class='sale__price' style='opacity: 0;'>Giá khuyến mãi: None</p>
                                         {{/if}}
                                     </div>
-                                    <a href='products/{{slug}}' class='product__btn'>
+                                    <a href='/{{category.slug}}/{{slug}}' class='product__btn'>
                                         <button type='button' class='btn btn-lg my-2'>
                                             Mua ngay
                                         </button>
@@ -352,13 +352,13 @@
                 {{#equal category.name 'Sóng nhựa'}}
                     <div class='col-md-3 col-sm-4 mb-4'>
                         <div class='card h-100 border-0'>
-                            <a href='products/{{slug}}' class='product-box'>
+                            <a href='/{{category.slug}}/{{slug}}' class='product-box'>
                                 <div class='product-img-box'>
                                     <img src='{{images.[0]}}' alt={{name}} class='w-100' />
                                 </div>
                                 <div class='product-content-box rounded-bottom card-body'>
                                     <div class='product-title' h-50>
-                                        <a href='products/{{slug}}'>{{name}}</a>
+                                        <a href='/{{category.slug}}/{{slug}}'>{{name}}</a>
                                     </div>
                                     <div class='product-price'>
                                         {{#if price.sale}}
@@ -370,7 +370,7 @@
                                             <p class='sale__price' style='opacity: 0;'>Giá khuyến mãi: None</p>
                                         {{/if}}
                                     </div>
-                                    <a href='products/{{slug}}' class='product__btn'>
+                                    <a href='/{{category.slug}}/{{slug}}' class='product__btn'>
                                         <button type='button' class='btn btn-lg my-2'>
                                             Mua ngay
                                         </button>
