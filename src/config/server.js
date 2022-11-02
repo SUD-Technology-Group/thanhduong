@@ -7,7 +7,7 @@ const flash = require('express-flash');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-require('dotenv').config()
+require('dotenv').config();
 
 function init() {
     app.use(cors());
@@ -19,6 +19,7 @@ function init() {
             helpers: {
                 equal: function (lval, rval, options) {
                     if (lval == rval) return options.fn(this);
+                    else return options.inverse(this);
                 },
 
                 noChild: function (name, categories, options) {
@@ -33,7 +34,7 @@ function init() {
                 formatCurrency: function (price) {
                     if (price) return price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.') + ' ₫';
                     return 'Liên hệ';
-                }
+                },
             },
         }),
     );

@@ -44,12 +44,12 @@
                             {{#each categories}}
                                 {{#unless parent}}
                                 <li>
-                                    <a href='/products?search={{name}}'>{{name}}</a>
+                                    <a href='/{{slug}}'>{{name}}</a>
                                     <ul class='sub-nav-inside'>
                                         {{#each ../categories}}
                                             {{#if ../name}}
                                                 {{#equal ../name parent.name}}
-                                                    <li><a href='/products#{{name}}'>{{name}}</a></li>
+                                                    <li><a href='/{{slug}}'>{{name}}</a></li>
                                                 {{/equal}}
                                             {{/if}}
                                         {{/each}}
@@ -144,12 +144,12 @@
                             {{#each categories}}
                                 {{#unless parent}}
                                 <li>
-                                    <a href='/products?search={{name}}'>{{name}}</a>
+                                    <a href='/{{slug}}'>{{name}}</a>
                                     <ul class='sub-nav-inside'>
                                         {{#each ../categories}}
                                             {{#if ../name}}
                                                 {{#equal ../name parent.name}}
-                                                    <li><a href='/products#{{name}}'>{{name}}</a></li>
+                                                    <li><a href='/{{slug}}'>{{name}}</a></li>
                                                 {{/equal}}
                                             {{/if}}
                                         {{/each}}
