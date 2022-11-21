@@ -24,6 +24,9 @@ const ProductController = {
     getByCategory: catchAsync(async (req, res) => {
         const categories = await categoryService.getAll();
         const category = await categoryService.get({ slug: req.params.category });
+        if (!category) {
+            return res.render('error', { title: 'Page not found', layout: '' });
+        }
         const queryCategories = await categoryService.getMany({ parent: category });
         queryCategories.push(category);
         const products = await productService.getMany({ category: { $in: queryCategories } });
