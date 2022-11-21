@@ -24,7 +24,7 @@ function init() {
 
                 noChild: function (name, categories, options) {
                     for (const item of categories) {
-                        if (item.parent && name == item.parent.name) {
+                        if (item && item.parent && name == item.parent.name) {
                             return options.inverse(this);
                         }
                     }

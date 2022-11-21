@@ -15,7 +15,7 @@ const UserController = {
         const { username, password } = req.body;
         const user = await userService.get({ username });
         if (user && bcrypt.compareSync(password, user.password)) {
-            jwt.sign({ username }, process.env.JWT_SECRET, { expiresIn: '15m' }, (err, token) => {
+            jwt.sign({ username }, process.env.JWT_SECRET, { expiresIn: '2h' }, (err, token) => {
                 if (err) {
                     req.flash('error', 'Đăng nhập thất bại');
                     res.redirect('admin/user/login');
@@ -32,7 +32,7 @@ const UserController = {
 
     // GET /user/logout
     logout: (req, res) => {
-        req.session.destroy();
+        res.clearCookie('AuthToken');
         res.redirect('/admin/user/login');
     },
 };
