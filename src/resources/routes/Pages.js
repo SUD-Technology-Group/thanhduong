@@ -11,19 +11,19 @@ const {
 
 router.get('/', pagesController.index);
 
-router.get('/about', pagesController.about);
-router.get('/sales', pagesController.sale);
-router.get('/cart', pagesController.cart);
+router.get('/gioi-thieu', pagesController.about);
+router.get('/uu-dai', pagesController.sale);
+router.get('/gio-hang', pagesController.cart);
 
-router.get('/contact', pagesController.contactView);
-router.post('/contact', pagesController.contact);
+router.get('/lien-he', pagesController.contactView);
+router.post('/lien-he', pagesController.contact);
 
-router.get('/products', productController.index);
+router.get('/san-pham', productController.index);
 
-router.get('/news', newController.index);
-router.get('/news/:id', newController.detail);
+router.get('/tin-tuc', newController.index);
+router.get('/tin-tuc/:id', newController.detail);
 
-router.post('/cart', orderController.create);
+router.post('/gio-hang', orderController.create);
 
 router.get('/:category', productController.getByCategory);
 router.get('/:category/:slug', productController.detail);
